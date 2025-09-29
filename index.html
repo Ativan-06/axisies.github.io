@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axisies | Yapay Zekâ ve Dijital Çözümler</title>
+  <meta name="description" content="Axisies: AI danışmanlık, otomasyon, web ve eğitim çözümleri. İletişim: support@axisies.com" />
+  <style>
+    :root{
+      --bg:#0b1220;--panel:#0f1a2e;--text:#e8eefc;--muted:#9fb3d9;--brand:#5aa3ff;--brand-2:#7dd3fc;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    header{
+      padding:72px 20px 56px;
+      background:
+        radial-gradient(1100px 600px at 70% -10%,rgba(90,163,255,.35),transparent 60%),
+        radial-gradient(900px 500px at 20% -20%,rgba(125,211,252,.25),transparent 60%);
+      text-align:center;border-bottom:1px solid #1b2746;
+    }
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    .brand{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:18px}
+    .brand .logo{
+      width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      display:inline-block;box-shadow:0 10px 30px rgba(90,163,255,.25);
+    }
+    h1{font-size:40px;letter-spacing:.2px;margin:8px 0 10px}
+    .subtitle{color:var(--muted);max-width:800px;margin:0 auto 22px}
+    .cta{display:inline-block;padding:12px 18px;border:1px solid #3a64a8;border-radius:12px}
+    section{padding:42px 0;border-bottom:1px solid #162444}
+    h2{font-size:28px;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{background:var(--panel);border:1px solid #1f2d4a;border-radius:16px;padding:18px}
+    .card h3{margin:8px 0;font-size:20px}
+    .mini{font-size:14px;color:var(--muted)}
+    footer{padding:28px 0;text-align:center;color:var(--muted)}
+    .pill{display:inline-block;padding:4px 10px;border:1px solid #28406f;border-radius:999px;margin:0 6px 8px 0;font-size:12px;color:#cfe1ff}
+    @media (min-width:900px){
+      header{text-align:left}
+      .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+      .brand{justify-content:flex-start}
+    }
+    form{display:grid;gap:10px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #25365c;background:#0b1730;color:var(--text)}
+    button{padding:12px 16px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#05203f;font-weight:600;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <div class="brand"><span class="logo"></span><strong>Axisies</strong></div>
+        <h1>Yapay Zekâ ile İşinizi Hızlandırın</h1>
+        <p class="subtitle">Axisies; AI danışmanlık, süreç otomasyonu, modern web uygulamaları ve eğitimlerle iş hedeflerinize daha hızlı ulaşmanızı sağlar.</p>
+        <p>
+          <span class="pill">AI Danışmanlık</span>
+          <span class="pill">Otomasyon</span>
+          <span class="pill">Web & Uygulama</span>
+          <span class="pill">Eğitim</span>
+        </p>
+        <p><a class="cta" href="mailto:support@axisies.com">Bize Yazın → support@axisies.com</a></p>
+      </div>
+      <div class="card">
+        <h3>Hızlı İletişim</h3>
+        <p class="mini">Form çalıştırmak yerine e-posta ile tek tıkta bize ulaşın.</p>
+        <ul class="mini">
+          <li>Ekip: info@axisies.com</li>
+          <li>Destek: support@axisies.com</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>Hizmetler</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AI Danışmanlık</h3>
+          <p>Veri odaklı karar destek, raporlama ve özel yapay zekâ çözümleri.</p>
+        </div>
+        <div class="card">
+          <h3>Otomasyon</h3>
+          <p>İş akışlarını uçtan uca otomatikleştirerek maliyet ve zaman tasarrufu.</p>
+        </div>
+        <div class="card">
+          <h3>Web & Uygulama</h3>
+          <p>Hızlı, güvenli ve modern web uygulamaları—bulutta ölçeklenebilir mimari.</p>
+        </div>
+        <div class="card">
+          <h3>Eğitim & Atölye</h3>
+          <p>Takımlarınız için pratik, proje odaklı yapay zekâ eğitimleri.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Hakkımızda</h2>
+      <p>Axisies, teknoloji ve yapay zekâ alanında sonuç odaklı çözümler geliştirir. Üretken yapay zekâ, geleneksel ML ve modern web teknolojilerini birleştirerek kurumların verimliliğini artırır.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>İletişim</h2>
+      <p class="mini">Her projeye 24 saat içinde dönüş yapıyoruz.</p>
+      <div class="card">
+        <p>E-posta: <a href="mailto:support@axisies.com">support@axisies.com</a> • <a href="mailto:info@axisies.com">info@axisies.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Axisies — Tüm hakları saklıdır.
+  </footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
