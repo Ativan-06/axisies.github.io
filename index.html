@@ -1,121 +1,567 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Axisies | Yapay Zekâ ve Dijital Çözümler</title>
-  <meta name="description" content="Axisies: AI danışmanlık, otomasyon, web ve eğitim çözümleri. İletişim: support@axisies.com" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Axisies | Yaratıcı Mühendislik</title>
+  <meta name="description" content="Axisies: Zekâ, tasarım ve üretimi birleştiriyoruz. AR-GE, prototipleme, CAD/CAE, endüstriyel otomasyon, gömülü sistemler & IoT, yapay zekâ ile optimizasyon." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Axisies | Yaratıcı Mühendislik">
+  <meta property="og:description" content="Zekâ, tasarım ve üretimi birleştiriyoruz. AR-GE, prototipleme, otomasyon, IoT ve yapay zekâ ile verimlilik.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-pages-url.example/">
+  <meta property="og:image" content="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230b1220'/><text x='50%' y='55%' font-size='48' fill='%2358a6ff' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif'>Axisies | Yaratıcı Mühendislik</text></svg>">
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1220'/%3E%3Cpath d='M10 45 L24 19 h6 l-14 26h-6Zm24 0 L48 19h6L34 45h-6Z' fill='%2358a6ff'/%3E%3C/svg%3E">
+
   <style>
+    /* ---- Temel değişkenler ---- */
     :root{
-      --bg:#0b1220;--panel:#0f1a2e;--text:#e8eefc;--muted:#9fb3d9;--brand:#5aa3ff;--brand-2:#7dd3fc;
+      --bg:#0b1220;
+      --panel:#1f2937;
+      --text:#e2e8f0;
+      --muted:#9aa6b2;
+      --accent:#58a6ff;
+      --accent-2:#8b5cf6;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --maxw:1100px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:var(--brand);text-decoration:none}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(88,166,255,.10), transparent 60%),
+                  radial-gradient(900px 500px at -5% 10%, rgba(139,92,246,.10), transparent 60%),
+                  var(--bg);
+      color:var(--text); line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; border-radius:12px; display:block}
+    .container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:0 20px}
+
+    /* ---- Header / Nav ---- */
     header{
-      padding:72px 20px 56px;
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background: color-mix(in oklab, var(--bg) 80%, #000 20% / 60%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      min-height:64px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .brand-badge{
+      width:34px; height:34px; border-radius:9px; display:grid; place-items:center;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#0b1220; font-weight:900; box-shadow: var(--shadow);
+    }
+    nav ul{display:flex; gap:16px; list-style:none; padding:0; margin:0}
+    nav a{padding:8px 12px; border-radius:10px; color:var(--muted)}
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .cta-sm{display:flex; gap:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px; font-weight:600; border:1px solid transparent;
+      transition:.2s transform ease, .2s background ease, .2s border-color ease;
+      cursor:pointer;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#74c0ff); color:#0b1220}
+    .btn-outline{border-color:rgba(255,255,255,.16); color:var(--text); background:transparent}
+    .btn-outline:hover{border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.06)}
+    .mobile-toggle{display:none; background:none; border:0; color:var(--text); font-size:22px}
+
+    /* ---- Hero ---- */
+    .hero{
+      padding:72px 0 40px; position:relative; overflow:hidden;
+    }
+    .split{
+      display:grid; gap:28px; grid-template-columns: 1.1fr .9fr;
+      align-items:center;
+    }
+    .hero h1{
+      font-size: clamp(28px, 5vw, 48px);
+      line-height:1.1; margin:0 0 14px;
+    }
+    .hero p{color:var(--muted); margin:0 0 22px}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero .visual{
+      aspect-ratio: 16/10; padding:16px;
+      display:grid; place-items:center;
       background:
-        radial-gradient(1100px 600px at 70% -10%,rgba(90,163,255,.35),transparent 60%),
-        radial-gradient(900px 500px at 20% -20%,rgba(125,211,252,.25),transparent 60%);
-      text-align:center;border-bottom:1px solid #1b2746;
+        radial-gradient(80% 60% at 60% 0%, rgba(88,166,255,.18), transparent 60%),
+        radial-gradient(80% 60% at 0% 40%, rgba(139,92,246,.14), transparent 60%),
+        var(--panel);
     }
-    .container{max-width:1080px;margin:0 auto;padding:0 20px}
-    .brand{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:18px}
-    .brand .logo{
-      width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      display:inline-block;box-shadow:0 10px 30px rgba(90,163,255,.25);
+    .ticker{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:18px;
+      font-size:14px; color:var(--muted)
     }
-    h1{font-size:40px;letter-spacing:.2px;margin:8px 0 10px}
-    .subtitle{color:var(--muted);max-width:800px;margin:0 auto 22px}
-    .cta{display:inline-block;padding:12px 18px;border:1px solid #3a64a8;border-radius:12px}
-    section{padding:42px 0;border-bottom:1px solid #162444}
-    h2{font-size:28px;margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .card{background:var(--panel);border:1px solid #1f2d4a;border-radius:16px;padding:18px}
-    .card h3{margin:8px 0;font-size:20px}
-    .mini{font-size:14px;color:var(--muted)}
-    footer{padding:28px 0;text-align:center;color:var(--muted)}
-    .pill{display:inline-block;padding:4px 10px;border:1px solid #28406f;border-radius:999px;margin:0 6px 8px 0;font-size:12px;color:#cfe1ff}
-    @media (min-width:900px){
-      header{text-align:left}
-      .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-      .brand{justify-content:flex-start}
+    .ticker .t{padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06)}
+    .label{display:inline-block; font-size:12px; padding:3px 8px; border-radius:999px; background:rgba(88,166,255,.15); color:var(--accent); border:1px solid rgba(88,166,255,.35);}
+
+    /* ---- Section generic ---- */
+    section{padding:64px 0}
+    .section-head{margin-bottom:26px}
+    .section-head h2{margin:0 0 8px; font-size: clamp(22px,3.5vw,32px)}
+    .section-head p{margin:0; color:var(--muted)}
+
+    /* ---- Hizmetler ---- */
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
+    .service{
+      padding:18px; display:grid; gap:10px; transition:.2s transform ease, .2s border-color ease, .2s background ease;
     }
-    form{display:grid;gap:10px}
-    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #25365c;background:#0b1730;color:var(--text)}
-    button{padding:12px 16px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#05203f;font-weight:600;cursor:pointer}
+    .service:hover{transform: translateY(-2px); border-color: rgba(88,166,255,.35); background:rgba(88,166,255,.06)}
+    .icon{
+      width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
+      background:rgba(88,166,255,.18); color:var(--text); font-weight:800; font-size:14px;
+      border:1px solid rgba(88,166,255,.35)
+    }
+    .muted{color:var(--muted)}
+
+    /* ---- Portföy ---- */
+    .portfolio .card{overflow:hidden}
+    .portfolio .body{padding:14px}
+    .kpi{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .kpi span{font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.06); color:var(--muted); border:1px solid rgba(255,255,255,.08)}
+
+    /* ---- Süreç ---- */
+    .timeline{
+      display:grid; gap:14px; counter-reset: step;
+    }
+    .step{
+      display:grid; grid-template-columns: 36px 1fr; gap:12px; align-items:start;
+      padding:14px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; background:rgba(255,255,255,.03)
+    }
+    .step::before{
+      counter-increment: step;
+      content: counter(step);
+      width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--accent),#74c0ff); color:#0b1220; font-weight:800
+    }
+
+    /* ---- SSS ---- */
+    .faq .item{border:1px solid rgba(255,255,255,.10); border-radius:12px; background:rgba(255,255,255,.03)}
+    .faq button{
+      width:100%; background:none; border:0; text-align:left; padding:14px 16px; color:var(--text); font: inherit; display:flex; justify-content:space-between; gap:10px; cursor:pointer
+    }
+    .faq .answer{max-height:0; overflow:hidden; transition:max-height .25s ease; padding:0 16px}
+    .faq .item.open .answer{max-height:220px; padding-bottom:14px}
+    .faq .item + .item{margin-top:10px}
+
+    /* ---- Form ---- */
+    form .row{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+    label{display:block; font-size:14px; color:var(--muted); margin-bottom:6px}
+    input, textarea{
+      width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04); color:var(--text); outline:none;
+    }
+    input:focus,textarea:focus{border-color: rgba(88,166,255,.45); box-shadow:0 0 0 4px rgba(88,166,255,.12)}
+    textarea{min-height:130px; resize:vertical}
+
+    /* ---- Footer ---- */
+    footer{padding:28px 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted)}
+    .foot{display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap}
+    .social{display:flex; gap:12px}
+    .social a{padding:8px 10px; border:1px solid rgba(255,255,255,.14); border-radius:10px}
+    .email-links{display:flex; gap:14px; flex-wrap:wrap}
+
+    /* ---- Responsive ---- */
+    @media (max-width: 960px){
+      .split{grid-template-columns:1fr}
+      nav ul{display:none}
+      .mobile-toggle{display:block}
+      .nav.open ul{display:flex; flex-direction:column; position:absolute; left:0; right:0; top:64px; padding:12px 20px; background:color-mix(in oklab, var(--bg) 82%, #000 18% / 80%); border-bottom:1px solid rgba(255,255,255,.08)}
+      .grid.cols-3{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .grid.cols-3, .grid.cols-2{grid-template-columns:1fr}
+      form .row{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="container hero">
-      <div>
-        <div class="brand"><span class="logo"></span><strong>Axisies</strong></div>
-        <h1>Yapay Zekâ ile İşinizi Hızlandırın</h1>
-        <p class="subtitle">Axisies; AI danışmanlık, süreç otomasyonu, modern web uygulamaları ve eğitimlerle iş hedeflerinize daha hızlı ulaşmanızı sağlar.</p>
-        <p>
-          <span class="pill">AI Danışmanlık</span>
-          <span class="pill">Otomasyon</span>
-          <span class="pill">Web & Uygulama</span>
-          <span class="pill">Eğitim</span>
-        </p>
-        <p><a class="cta" href="mailto:support@axisies.com">Bize Yazın → support@axisies.com</a></p>
+    <div class="container nav" id="site-nav">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true">A</span>
+        <span>Axisies | Yaratıcı Mühendislik</span>
       </div>
-      <div class="card">
-        <h3>Hızlı İletişim</h3>
-        <p class="mini">Form çalıştırmak yerine e-posta ile tek tıkta bize ulaşın.</p>
-        <ul class="mini">
-          <li>Ekip: info@axisies.com</li>
-          <li>Destek: support@axisies.com</li>
+      <nav aria-label="Birincil">
+        <ul>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#portfoy">Portföy</a></li>
+          <li><a href="#surec">Süreç</a></li>
+          <li><a href="#sss">SSS</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
         </ul>
+      </nav>
+      <div class="cta-sm">
+        <a class="btn btn-outline" href="#iletisim">Bize Ulaşın</a>
+        <a class="btn btn-primary" href="#iletisim">Teklif Al</a>
+        <button class="mobile-toggle" aria-label="Menüyü aç/kapat" id="navToggle">☰</button>
       </div>
     </div>
   </header>
 
-  <section>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container split">
+      <div>
+        <span class="label">Sloganımız</span>
+        <h1>Zekâ, tasarım ve üretimi birleştiriyoruz</h1>
+        <p>Axisies, fikirden seri üretime giden yolda <strong>AR-GE</strong>, <strong>prototipleme</strong>, <strong>CAD/CAE</strong>, <strong>otomasyon</strong> ve <strong>yapay zekâ</strong> çözümlerini tek çatı altında sunar.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#iletisim">Teklif Al</a>
+          <a class="btn btn-outline" href="#portfoy">Portföyü Gör</a>
+        </div>
+        <div class="ticker">
+          <div class="t">⏱ POC → Üretim Hızı: <strong>%40+</strong></div>
+          <div class="t">⚙️ OEE (Verim): <strong>%18 artış</strong></div>
+          <div class="t">💡 Patent/Dizayn: <strong>9+ başvuru</strong></div>
+        </div>
+      </div>
+      <div class="card hero visual" aria-hidden="true">
+        <!-- Basit, optimize edilmiş vektör yer tutucu -->
+        <svg width="100%" height="100%" viewBox="0 0 800 500" role="img" aria-label="Yaratıcı mühendislik görseli">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#58a6ff" stop-opacity=".6"/>
+              <stop offset="1" stop-color="#8b5cf6" stop-opacity=".4"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="800" height="500" rx="18" fill="url(#g1)" opacity=".12"/>
+          <g transform="translate(120,120)">
+            <circle cx="120" cy="120" r="110" fill="none" stroke="#58a6ff" stroke-width="3" opacity=".7"/>
+            <circle cx="120" cy="120" r="70" fill="none" stroke="#58a6ff" stroke-width="2" opacity=".4"/>
+            <path d="M0,120 H240" stroke="#8b5cf6" stroke-width="2" opacity=".6"/>
+            <path d="M120,0 V240" stroke="#8b5cf6" stroke-width="2" opacity=".6"/>
+          </g>
+          <g transform="translate(420,170)">
+            <rect x="0" y="0" width="240" height="160" rx="14" fill="none" stroke="#58a6ff" stroke-width="3" opacity=".7"/>
+            <rect x="12" y="18" width="104" height="18" rx="6" fill="#58a6ff" opacity=".3"/>
+            <rect x="12" y="48" width="216" height="10" rx="5" fill="#58a6ff" opacity=".2"/>
+            <rect x="12" y="66" width="180" height="10" rx="5" fill="#58a6ff" opacity=".18"/>
+            <rect x="12" y="84" width="200" height="10" rx="5" fill="#58a6ff" opacity=".16"/>
+            <rect x="12" y="122" width="84" height="20" rx="8" fill="#58a6ff" opacity=".35"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hakkımızda -->
+  <section id="hakkimizda">
     <div class="container">
-      <h2>Hizmetler</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>AI Danışmanlık</h3>
-          <p>Veri odaklı karar destek, raporlama ve özel yapay zekâ çözümleri.</p>
+      <div class="section-head">
+        <h2>Hakkımızda</h2>
+        <p>Yaratıcı mühendislik yaklaşımımızla iş hedeflerinizi ölçülebilir çıktılara dönüştürüyoruz.</p>
+      </div>
+      <div class="card" style="padding:18px;">
+        <p>Axisies; AR-GE, prototipleme, simülasyon ve üretim otomasyonu süreçlerini tek bir akışta birleştirir. İhtiyacınıza göre <em>hızlı prototip</em>, <em>tasarım doğrulama</em>, <em>veri odaklı optimizasyon</em> ve <em>saha devreye alma</em> adımlarını yönetir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hizmetler -->
+  <section id="hizmetler">
+    <div class="container">
+      <div class="section-head">
+        <h2>Hizmetler</h2>
+        <p>Uçtan uca değer yaratmak için modüler hizmet paketleri.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card service">
+          <div class="icon">PD</div>
+          <h3>Ürün Tasarımı & Prototipleme</h3>
+          <p class="muted">Endüstriyel tasarım, hızlı prototip, üretime uygunluk (DFM/DFA).</p>
+        </article>
+        <article class="card service">
+          <div class="icon">CAD</div>
+          <h3>CAD/CAE & Simülasyon</h3>
+          <p class="muted">Yapısal, akış ve ısı analizleri; optimizasyon döngüleri.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">AUTO</div>
+          <h3>Endüstriyel Otomasyon</h3>
+          <p class="muted">PLC/SCADA entegrasyonu, hat dengeleme ve OEE artırımı.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">IoT</div>
+          <h3>Gömülü Sistemler & IoT</h3>
+          <p class="muted">Donanım/firmware geliştirme, telemetri ve uzaktan izleme.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">AI</div>
+          <h3>Yapay Zekâ ile Optimizasyon</h3>
+          <p class="muted">Tedarik, üretim ve bakım için kestirimsel analitik.</p>
+        </article>
+        <article class="card service">
+          <div class="icon">ANA</div>
+          <h3>Üretim Verimliliği Analitiği</h3>
+          <p class="muted">Kök neden analizi, KPI panoları ve sürekli iyileştirme.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portföy -->
+  <section id="portfoy" class="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <h2>Vaka Çalışmaları / Portföy</h2>
+        <p>Ölçülebilir sonuçlara odaklanan seçili projeler.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <!-- Kart 1 -->
+        <article class="card">
+          <img loading="lazy" width="720" height="480" alt="Otomasyon hattı yer tutucu"
+               src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='52%' font-size='24' fill='%23e2e8f0' text-anchor='middle' font-family='system-ui'>Otomasyon Hattı</text></svg>">
+          <div class="body">
+            <h3>Montaj Hattı Otomasyonu</h3>
+            <p class="muted">Robotik istasyonlar + veri toplayıcı sensörler ile çevrim süresinde belirgin azalma.</p>
+            <div class="kpi">
+              <span>Çevrim Süresi: −%27</span>
+              <span>Hata: −%15</span>
+              <span>ROI: 9 ay</span>
+            </div>
+          </div>
+        </article>
+        <!-- Kart 2 -->
+        <article class="card">
+          <img loading="lazy" width="720" height="480" alt="IoT izleme yer tutucu"
+               src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='52%' font-size='24' fill='%23e2e8f0' text-anchor='middle' font-family='system-ui'>IoT İzleme</text></svg>">
+          <div class="body">
+            <h3>IoT Tesis İzleme</h3>
+            <p class="muted">Enerji tüketimi & arıza göstergeleri ile kestirimsel bakım.</p>
+            <div class="kpi">
+              <span>Duruş: −%22</span>
+              <span>Enerji: −%12</span>
+              <span>Bakım Maliyeti: −%18</span>
+            </div>
+          </div>
+        </article>
+        <!-- Kart 3 -->
+        <article class="card">
+          <img loading="lazy" width="720" height="480" alt="Yapay zekâ optimizasyonu yer tutucu"
+               src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='52%' font-size='24' fill='%23e2e8f0' text-anchor='middle' font-family='system-ui'>AI Optimizasyon</text></svg>">
+          <div class="body">
+            <h3>AI ile Üretim Planlama</h3>
+            <p class="muted">Talep dalgalanmalarına uyumlu üretim çizelgeleme.</p>
+            <div class="kpi">
+              <span>OEE: +%14</span>
+              <span>Stok: −%20</span>
+              <span>Termin Sapma: −%35</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Süreç -->
+  <section id="surec">
+    <div class="container">
+      <div class="section-head">
+        <h2>Çalışma Sürecimiz</h2>
+        <p>Keşiften devreye almaya dek şeffaf ve ölçülebilir bir akış.</p>
+      </div>
+      <div class="timeline">
+        <div class="step"><div></div><div><h3>Keşif</h3><p class="muted">Problemi tanımlama, hedef KPI ve kapsam netleştirme.</p></div></div>
+        <div class="step"><div></div><div><h3>Tasarım</h3><p class="muted">CAD, mimari ve bileşen seçimleri; risk analizi.</p></div></div>
+        <div class="step"><div></div><div><h3>Prototip</h3><p class="muted">Hızlı prototipleme ve iteratif doğrulama.</p></div></div>
+        <div class="step"><div></div><div><h3>Test/Doğrulama</h3><p class="muted">Fonksiyonel testler, güvenlik ve standart uyumluluğu.</p></div></div>
+        <div class="step"><div></div><div><h3>Üretime Hazırlık</h3><p class="muted">DFM/DFA, tedarik ve üretim planlama.</p></div></div>
+        <div class="step"><div></div><div><h3>Devreye Alma</h3><p class="muted">Saha kurulum, eğitim ve izleme panoları.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section id="sss" class="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sık Sorulan Sorular</h2>
+        <p>Merak ettiklerinizin kısa cevapları.</p>
+      </div>
+
+      <div class="item card">
+        <button type="button" aria-expanded="false">
+          Proje süresi ne kadar sürer?
+          <span>＋</span>
+        </button>
+        <div class="answer">
+          <p>Kapsama göre değişir; tipik POC 2–6 hafta, üretim projeleri 2–4 ay arası sürer.</p>
         </div>
-        <div class="card">
-          <h3>Otomasyon</h3>
-          <p>İş akışlarını uçtan uca otomatikleştirerek maliyet ve zaman tasarrufu.</p>
+      </div>
+
+      <div class="item card">
+        <button type="button" aria-expanded="false">
+          Gizlilik ve fikri mülkiyet nasıl korunur?
+          <span>＋</span>
+        </button>
+        <div class="answer">
+          <p>Karşılıklı NDA ile çalışırız; kaynak dosyalar ve raporlar size ait olur.</p>
         </div>
-        <div class="card">
-          <h3>Web & Uygulama</h3>
-          <p>Hızlı, güvenli ve modern web uygulamaları—bulutta ölçeklenebilir mimari.</p>
+      </div>
+
+      <div class="item card">
+        <button type="button" aria-expanded="false">
+          Saha devreye alma desteği veriyor musunuz?
+          <span>＋</span>
+        </button>
+        <div class="answer">
+          <p>Evet. Kurulum, eğitim ve kabul testleri süreçlerine eşlik ediyoruz.</p>
         </div>
-        <div class="card">
-          <h3>Eğitim & Atölye</h3>
-          <p>Takımlarınız için pratik, proje odaklı yapay zekâ eğitimleri.</p>
+      </div>
+
+      <div class="item card">
+        <button type="button" aria-expanded="false">
+          Mevcut hatlarımıza entegre olabilir misiniz?
+          <span>＋</span>
+        </button>
+        <div class="answer">
+          <p>Standart arayüzler (OPC-UA, MQTT, Modbus, REST) ve özelleştirilmiş geçiş planları ile entegrasyon yapıyoruz.</p>
+        </div>
+      </div>
+
+      <div class="item card">
+        <button type="button" aria-expanded="false">
+          Yaklaşık bütçe nasıl belirlenir?
+          <span>＋</span>
+        </button>
+        <div class="answer">
+          <p>Keşif oturumundan sonra kapsam & risk matrisi ile kalem kalem maliyetlendirme paylaşırız.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <!-- İletişim -->
+  <section id="iletisim">
     <div class="container">
-      <h2>Hakkımızda</h2>
-      <p>Axisies, teknoloji ve yapay zekâ alanında sonuç odaklı çözümler geliştirir. Üretken yapay zekâ, geleneksel ML ve modern web teknolojilerini birleştirerek kurumların verimliliğini artırır.</p>
-    </div>
-  </section>
+      <div class="section-head">
+        <h2>İletişim</h2>
+        <p>İhtiyacınızı bize yazın; kısa bir keşif görüşmesi planlayalım.</p>
+      </div>
+      <div class="grid cols-2">
+        <form id="contactForm" class="card" style="padding:18px" autocomplete="on">
+          <div>
+            <label for="name">İsim Soyisim</label>
+            <input id="name" name="name" type="text" placeholder="Adınız" required>
+          </div>
+          <div class="row">
+            <div>
+              <label for="email">E-posta</label>
+              <input id="email" name="email" type="email" placeholder="mail@ornek.com" required>
+            </div>
+            <div>
+              <label for="topic">Konu</label>
+              <input id="topic" name="topic" type="text" placeholder="Teklif / Danışmanlık / Soru">
+            </div>
+          </div>
+          <div>
+            <label for="message">Mesaj</label>
+            <textarea id="message" name="message" placeholder="Kısaca ihtiyacınızı anlatın..." required></textarea>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+            <button class="btn btn-primary" type="submit">Bize Ulaşın</button>
+            <a class="btn btn-outline" href="#hero">Teklif Al</a>
+          </div>
+          <p class="muted" style="margin-top:10px; font-size:13px">Doğrudan e-posta: <a href="mailto:info@axisies.com">info@axisies.com</a> · <a href="mailto:support@axisies.com">support@axisies.com</a></p>
+        </form>
 
-  <section>
-    <div class="container">
-      <h2>İletişim</h2>
-      <p class="mini">Her projeye 24 saat içinde dönüş yapıyoruz.</p>
-      <div class="card">
-        <p>E-posta: <a href="mailto:support@axisies.com">support@axisies.com</a> • <a href="mailto:info@axisies.com">info@axisies.com</a></p>
+        <div class="card" style="padding:18px">
+          <h3 style="margin-top:0">Hızlı Bağlantılar</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--muted)">
+            <li><a href="#hizmetler">Hizmetler</a></li>
+            <li><a href="#portfoy">Portföy</a></li>
+            <li><a href="#sss">SSS</a></li>
+          </ul>
+          <div style="margin-top:12px">
+            <p class="muted">Çalışma saatleri: Pzt–Cum 09:00–18:00 (GMT+3)</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    © <span id="y"></span> Axisies — Tüm hakları saklıdır.
+    <div class="container foot">
+      <div>© <span id="year"></span> Axisies. Tüm hakları saklıdır.</div>
+      <div class="email-links">
+        <a href="mailto:info@axisies.com">info@axisies.com</a>
+        <a href="mailto:support@axisies.com">support@axisies.com</a>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">gh</a>
+        <a href="#" aria-label="YouTube">yt</a>
+      </div>
+    </div>
   </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    // --- Küçük JS: mobil menü, smooth scroll, SSS akordeon, mailto form ---
+    const navWrap = document.getElementById('site-nav');
+    const navToggle = document.getElementById('navToggle');
+    navToggle?.addEventListener('click', ()=> navWrap.classList.toggle('open'));
+
+    // Smooth scroll (anker bağlantılar)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'})}
+        // mobil menüyü kapat
+        navWrap.classList.remove('open');
+      });
+    });
+
+    // SSS akordeon
+    document.querySelectorAll('.faq .item button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const item = btn.closest('.item');
+        const open = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    });
+
+    // Mailto ile basit gönderim
+    document.getElementById('contactForm')?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const topic = document.getElementById('topic').value.trim() || 'İletişim Talebi';
+      const message = document.getElementById('message').value.trim();
+
+      const body = encodeURIComponent(
+        `Merhaba Axisies,%0D%0A%0D%0AAdım: ${name}%0D%0AE-posta: ${email}%0D%0AKonu: ${topic}%0D%0AMesaj:%0D%0A${message}%0D%0A%0D%0ATeşekkürler.`
+      );
+      const subject = encodeURIComponent(`[Axisies] ${topic} - ${name}`);
+      // Varsayılan: info@ adresine yönlendir
+      window.location.href = `mailto:info@axisies.com?subject=${subject}&body=${body}`;
+    });
+
+    // Yıl
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
