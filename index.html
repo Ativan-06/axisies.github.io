@@ -1,568 +1,1325 @@
-<!doctype html>
-<html lang="tr" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Axisies | Yaratıcı Mühendislik</title>
-  <meta name="description" content="Axisies: Zekâ, tasarım ve üretimi birleştiriyoruz. AR-GE, prototipleme, CAD/CAE, endüstriyel otomasyon, gömülü sistemler & IoT, yapay zekâ ile optimizasyon." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Axisies | Yaratıcı Mühendislik">
-  <meta property="og:description" content="Zekâ, tasarım ve üretimi birleştiriyoruz. AR-GE, prototipleme, otomasyon, IoT ve yapay zekâ ile verimlilik.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ativan-06.github.io/https---github-com-Ativan-06-axisies.github.io/">
-
-  <meta property="og:image" content="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230b1220'/><text x='50%' y='55%' font-size='48' fill='%2358a6ff' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif'>Axisies | Yaratıcı Mühendislik</text></svg>">
-
-  <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1220'/%3E%3Cpath d='M10 45 L24 19 h6 l-14 26h-6Zm24 0 L48 19h6L34 45h-6Z' fill='%2358a6ff'/%3E%3C/svg%3E">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axisies | Creative Engineering</title>
+  <meta name="description" content="Axisies is a Saudi engineering firm delivering innovative, precision-crafted solutions in automation, R&amp;D, and advanced engineering." />
+  <meta property="og:title" content="Axisies | Creative Engineering" />
+  <meta property="og:description" content="Axisies engineers the future with innovative automation, R&amp;D, and advanced engineering solutions across Saudi Arabia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ativan-06.github.io/https---github-com-Ativan-06-axisies.github.io/" />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230b1220'/%3E%3Ctext x='50%25' y='50%25' fill='%2358a6ff' font-family='system-ui,-apple-system,%22Segoe UI%22,Roboto' font-size='72' text-anchor='middle' dominant-baseline='middle'%3EAxisies%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' ry='12' fill='%230b1220'/%3E%3Cpath d='M20 44L32 12l12 32' stroke='%2358a6ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='4' fill='%23e2e8f0'/%3E%3C/svg%3E" />
   <style>
-    /* ---- Temel değişkenler ---- */
-    :root{
-      --bg:#0b1220;
-      --panel:#1f2937;
-      --text:#e2e8f0;
-      --muted:#9aa6b2;
-      --accent:#58a6ff;
-      --accent-2:#8b5cf6;
-      --radius:14px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --maxw:1100px;
+    :root {
+      color-scheme: dark;
+      --bg: #0b1220;
+      --panel: #1f2937;
+      --accent: #58a6ff;
+      --text: #e2e8f0;
+      --muted: rgba(226, 232, 240, 0.7);
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, sans-serif;
+      --shadow: 0 24px 48px rgba(11, 18, 32, 0.45);
+      scroll-behavior: smooth;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(88,166,255,.10), transparent 60%),
-                  radial-gradient(900px 500px at -5% 10%, rgba(139,92,246,.10), transparent 60%),
-                  var(--bg);
-      color:var(--text); line-height:1.6;
-    }
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; height:auto; border-radius:12px; display:block}
-    .container{width:100%; max-width:var(--maxw); margin-inline:auto; padding:0 20px}
 
-    /* ---- Header / Nav ---- */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(140%) blur(10px);
-      background: color-mix(in oklab, var(--bg) 80%, #000 20% / 60%);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+    * {
+      box-sizing: border-box;
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      min-height:64px;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
-    .brand-badge{
-      width:34px; height:34px; border-radius:9px; display:grid; place-items:center;
-      background:linear-gradient(135deg, var(--accent), var(--accent-2));
-      color:#0b1220; font-weight:900; box-shadow: var(--shadow);
-    }
-    nav ul{display:flex; gap:16px; list-style:none; padding:0; margin:0}
-    nav a{padding:8px 12px; border-radius:10px; color:var(--muted)}
-    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    .cta-sm{display:flex; gap:10px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:12px; font-weight:600; border:1px solid transparent;
-      transition:.2s transform ease, .2s background ease, .2s border-color ease;
-      cursor:pointer;
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{background:linear-gradient(135deg,var(--accent),#74c0ff); color:#0b1220}
-    .btn-outline{border-color:rgba(255,255,255,.16); color:var(--text); background:transparent}
-    .btn-outline:hover{border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.06)}
-    .mobile-toggle{display:none; background:none; border:0; color:var(--text); font-size:22px}
 
-    /* ---- Hero ---- */
-    .hero{
-      padding:72px 0 40px; position:relative; overflow:hidden;
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: radial-gradient(circle at top, rgba(88, 166, 255, 0.08), transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
     }
-    .split{
-      display:grid; gap:28px; grid-template-columns: 1.1fr .9fr;
-      align-items:center;
+
+    body.rtl {
+      direction: rtl;
     }
-    .hero h1{
-      font-size: clamp(28px, 5vw, 48px);
-      line-height:1.1; margin:0 0 14px;
+
+    img, svg {
+      max-width: 100%;
+      display: block;
     }
-    .hero p{color:var(--muted); margin:0 0 22px}
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(11, 18, 32, 0.8);
+      border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+    }
+
+    .nav-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand svg {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 8px 12px rgba(88, 166, 255, 0.35));
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      color: var(--muted);
+      position: relative;
+      padding: 0.35rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:focus-visible,
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(88, 166, 255, 0.4);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(31, 41, 55, 0.8);
+    }
+
+    .lang-toggle button {
+      background: none;
+      border: none;
+      color: var(--muted);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .lang-toggle button.active {
+      background: var(--accent);
+      color: #0b1220;
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(88, 166, 255, 0.4);
+      background: rgba(31, 41, 55, 0.6);
+      color: var(--text);
+      cursor: pointer;
+      transition: border 0.3s ease;
+    }
+
+    .menu-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      position: relative;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-toggle span::before {
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      top: 6px;
+    }
+
+    .menu-open .menu-toggle span {
+      background: transparent;
+    }
+
+    .menu-open .menu-toggle span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-open .menu-toggle span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-links.mobile-hidden {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      .nav-links {
+        display: flex !important;
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    section {
+      margin: 4.5rem 0;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2.5rem;
+      padding: 5rem 0 4rem;
+    }
+
+    .hero-content {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .eyebrow {
+      letter-spacing: 0.35em;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--accent);
+      color: #0b1220;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn.secondary {
+      background: rgba(31, 41, 55, 0.75);
+      color: var(--text);
+      border-color: rgba(88, 166, 255, 0.4);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(88, 166, 255, 0.25);
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.12), transparent);
+      border-radius: 28px;
+      border: 1px solid rgba(88, 166, 255, 0.2);
       box-shadow: var(--shadow);
-    }
-    .hero .visual{
-      aspect-ratio: 16/10; padding:16px;
-      display:grid; place-items:center;
-      background:
-        radial-gradient(80% 60% at 60% 0%, rgba(88,166,255,.18), transparent 60%),
-        radial-gradient(80% 60% at 0% 40%, rgba(139,92,246,.14), transparent 60%),
-        var(--panel);
-    }
-    .ticker{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:18px;
-      font-size:14px; color:var(--muted)
-    }
-    .ticker .t{padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06)}
-    .label{display:inline-block; font-size:12px; padding:3px 8px; border-radius:999px; background:rgba(88,166,255,.15); color:var(--accent); border:1px solid rgba(88,166,255,.35);}
-
-    /* ---- Section generic ---- */
-    section{padding:64px 0}
-    .section-head{margin-bottom:26px}
-    .section-head h2{margin:0 0 8px; font-size: clamp(22px,3.5vw,32px)}
-    .section-head p{margin:0; color:var(--muted)}
-
-    /* ---- Hizmetler ---- */
-    .grid{display:grid; gap:16px}
-    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
-    .grid.cols-2{grid-template-columns: repeat(2, 1fr)}
-    .service{
-      padding:18px; display:grid; gap:10px; transition:.2s transform ease, .2s border-color ease, .2s background ease;
-    }
-    .service:hover{transform: translateY(-2px); border-color: rgba(88,166,255,.35); background:rgba(88,166,255,.06)}
-    .icon{
-      width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
-      background:rgba(88,166,255,.18); color:var(--text); font-weight:800; font-size:14px;
-      border:1px solid rgba(88,166,255,.35)
-    }
-    .muted{color:var(--muted)}
-
-    /* ---- Portföy ---- */
-    .portfolio .card{overflow:hidden}
-    .portfolio .body{padding:14px}
-    .kpi{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
-    .kpi span{font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,.06); color:var(--muted); border:1px solid rgba(255,255,255,.08)}
-
-    /* ---- Süreç ---- */
-    .timeline{
-      display:grid; gap:14px; counter-reset: step;
-    }
-    .step{
-      display:grid; grid-template-columns: 36px 1fr; gap:12px; align-items:start;
-      padding:14px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; background:rgba(255,255,255,.03)
-    }
-    .step::before{
-      counter-increment: step;
-      content: counter(step);
-      width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
-      background:linear-gradient(135deg,var(--accent),#74c0ff); color:#0b1220; font-weight:800
+      overflow: hidden;
     }
 
-    /* ---- SSS ---- */
-    .faq .item{border:1px solid rgba(255,255,255,.10); border-radius:12px; background:rgba(255,255,255,.03)}
-    .faq button{
-      width:100%; background:none; border:0; text-align:left; padding:14px 16px; color:var(--text); font: inherit; display:flex; justify-content:space-between; gap:10px; cursor:pointer
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.35), transparent 55%);
+      opacity: 0.6;
     }
-    .faq .answer{max-height:0; overflow:hidden; transition:max-height .25s ease; padding:0 16px}
-    .faq .item.open .answer{max-height:220px; padding-bottom:14px}
-    .faq .item + .item{margin-top:10px}
 
-    /* ---- Form ---- */
-    form .row{display:grid; gap:12px; grid-template-columns:1fr 1fr}
-    label{display:block; font-size:14px; color:var(--muted); margin-bottom:6px}
-    input, textarea{
-      width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04); color:var(--text); outline:none;
+    .hero-visual svg {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: auto;
     }
-    input:focus,textarea:focus{border-color: rgba(88,166,255,.45); box-shadow:0 0 0 4px rgba(88,166,255,.12)}
-    textarea{min-height:130px; resize:vertical}
 
-    /* ---- Footer ---- */
-    footer{padding:28px 0; border-top:1px solid rgba(255,255,255,.08); color:var(--muted)}
-    .foot{display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap}
-    .social{display:flex; gap:12px}
-    .social a{padding:8px 10px; border:1px solid rgba(255,255,255,.14); border-radius:10px}
-    .email-links{display:flex; gap:14px; flex-wrap:wrap}
-
-    /* ---- Responsive ---- */
-    @media (max-width: 960px){
-      .split{grid-template-columns:1fr}
-      nav ul{display:none}
-      .mobile-toggle{display:block}
-      .nav.open ul{display:flex; flex-direction:column; position:absolute; left:0; right:0; top:64px; padding:12px 20px; background:color-mix(in oklab, var(--bg) 82%, #000 18% / 80%); border-bottom:1px solid rgba(255,255,255,.08)}
-      .grid.cols-3{grid-template-columns:1fr 1fr}
+    .panel {
+      background: rgba(31, 41, 55, 0.75);
+      border-radius: 24px;
+      padding: 2.5rem;
+      border: 1px solid rgba(88, 166, 255, 0.12);
+      box-shadow: 0 20px 48px rgba(10, 16, 30, 0.45);
     }
-    @media (max-width: 640px){
-      .grid.cols-3, .grid.cols-2{grid-template-columns:1fr}
-      form .row{grid-template-columns:1fr}
+
+    .about-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .services-grid, .portfolio-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card, .portfolio-card {
+      padding: 1.8rem;
+      background: var(--panel);
+      border-radius: 22px;
+      border: 1px solid rgba(88, 166, 255, 0.12);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover,
+    .service-card:focus-within,
+    .portfolio-card:hover,
+    .portfolio-card:focus-within {
+      transform: translateY(-6px);
+      border-color: rgba(88, 166, 255, 0.35);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      background: rgba(88, 166, 255, 0.12);
+      border: 1px solid rgba(88, 166, 255, 0.25);
+    }
+
+    .portfolio-kpis {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .process-steps {
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .process-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--panel);
+      border-radius: 18px;
+      border: 1px solid rgba(88, 166, 255, 0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .process-item:hover {
+      transform: translateX(6px);
+    }
+
+    .process-step {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border-radius: 18px;
+      border: 1px solid rgba(88, 166, 255, 0.18);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.2rem 1.5rem;
+      text-align: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .faq-question:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+    }
+
+    .faq-item[aria-expanded="true"] .faq-answer {
+      padding: 0 1.5rem 1.3rem;
+      max-height: 320px;
+    }
+
+    .contact-card {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      background: rgba(11, 18, 32, 0.6);
+      color: var(--text);
+      font-family: var(--font);
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .direct-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .direct-links a {
+      border: 1px solid rgba(88, 166, 255, 0.35);
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      background: rgba(31, 41, 55, 0.6);
+      transition: border 0.3s ease;
+    }
+
+    .direct-links a:hover,
+    .direct-links a:focus-visible {
+      border-color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid rgba(88, 166, 255, 0.1);
+      padding: 2.5rem 1.25rem 3rem;
+      background: rgba(11, 18, 32, 0.85);
+    }
+
+    .footer-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .socials a {
+      border: 1px solid rgba(88, 166, 255, 0.35);
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: border 0.3s ease;
+    }
+
+    .socials a:hover,
+    .socials a:focus-visible {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    @media (min-width: 640px) {
+      .hero {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+      }
+
+      .about-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .rtl .hero,
+    .rtl .about-grid,
+    .rtl .services-grid,
+    .rtl .portfolio-grid,
+    .rtl .process-steps {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .rtl .cta-group {
+      justify-content: flex-end;
+    }
+
+    .rtl .process-item:hover {
+      transform: translateX(-6px);
+    }
+
+    .rtl .portfolio-kpis,
+    .rtl .direct-links,
+    .rtl .socials {
+      justify-content: flex-end;
+    }
+
+    .mobile-nav {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      border-bottom: 1px solid rgba(88, 166, 255, 0.12);
+      background: rgba(11, 18, 32, 0.95);
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .mobile-nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .menu-open .mobile-nav {
+      display: block;
+    }
+
+    .menu-open header {
+      box-shadow: 0 24px 48px rgba(11, 18, 32, 0.75);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="container nav" id="site-nav">
-      <div class="brand">
-        <span class="brand-badge" aria-hidden="true">A</span>
-        <span>Axisies | Yaratıcı Mühendislik</span>
-      </div>
-      <nav aria-label="Birincil">
-        <ul>
-          <li><a href="#hakkimizda">Hakkımızda</a></li>
-          <li><a href="#hizmetler">Hizmetler</a></li>
-          <li><a href="#portfoy">Portföy</a></li>
-          <li><a href="#surec">Süreç</a></li>
-          <li><a href="#sss">SSS</a></li>
-          <li><a href="#iletisim">İletişim</a></li>
+    <div class="nav-shell">
+      <a class="brand" href="#hero" aria-label="Axisies home">
+        <svg aria-hidden="true" viewBox="0 0 64 64" role="img">
+          <path d="M12 48L28 16l8 16 8-16 16 32" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="32" cy="48" r="4" fill="var(--text)" />
+        </svg>
+        Axisies
+      </a>
+      <div class="nav-group">
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+        </button>
+        <ul class="nav-links mobile-hidden">
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#process" data-i18n="nav.process">Process</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
-      </nav>
-      <div class="cta-sm">
-        <a class="btn btn-outline" href="#iletisim">Bize Ulaşın</a>
-        <a class="btn btn-primary" href="#iletisim">Teklif Al</a>
-        <button class="mobile-toggle" aria-label="Menüyü aç/kapat" id="navToggle">☰</button>
+        <div class="lang-toggle" role="group" aria-label="Language toggle">
+          <button type="button" data-lang="en" class="active">EN</button>
+          <button type="button" data-lang="ar">AR</button>
+        </div>
       </div>
     </div>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#process" data-i18n="nav.process">Process</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="container split">
-      <div>
-        <span class="label">Sloganımız</span>
-        <h1>Zekâ, tasarım ve üretimi birleştiriyoruz</h1>
-        <p>Axisies, fikirden seri üretime giden yolda <strong>AR-GE</strong>, <strong>prototipleme</strong>, <strong>CAD/CAE</strong>, <strong>otomasyon</strong> ve <strong>yapay zekâ</strong> çözümlerini tek çatı altında sunar.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#iletisim">Teklif Al</a>
-          <a class="btn btn-outline" href="#portfoy">Portföyü Gör</a>
-        </div>
-        <div class="ticker">
-          <div class="t">⏱ POC → Üretim Hızı: <strong>%40+</strong></div>
-          <div class="t">⚙️ OEE (Verim): <strong>%18 artış</strong></div>
-          <div class="t">💡 Patent/Dizayn: <strong>9+ başvuru</strong></div>
+  <main>
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <span class="eyebrow" data-i18n="hero.eyebrow">Engineering beyond boundaries</span>
+        <h1 id="hero-title" data-i18n="hero.title">Axisies | Creative Engineering</h1>
+        <p data-i18n="hero.subtitle">Where imagination meets precision. We design, innovate, and build the future of engineering in Saudi Arabia.</p>
+        <div class="cta-group">
+          <a class="btn" href="#contact" data-i18n="hero.ctaPrimary">Get a Quote</a>
+          <a class="btn secondary" href="#portfolio" data-i18n="hero.ctaSecondary">Discover Our Work</a>
         </div>
       </div>
-      <div class="card hero visual" aria-hidden="true">
-        <!-- Basit, optimize edilmiş vektör yer tutucu -->
-        <svg width="100%" height="100%" viewBox="0 0 800 500" role="img" aria-label="Yaratıcı mühendislik görseli">
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 480 360" role="img" aria-label="Abstract engineering illustration">
           <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#58a6ff" stop-opacity=".6"/>
-              <stop offset="1" stop-color="#8b5cf6" stop-opacity=".4"/>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(88,166,255,0.6)" />
+              <stop offset="100%" stop-color="rgba(88,166,255,0.05)" />
             </linearGradient>
           </defs>
-          <rect x="0" y="0" width="800" height="500" rx="18" fill="url(#g1)" opacity=".12"/>
-          <g transform="translate(120,120)">
-            <circle cx="120" cy="120" r="110" fill="none" stroke="#58a6ff" stroke-width="3" opacity=".7"/>
-            <circle cx="120" cy="120" r="70" fill="none" stroke="#58a6ff" stroke-width="2" opacity=".4"/>
-            <path d="M0,120 H240" stroke="#8b5cf6" stroke-width="2" opacity=".6"/>
-            <path d="M120,0 V240" stroke="#8b5cf6" stroke-width="2" opacity=".6"/>
+          <rect x="30" y="40" width="420" height="280" rx="32" fill="rgba(11,18,32,0.8)" stroke="rgba(88,166,255,0.4)" stroke-width="2" />
+          <circle cx="140" cy="120" r="58" fill="url(#grad)" stroke="rgba(88,166,255,0.4)" stroke-width="2" />
+          <circle cx="320" cy="220" r="90" fill="none" stroke="rgba(88,166,255,0.3)" stroke-width="2" stroke-dasharray="10 12" />
+          <path d="M120 240c40-60 120-60 160 0s120 60 160 0" fill="none" stroke="rgba(88,166,255,0.35)" stroke-width="3" stroke-linecap="round" />
+          <g stroke="rgba(226,232,240,0.4)" stroke-width="2">
+            <line x1="90" y1="60" x2="390" y2="60" />
+            <line x1="90" y1="300" x2="390" y2="300" />
           </g>
-          <g transform="translate(420,170)">
-            <rect x="0" y="0" width="240" height="160" rx="14" fill="none" stroke="#58a6ff" stroke-width="3" opacity=".7"/>
-            <rect x="12" y="18" width="104" height="18" rx="6" fill="#58a6ff" opacity=".3"/>
-            <rect x="12" y="48" width="216" height="10" rx="5" fill="#58a6ff" opacity=".2"/>
-            <rect x="12" y="66" width="180" height="10" rx="5" fill="#58a6ff" opacity=".18"/>
-            <rect x="12" y="84" width="200" height="10" rx="5" fill="#58a6ff" opacity=".16"/>
-            <rect x="12" y="122" width="84" height="20" rx="8" fill="#58a6ff" opacity=".35"/>
+          <g fill="rgba(226,232,240,0.7)">
+            <circle cx="140" cy="120" r="6" />
+            <circle cx="320" cy="220" r="6" />
+            <circle cx="240" cy="180" r="6" />
           </g>
         </svg>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hakkımızda -->
-  <section id="hakkimizda">
-    <div class="container">
-      <div class="section-head">
-        <h2>Hakkımızda</h2>
-        <p>Yaratıcı mühendislik yaklaşımımızla iş hedeflerinizi ölçülebilir çıktılara dönüştürüyoruz.</p>
+    <section id="about" class="panel" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <h2 id="about-title" data-i18n="about.heading">About Axisies</h2>
+          <p data-i18n="about.body1">Axisies is a Saudi-based engineering firm that bridges innovation, design, and technology. We specialize in machine installation, industrial automation, R&amp;D, and advanced engineering services.</p>
+        </div>
+        <div>
+          <p data-i18n="about.body2">We transform ideas into sustainable, high-performance solutions.</p>
+        </div>
       </div>
-      <div class="card" style="padding:18px;">
-        <p>Axisies; AR-GE, prototipleme, simülasyon ve üretim otomasyonu süreçlerini tek bir akışta birleştirir. İhtiyacınıza göre <em>hızlı prototip</em>, <em>tasarım doğrulama</em>, <em>veri odaklı optimizasyon</em> ve <em>saha devreye alma</em> adımlarını yönetir.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Hizmetler -->
-  <section id="hizmetler">
-    <div class="container">
-      <div class="section-head">
-        <h2>Hizmetler</h2>
-        <p>Uçtan uca değer yaratmak için modüler hizmet paketleri.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card service">
-          <div class="icon">PD</div>
-          <h3>Ürün Tasarımı & Prototipleme</h3>
-          <p class="muted">Endüstriyel tasarım, hızlı prototip, üretime uygunluk (DFM/DFA).</p>
-        </article>
-        <article class="card service">
-          <div class="icon">CAD</div>
-          <h3>CAD/CAE & Simülasyon</h3>
-          <p class="muted">Yapısal, akış ve ısı analizleri; optimizasyon döngüleri.</p>
-        </article>
-        <article class="card service">
-          <div class="icon">AUTO</div>
-          <h3>Endüstriyel Otomasyon</h3>
-          <p class="muted">PLC/SCADA entegrasyonu, hat dengeleme ve OEE artırımı.</p>
-        </article>
-        <article class="card service">
-          <div class="icon">IoT</div>
-          <h3>Gömülü Sistemler & IoT</h3>
-          <p class="muted">Donanım/firmware geliştirme, telemetri ve uzaktan izleme.</p>
-        </article>
-        <article class="card service">
-          <div class="icon">AI</div>
-          <h3>Yapay Zekâ ile Optimizasyon</h3>
-          <p class="muted">Tedarik, üretim ve bakım için kestirimsel analitik.</p>
-        </article>
-        <article class="card service">
-          <div class="icon">ANA</div>
-          <h3>Üretim Verimliliği Analitiği</h3>
-          <p class="muted">Kök neden analizi, KPI panoları ve sürekli iyileştirme.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portföy -->
-  <section id="portfoy" class="portfolio">
-    <div class="container">
-      <div class="section-head">
-        <h2>Vaka Çalışmaları / Portföy</h2>
-        <p>Ölçülebilir sonuçlara odaklanan seçili projeler.</p>
-      </div>
-
-      <div class="grid cols-3">
-        <!-- Kart 1 -->
-        <article class="card">
-          <img loading="lazy" width="720" height="480" alt="Otomasyon hattı yer tutucu"
-               src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='52%' font-size='24' fill='%23e2e8f0' text-anchor='middle' font-family='system-ui'>Otomasyon Hattı</text></svg>">
-          <div class="body">
-            <h3>Montaj Hattı Otomasyonu</h3>
-            <p class="muted">Robotik istasyonlar + veri toplayıcı sensörler ile çevrim süresinde belirgin azalma.</p>
-            <div class="kpi">
-              <span>Çevrim Süresi: −%27</span>
-              <span>Hata: −%15</span>
-              <span>ROI: 9 ay</span>
-            </div>
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title" data-i18n="services.heading">Services</h2>
+      <p data-i18n="services.subtitle">Built by engineers, powered by imagination. Explore our core capabilities.</p>
+      <div class="services-grid">
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <path d="M10 34h28L30 14H18z" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" />
+              <circle cx="18" cy="38" r="3" fill="var(--accent)" />
+              <circle cx="30" cy="38" r="3" fill="var(--accent)" />
+            </svg>
           </div>
+          <h3 data-i18n="services.items.0">Machine Installation &amp; Commissioning</h3>
         </article>
-        <!-- Kart 2 -->
-        <article class="card">
-          <img loading="lazy" width="720" height="480" alt="IoT izleme yer tutucu"
-               src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='52%' font-size='24' fill='%23e2e8f0' text-anchor='middle' font-family='system-ui'>IoT İzleme</text></svg>">
-          <div class="body">
-            <h3>IoT Tesis İzleme</h3>
-            <p class="muted">Enerji tüketimi & arıza göstergeleri ile kestirimsel bakım.</p>
-            <div class="kpi">
-              <span>Duruş: −%22</span>
-              <span>Enerji: −%12</span>
-              <span>Bakım Maliyeti: −%18</span>
-            </div>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <rect x="10" y="10" width="28" height="28" rx="6" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+              <path d="M16 24h16" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M24 16v16" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
           </div>
+          <h3 data-i18n="services.items.1">Industrial Automation</h3>
         </article>
-        <!-- Kart 3 -->
-        <article class="card">
-          <img loading="lazy" width="720" height="480" alt="Yapay zekâ optimizasyonu yer tutucu"
-               src="data:image/svg+xml;utf8,<?xml version='1.0'?><svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='100%' height='100%' fill='%231f2937'/><text x='50%' y='52%' font-size='24' fill='%23e2e8f0' text-anchor='middle' font-family='system-ui'>AI Optimizasyon</text></svg>">
-          <div class="body">
-            <h3>AI ile Üretim Planlama</h3>
-            <p class="muted">Talep dalgalanmalarına uyumlu üretim çizelgeleme.</p>
-            <div class="kpi">
-              <span>OEE: +%14</span>
-              <span>Stok: −%20</span>
-              <span>Termin Sapma: −%35</span>
-            </div>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <path d="M12 32l12-16 12 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="24" cy="20" r="4" fill="var(--accent)" />
+            </svg>
           </div>
+          <h3 data-i18n="services.items.2">R&amp;D &amp; Prototyping</h3>
+        </article>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <path d="M12 20h24v16H12z" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+              <path d="M18 16l6-6 6 6" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 data-i18n="services.items.3">Engineering Consultancy</h3>
+        </article>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <rect x="12" y="14" width="24" height="20" rx="4" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+              <circle cx="24" cy="24" r="5" fill="var(--accent)" />
+              <path d="M24 14v-4" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 data-i18n="services.items.4">IoT &amp; Embedded Systems</h3>
+        </article>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
+              <path d="M12 30c6-12 18-12 24 0" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
+              <circle cx="24" cy="18" r="6" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+              <circle cx="24" cy="18" r="2" fill="var(--accent)" />
+            </svg>
+          </div>
+          <h3 data-i18n="services.items.5">AI-Driven Optimization</h3>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Süreç -->
-  <section id="surec">
-    <div class="container">
-      <div class="section-head">
-        <h2>Çalışma Sürecimiz</h2>
-        <p>Keşiften devreye almaya dek şeffaf ve ölçülebilir bir akış.</p>
+    <section id="portfolio" aria-labelledby="portfolio-title" class="panel">
+      <h2 id="portfolio-title" data-i18n="portfolio.heading">Case Studies</h2>
+      <p data-i18n="portfolio.subtitle">Proof of impact measured in efficiency, savings, and speed.</p>
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <svg viewBox="0 0 240 140" aria-hidden="true">
+            <rect width="240" height="140" rx="18" fill="rgba(88,166,255,0.08)" />
+            <path d="M30 90l40-50 40 30 40-20 40 30 20-40" fill="none" stroke="rgba(88,166,255,0.5)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <h3 data-i18n="portfolio.items.0.title">Smart Factory Retrofit</h3>
+          <p data-i18n="portfolio.items.0.desc">OEE +22%, scrap −15%, ROI 9 months</p>
+        </article>
+        <article class="portfolio-card">
+          <svg viewBox="0 0 240 140" aria-hidden="true">
+            <rect width="240" height="140" rx="18" fill="rgba(88,166,255,0.08)" />
+            <path d="M40 100h160" stroke="rgba(88,166,255,0.45)" stroke-width="3" />
+            <rect x="80" y="50" width="80" height="60" rx="12" fill="rgba(88,166,255,0.18)" />
+            <path d="M110 70h20" stroke="rgba(226,232,240,0.7)" stroke-width="4" stroke-linecap="round" />
+          </svg>
+          <h3 data-i18n="portfolio.items.1.title">IoT Energy Monitoring</h3>
+          <p data-i18n="portfolio.items.1.desc">energy cost −18%</p>
+        </article>
+        <article class="portfolio-card">
+          <svg viewBox="0 0 240 140" aria-hidden="true">
+            <rect width="240" height="140" rx="18" fill="rgba(88,166,255,0.08)" />
+            <path d="M60 100h120" stroke="rgba(88,166,255,0.45)" stroke-width="3" />
+            <path d="M80 90l40-50 40 50" fill="none" stroke="rgba(226,232,240,0.7)" stroke-width="6" stroke-linecap="round" />
+          </svg>
+          <h3 data-i18n="portfolio.items.2.title">Automated Packaging Line</h3>
+          <p data-i18n="portfolio.items.2.desc">throughput +35%</p>
+        </article>
       </div>
-      <div class="timeline">
-        <div class="step"><div></div><div><h3>Keşif</h3><p class="muted">Problemi tanımlama, hedef KPI ve kapsam netleştirme.</p></div></div>
-        <div class="step"><div></div><div><h3>Tasarım</h3><p class="muted">CAD, mimari ve bileşen seçimleri; risk analizi.</p></div></div>
-        <div class="step"><div></div><div><h3>Prototip</h3><p class="muted">Hızlı prototipleme ve iteratif doğrulama.</p></div></div>
-        <div class="step"><div></div><div><h3>Test/Doğrulama</h3><p class="muted">Fonksiyonel testler, güvenlik ve standart uyumluluğu.</p></div></div>
-        <div class="step"><div></div><div><h3>Üretime Hazırlık</h3><p class="muted">DFM/DFA, tedarik ve üretim planlama.</p></div></div>
-        <div class="step"><div></div><div><h3>Devreye Alma</h3><p class="muted">Saha kurulum, eğitim ve izleme panoları.</p></div></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SSS -->
-  <section id="sss" class="faq">
-    <div class="container">
-      <div class="section-head">
-        <h2>Sık Sorulan Sorular</h2>
-        <p>Merak ettiklerinizin kısa cevapları.</p>
-      </div>
-
-      <div class="item card">
-        <button type="button" aria-expanded="false">
-          Proje süresi ne kadar sürer?
-          <span>＋</span>
-        </button>
-        <div class="answer">
-          <p>Kapsama göre değişir; tipik POC 2–6 hafta, üretim projeleri 2–4 ay arası sürer.</p>
+    <section id="process" aria-labelledby="process-title">
+      <h2 id="process-title" data-i18n="process.heading">How We Work</h2>
+      <p data-i18n="process.subtitle">A complete journey from concept to continuous improvement.</p>
+      <div class="process-steps">
+        <div class="process-item">
+          <span class="process-step">1</span>
+          <span data-i18n="process.steps.0">Discovery</span>
+        </div>
+        <div class="process-item">
+          <span class="process-step">2</span>
+          <span data-i18n="process.steps.1">Design</span>
+        </div>
+        <div class="process-item">
+          <span class="process-step">3</span>
+          <span data-i18n="process.steps.2">Prototype</span>
+        </div>
+        <div class="process-item">
+          <span class="process-step">4</span>
+          <span data-i18n="process.steps.3">Test</span>
+        </div>
+        <div class="process-item">
+          <span class="process-step">5</span>
+          <span data-i18n="process.steps.4">Implementation</span>
+        </div>
+        <div class="process-item">
+          <span class="process-step">6</span>
+          <span data-i18n="process.steps.5">Support</span>
         </div>
       </div>
+    </section>
 
-      <div class="item card">
-        <button type="button" aria-expanded="false">
-          Gizlilik ve fikri mülkiyet nasıl korunur?
-          <span>＋</span>
-        </button>
-        <div class="answer">
-          <p>Karşılıklı NDA ile çalışırız; kaynak dosyalar ve raporlar size ait olur.</p>
+    <section id="faq" class="panel" aria-labelledby="faq-title">
+      <h2 id="faq-title" data-i18n="faq.heading">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" data-faq="0">
+            <span data-i18n="faq.items.0.q">What industries do you serve?</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.items.0.a">We partner with manufacturing, energy, logistics, and government innovators across the Kingdom.</p>
+          </div>
+        </div>
+        <div class="faq-item" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" data-faq="1">
+            <span data-i18n="faq.items.1.q">Do you provide turnkey automation solutions?</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.items.1.a">Yes, we cover the entire lifecycle from design to commissioning and long-term support.</p>
+          </div>
+        </div>
+        <div class="faq-item" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" data-faq="2">
+            <span data-i18n="faq.items.2.q">How do you ensure project success?</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.items.2.a">We align every engagement with measurable KPIs, transparent communication, and rigorous testing.</p>
+          </div>
+        </div>
+        <div class="faq-item" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" data-faq="3">
+            <span data-i18n="faq.items.3.q">Can you integrate with existing factory systems?</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.items.3.a">Absolutely. Our team specializes in interoperable architectures that modernize without disruption.</p>
+          </div>
+        </div>
+        <div class="faq-item" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" data-faq="4">
+            <span data-i18n="faq.items.4.q">Do you offer post-launch support?</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.items.4.a">We provide training, monitoring, and optimization services to keep systems performing flawlessly.</p>
+          </div>
+        </div>
+        <div class="faq-item" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" data-faq="5">
+            <span data-i18n="faq.items.5.q">Where is Axisies based?</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.items.5.a">We are proudly headquartered in Saudi Arabia with teams ready to collaborate across the region.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="item card">
-        <button type="button" aria-expanded="false">
-          Saha devreye alma desteği veriyor musunuz?
-          <span>＋</span>
-        </button>
-        <div class="answer">
-          <p>Evet. Kurulum, eğitim ve kabul testleri süreçlerine eşlik ediyoruz.</p>
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="panel contact-card">
+        <div>
+          <h2 id="contact-title" data-i18n="contact.heading">Let’s build what’s next</h2>
+          <p data-i18n="contact.subtitle">Share your vision and we’ll craft a proposal engineered around your goals.</p>
         </div>
-      </div>
-
-      <div class="item card">
-        <button type="button" aria-expanded="false">
-          Mevcut hatlarımıza entegre olabilir misiniz?
-          <span>＋</span>
-        </button>
-        <div class="answer">
-          <p>Standart arayüzler (OPC-UA, MQTT, Modbus, REST) ve özelleştirilmiş geçiş planları ile entegrasyon yapıyoruz.</p>
-        </div>
-      </div>
-
-      <div class="item card">
-        <button type="button" aria-expanded="false">
-          Yaklaşık bütçe nasıl belirlenir?
-          <span>＋</span>
-        </button>
-        <div class="answer">
-          <p>Keşif oturumundan sonra kapsam & risk matrisi ile kalem kalem maliyetlendirme paylaşırız.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- İletişim -->
-  <section id="iletisim">
-    <div class="container">
-      <div class="section-head">
-        <h2>İletişim</h2>
-        <p>İhtiyacınızı bize yazın; kısa bir keşif görüşmesi planlayalım.</p>
-      </div>
-      <div class="grid cols-2">
-        <form id="contactForm" class="card" style="padding:18px" autocomplete="on">
+        <form id="contact-form">
           <div>
-            <label for="name">İsim Soyisim</label>
-            <input id="name" name="name" type="text" placeholder="Adınız" required>
-          </div>
-          <div class="row">
-            <div>
-              <label for="email">E-posta</label>
-              <input id="email" name="email" type="email" placeholder="mail@ornek.com" required>
-            </div>
-            <div>
-              <label for="topic">Konu</label>
-              <input id="topic" name="topic" type="text" placeholder="Teklif / Danışmanlık / Soru">
-            </div>
+            <label for="name" data-i18n="contact.nameLabel">Name</label>
+            <input id="name" name="name" type="text" required data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" />
           </div>
           <div>
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="message" placeholder="Kısaca ihtiyacınızı anlatın..." required></textarea>
+            <label for="email" data-i18n="contact.emailLabel">Email</label>
+            <input id="email" name="email" type="email" required data-i18n-placeholder="contact.emailPlaceholder" placeholder="name@example.com" />
           </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
-            <button class="btn btn-primary" type="submit">Bize Ulaşın</button>
-            <a class="btn btn-outline" href="#hero">Teklif Al</a>
+          <div>
+            <label for="message" data-i18n="contact.messageLabel">Message</label>
+            <textarea id="message" name="message" required data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell us about your project"></textarea>
           </div>
-          <p class="muted" style="margin-top:10px; font-size:13px">Doğrudan e-posta: <a href="mailto:info@axisies.com">info@axisies.com</a> · <a href="mailto:support@axisies.com">support@axisies.com</a></p>
+          <button class="btn" type="submit" data-i18n="contact.submit">Send Inquiry</button>
         </form>
-
-        <div class="card" style="padding:18px">
-          <h3 style="margin-top:0">Hızlı Bağlantılar</h3>
-          <ul style="margin:0; padding-left:18px; color:var(--muted)">
-            <li><a href="#hizmetler">Hizmetler</a></li>
-            <li><a href="#portfoy">Portföy</a></li>
-            <li><a href="#sss">SSS</a></li>
-          </ul>
-          <div style="margin-top:12px">
-            <p class="muted">Çalışma saatleri: Pzt–Cum 09:00–18:00 (GMT+3)</p>
+        <div>
+          <p data-i18n="contact.direct">Prefer direct contact?</p>
+          <div class="direct-links">
+            <a href="mailto:info@axisies.com">info@axisies.com</a>
+            <a href="mailto:support@axisies.com">support@axisies.com</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+    </section>
+  </main>
   <footer>
-    <div class="container foot">
-      <div>© <span id="year"></span> Axisies. Tüm hakları saklıdır.</div>
-      <div class="email-links">
+    <div class="footer-shell">
+      <div class="socials" aria-label="Social links">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+      <p id="footer-copy"><span data-i18n="footer.copy">© Axisies. All rights reserved.</span></p>
+      <div class="direct-links">
         <a href="mailto:info@axisies.com">info@axisies.com</a>
         <a href="mailto:support@axisies.com">support@axisies.com</a>
       </div>
-      <div class="social">
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="GitHub">gh</a>
-        <a href="#" aria-label="YouTube">yt</a>
-      </div>
     </div>
   </footer>
+  <script defer>
+    const i18n = {
+      en: {
+        htmlLang: "en",
+        dir: "ltr",
+        nav: {
+          home: "Home",
+          about: "About",
+          services: "Services",
+          portfolio: "Portfolio",
+          process: "Process",
+          faq: "FAQ",
+          contact: "Contact"
+        },
+        hero: {
+          eyebrow: "Engineering beyond boundaries",
+          title: "Axisies | Creative Engineering",
+          subtitle: "Where imagination meets precision. We design, innovate, and build the future of engineering in Saudi Arabia.",
+          ctaPrimary: "Get a Quote",
+          ctaSecondary: "Discover Our Work"
+        },
+        about: {
+          heading: "About Axisies",
+          body1: "Axisies is a Saudi-based engineering firm that bridges innovation, design, and technology. We specialize in machine installation, industrial automation, R&D, and advanced engineering services.",
+          body2: "We transform ideas into sustainable, high-performance solutions."
+        },
+        services: {
+          heading: "Services",
+          subtitle: "Built by engineers, powered by imagination. Explore our core capabilities.",
+          items: [
+            "Machine Installation & Commissioning",
+            "Industrial Automation",
+            "R&D & Prototyping",
+            "Engineering Consultancy",
+            "IoT & Embedded Systems",
+            "AI-Driven Optimization"
+          ]
+        },
+        portfolio: {
+          heading: "Case Studies",
+          subtitle: "Proof of impact measured in efficiency, savings, and speed.",
+          items: [
+            { title: "Smart Factory Retrofit", desc: "OEE +22%, scrap −15%, ROI 9 months" },
+            { title: "IoT Energy Monitoring", desc: "energy cost −18%" },
+            { title: "Automated Packaging Line", desc: "throughput +35%" }
+          ]
+        },
+        process: {
+          heading: "How We Work",
+          subtitle: "A complete journey from concept to continuous improvement.",
+          steps: [
+            "Discovery",
+            "Design",
+            "Prototype",
+            "Test",
+            "Implementation",
+            "Support"
+          ]
+        },
+        faq: {
+          heading: "Frequently Asked Questions",
+          items: [
+            {
+              q: "What industries do you serve?",
+              a: "We partner with manufacturing, energy, logistics, and government innovators across the Kingdom."
+            },
+            {
+              q: "Do you provide turnkey automation solutions?",
+              a: "Yes, we cover the entire lifecycle from design to commissioning and long-term support."
+            },
+            {
+              q: "How do you ensure project success?",
+              a: "We align every engagement with measurable KPIs, transparent communication, and rigorous testing."
+            },
+            {
+              q: "Can you integrate with existing factory systems?",
+              a: "Absolutely. Our team specializes in interoperable architectures that modernize without disruption."
+            },
+            {
+              q: "Do you offer post-launch support?",
+              a: "We provide training, monitoring, and optimization services to keep systems performing flawlessly."
+            },
+            {
+              q: "Where is Axisies based?",
+              a: "We are proudly headquartered in Saudi Arabia with teams ready to collaborate across the region."
+            }
+          ]
+        },
+        contact: {
+          heading: "Let\u2019s build what\u2019s next",
+          subtitle: "Share your vision and we\u2019ll craft a proposal engineered around your goals.",
+          nameLabel: "Name",
+          namePlaceholder: "Your name",
+          emailLabel: "Email",
+          emailPlaceholder: "name@example.com",
+          messageLabel: "Message",
+          messagePlaceholder: "Tell us about your project",
+          submit: "Send Inquiry",
+          direct: "Prefer direct contact?"
+        },
+        footer: {
+          copy: "© {year} Axisies. All rights reserved."
+        }
+      },
+      ar: {
+        htmlLang: "ar",
+        dir: "rtl",
+        nav: {
+          home: "الرئيسية",
+          about: "نبذة",
+          services: "الخدمات",
+          portfolio: "الأعمال",
+          process: "المنهجية",
+          faq: "الأسئلة الشائعة",
+          contact: "تواصل"
+        },
+        hero: {
+          eyebrow: "هندسة بلا حدود",
+          title: "أكسيسيس | الهندسة الإبداعية",
+          subtitle: "حيث يلتقي الخيال بالدقة. نصمم ونبتكر ونبني مستقبل الهندسة في المملكة العربية السعودية.",
+          ctaPrimary: "اطلب عرضًا",
+          ctaSecondary: "اكتشف أعمالنا"
+        },
+        about: {
+          heading: "عن أكسيسيس",
+          body1: "تأسست شركة أكسيسيس في المملكة العربية السعودية لدمج الابتكار والتصميم والتقنية. نحن متخصصون في تركيب الآلات، الأتمتة الصناعية، البحث والتطوير، والخدمات الهندسية المتقدمة.",
+          body2: "نحوّل الأفكار إلى حلول مستدامة عالية الأداء."
+        },
+        services: {
+          heading: "الخدمات",
+          subtitle: "نصنع حلولاً هندسية مستوحاة من الخيال ومبنية على الدقة.",
+          items: [
+            "تركيب وتشغيل الآلات",
+            "الأتمتة الصناعية",
+            "البحث والتطوير والنمذجة الأولية",
+            "الاستشارات الهندسية",
+            "أنظمة إنترنت الأشياء والأنظمة المدمجة",
+            "التحسين بالذكاء الاصطناعي"
+          ]
+        },
+        portfolio: {
+          heading: "دراسات حالة",
+          subtitle: "أثر ملموس في الكفاءة والتكاليف والسرعة.",
+          items: [
+            { title: "تحديث مصنع ذكي", desc: "كفاءة التشغيل +22٪، الهدر −15٪، عائد الاستثمار 9 أشهر" },
+            { title: "مراقبة الطاقة عبر إنترنت الأشياء", desc: "خفض تكاليف الطاقة −18٪" },
+            { title: "خط تغليف آلي", desc: "زيادة الإنتاجية +35٪" }
+          ]
+        },
+        process: {
+          heading: "منهجيتنا",
+          subtitle: "رحلة متكاملة من الفكرة إلى التحسين المستمر.",
+          steps: [
+            "الاكتشاف",
+            "التصميم",
+            "النموذج الأولي",
+            "الاختبار",
+            "التنفيذ",
+            "الدعم"
+          ]
+        },
+        faq: {
+          heading: "الأسئلة الشائعة",
+          items: [
+            {
+              q: "ما القطاعات التي تخدمونها؟",
+              a: "نتعاون مع رواد التصنيع والطاقة واللوجستيات والجهات الحكومية في أنحاء المملكة."
+            },
+            {
+              q: "هل تقدمون حلول أتمتة متكاملة؟",
+              a: "نعم، نغطي دورة الحياة كاملة من التصميم إلى التشغيل والدعم الطويل الأمد."
+            },
+            {
+              q: "كيف تضمنون نجاح المشاريع؟",
+              a: "نربط كل مشروع بمؤشرات أداء واضحة وتواصل شفاف واختبارات صارمة."
+            },
+            {
+              q: "هل يمكنكم التكامل مع الأنظمة الحالية؟",
+              a: "بالتأكيد، نمتلك خبرة في بناء أنظمة متوافقة تحدّث المصانع دون تعطيل."
+            },
+            {
+              q: "هل توفرون دعمًا بعد الإطلاق؟",
+              a: "نقدم التدريب والمراقبة والتحسين لضمان أداء الأنظمة باستمرار."
+            },
+            {
+              q: "أين يقع مقر أكسيسيس؟",
+              a: "نحن مقرّنا في المملكة العربية السعودية ونتعاون مع العملاء في المنطقة."
+            }
+          ]
+        },
+        contact: {
+          heading: "لنبنِ المستقبل معًا",
+          subtitle: "شاركنا رؤيتك لنصمم عرضًا هندسيًا يناسب أهدافك.",
+          nameLabel: "الاسم",
+          namePlaceholder: "اكتب اسمك",
+          emailLabel: "البريد الإلكتروني",
+          emailPlaceholder: "name@example.com",
+          messageLabel: "الرسالة",
+          messagePlaceholder: "حدثنا عن مشروعك",
+          submit: "أرسل الطلب",
+          direct: "تفضّل التواصل المباشر؟"
+        },
+        footer: {
+          copy: "© {year} أكسيسيس. جميع الحقوق محفوظة."
+        }
+      }
+    };
 
-  <script>
-    // --- Küçük JS: mobil menü, smooth scroll, SSS akordeon, mailto form ---
-    const navWrap = document.getElementById('site-nav');
-    const navToggle = document.getElementById('navToggle');
-    navToggle?.addEventListener('click', ()=> navWrap.classList.toggle('open'));
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const langButtons = document.querySelectorAll('.lang-toggle button');
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const form = document.getElementById('contact-form');
+    const textNodes = document.querySelectorAll('[data-i18n]');
+    const placeholderNodes = document.querySelectorAll('[data-i18n-placeholder]');
+    const footerCopySpan = document.querySelector('#footer-copy [data-i18n="footer.copy"]');
 
-    // Smooth scroll (anker bağlantılar)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'})}
-        // mobil menüyü kapat
-        navWrap.classList.remove('open');
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-question');
+      button.addEventListener('click', () => {
+        const expanded = item.getAttribute('aria-expanded') === 'true';
+        item.setAttribute('aria-expanded', String(!expanded));
+        button.setAttribute('aria-expanded', String(!expanded));
       });
     });
 
-    // SSS akordeon
-    document.querySelectorAll('.faq .item button').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const item = btn.closest('.item');
-        const open = item.classList.toggle('open');
-        btn.setAttribute('aria-expanded', String(open));
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      bodyEl.classList.toggle('menu-open');
+      const firstLink = mobileNav.querySelector('a');
+      if (!expanded) {
+        firstLink.focus({ preventScroll: true });
+      }
+    });
+
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        bodyEl.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
-    // Mailto ile basit gönderim
-    document.getElementById('contactForm')?.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const topic = document.getElementById('topic').value.trim() || 'İletişim Talebi';
-      const message = document.getElementById('message').value.trim();
+    const applyLanguage = (lang) => {
+      const locale = i18n[lang] ? lang : 'en';
+      const dict = i18n[locale];
+      htmlEl.lang = dict.htmlLang;
+      htmlEl.dir = dict.dir;
+      bodyEl.classList.toggle('rtl', dict.dir === 'rtl');
+      textNodes.forEach((node) => {
+        const keyPath = node.dataset.i18n.split('.');
+        let value = dict;
+        keyPath.forEach((k) => {
+          value = value?.[k];
+        });
+        if (Array.isArray(value)) {
+          return;
+        }
+        if (typeof value === 'object' && value !== null) {
+          return;
+        }
+        node.textContent = value ?? node.textContent;
+      });
+      placeholderNodes.forEach((node) => {
+        const keyPath = node.dataset.i18nPlaceholder.split('.');
+        let value = dict;
+        keyPath.forEach((k) => {
+          value = value?.[k];
+        });
+        if (typeof value === 'string') {
+          node.placeholder = value;
+        }
+      });
+      // update repeating arrays for services, portfolio, process, faq
+      const serviceTitles = document.querySelectorAll('[data-i18n="services.items.0"], [data-i18n="services.items.1"], [data-i18n="services.items.2"], [data-i18n="services.items.3"], [data-i18n="services.items.4"], [data-i18n="services.items.5"]');
+      serviceTitles.forEach((node, index) => {
+        node.textContent = dict.services.items[index];
+      });
+      const portfolioTitles = document.querySelectorAll('[data-i18n^="portfolio.items"]');
+      portfolioTitles.forEach((node) => {
+        const path = node.dataset.i18n;
+        const match = path.match(/portfolio\.items\.(\d+)\.(title|desc)/);
+        if (match) {
+          const [, idx, prop] = match;
+          node.textContent = dict.portfolio.items[Number(idx)][prop];
+        }
+      });
+      const processItems = document.querySelectorAll('[data-i18n^="process.steps"]');
+      processItems.forEach((node) => {
+        const idx = Number(node.dataset.i18n.split('.').pop());
+        node.textContent = dict.process.steps[idx];
+      });
+      const faqNodes = document.querySelectorAll('[data-i18n^="faq.items"]');
+      faqNodes.forEach((node) => {
+        const match = node.dataset.i18n.match(/faq\.items\.(\d+)\.(q|a)/);
+        if (match) {
+          const [, idx, qa] = match;
+          node.textContent = dict.faq.items[Number(idx)][qa];
+        }
+      });
+      const year = new Date().getFullYear();
+      if (footerCopySpan) {
+        footerCopySpan.textContent = dict.footer.copy.replace('{year}', year);
+      }
+      langButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.lang === locale);
+      });
+      localStorage.setItem('axisies_lang', locale);
+      document.title = dict.hero.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', dict.about.body1);
+      document.querySelector('meta[property="og:title"]').setAttribute('content', dict.hero.title);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', dict.about.body1);
+    };
 
-      const body = encodeURIComponent(
-        `Merhaba Axisies,%0D%0A%0D%0AAdım: ${name}%0D%0AE-posta: ${email}%0D%0AKonu: ${topic}%0D%0AMesaj:%0D%0A${message}%0D%0A%0D%0ATeşekkürler.`
-      );
-      const subject = encodeURIComponent(`[Axisies] ${topic} - ${name}`);
-      // Varsayılan: info@ adresine yönlendir
-      window.location.href = `mailto:info@axisies.com?subject=${subject}&body=${body}`;
+    langButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const lang = button.dataset.lang;
+        applyLanguage(lang);
+      });
     });
 
-    // Yıl
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const storedLang = localStorage.getItem('axisies_lang') || 'en';
+    applyLanguage(storedLang);
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const name = formData.get('name').toString().trim();
+      const email = formData.get('email').toString().trim();
+      const message = formData.get('message').toString().trim();
+      const currentLang = localStorage.getItem('axisies_lang') || 'en';
+      const fallback = currentLang === 'ar' ? 'استفسار' : 'Inquiry';
+      const topic = message ? message.split('\n')[0].slice(0, 60) : fallback;
+      const subject = `[Axisies] ${topic || fallback} - ${name || ''}`;
+      const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+      const mailto = `mailto:info@axisies.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
   </script>
 </body>
 </html>
-
