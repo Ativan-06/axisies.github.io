@@ -16,6 +16,8 @@
     href="https://ativan-06.github.io/axisies.github.io/assets/background.png"
     imagesrcset="https://ativan-06.github.io/axisies.github.io/assets/background.png 1x"
   />
+  <link rel="preload" as="image" href="/assets/axisies_logo1.jpg" />
+  <link rel="preload" as="image" href="/assets/axisies_logo2.jpg" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' ry='12' fill='%230b1220'/%3E%3Cpath d='M20 44L32 12l12 32' stroke='%2358a6ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='4' fill='%23e2e8f0'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -87,10 +89,18 @@
       gap: 0.6rem;
     }
 
-    .brand svg {
-      width: 28px;
-      height: 28px;
-      filter: drop-shadow(0 8px 12px rgba(88, 166, 255, 0.35));
+    .brand img {
+      height: 30px;
+      width: auto;
+      flex-shrink: 0;
+      border-radius: 6px;
+      transition: opacity 0.3s ease;
+      box-shadow: 0 8px 12px rgba(88, 166, 255, 0.25);
+    }
+
+    .brand:hover img,
+    .brand:focus-visible img {
+      opacity: 0.9;
     }
 
     nav {
@@ -337,6 +347,9 @@
       border: 1px solid rgba(88, 166, 255, 0.2);
       box-shadow: var(--shadow);
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-visual::after {
@@ -347,11 +360,36 @@
       opacity: 0.6;
     }
 
-    .hero-visual svg {
+    .hero-visual-frame {
       position: relative;
       z-index: 1;
       width: 100%;
-      height: auto;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(88, 166, 255, 0.35);
+      background: rgba(11, 18, 32, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 18, 32, 0.6);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .hero-visual-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     .panel {
@@ -671,10 +709,7 @@
   <header>
     <div class="nav-shell">
       <a class="brand" href="#hero" aria-label="Axisies home">
-        <svg aria-hidden="true" viewBox="0 0 64 64" role="img">
-          <path d="M12 48L28 16l8 16 8-16 16 32" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="32" cy="48" r="4" fill="var(--text)" />
-        </svg>
+        <img src="/assets/axisies_logo1.jpg" alt="Axisies logo" height="30" width="30" />
         Axisies
       </a>
       <div class="nav-group">
@@ -719,28 +754,10 @@
           <a class="btn secondary" href="#portfolio" data-i18n="hero.ctaSecondary">Discover Our Work</a>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 480 360" role="img" aria-label="Abstract engineering illustration">
-          <defs>
-            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="rgba(88,166,255,0.6)" />
-              <stop offset="100%" stop-color="rgba(88,166,255,0.05)" />
-            </linearGradient>
-          </defs>
-          <rect x="30" y="40" width="420" height="280" rx="32" fill="rgba(11,18,32,0.8)" stroke="rgba(88,166,255,0.4)" stroke-width="2" />
-          <circle cx="140" cy="120" r="58" fill="url(#grad)" stroke="rgba(88,166,255,0.4)" stroke-width="2" />
-          <circle cx="320" cy="220" r="90" fill="none" stroke="rgba(88,166,255,0.3)" stroke-width="2" stroke-dasharray="10 12" />
-          <path d="M120 240c40-60 120-60 160 0s120 60 160 0" fill="none" stroke="rgba(88,166,255,0.35)" stroke-width="3" stroke-linecap="round" />
-          <g stroke="rgba(226,232,240,0.4)" stroke-width="2">
-            <line x1="90" y1="60" x2="390" y2="60" />
-            <line x1="90" y1="300" x2="390" y2="300" />
-          </g>
-          <g fill="rgba(226,232,240,0.7)">
-            <circle cx="140" cy="120" r="6" />
-            <circle cx="320" cy="220" r="6" />
-            <circle cx="240" cy="180" r="6" />
-          </g>
-        </svg>
+      <div class="hero-visual">
+        <div class="hero-visual-frame">
+          <img src="/assets/axisies_logo2.jpg" alt="Axisies engineering mark" />
+        </div>
       </div>
     </section>
 
