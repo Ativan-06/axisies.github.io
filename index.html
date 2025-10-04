@@ -16,8 +16,8 @@
     href="https://ativan-06.github.io/axisies.github.io/assets/background.png"
     imagesrcset="https://ativan-06.github.io/axisies.github.io/assets/background.png 1x"
   />
-  <link rel="preload" as="image" href="/assets/axisies_logo1.jpg" />
-  <link rel="preload" as="image" href="/assets/axisies_logo2.jpg" />
+  <link rel="preload" as="image" href="assets/axisies_logo1.jpg" />
+<link rel="preload" as="image" href="assets/axisies_logo2.jpg" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' ry='12' fill='%230b1220'/%3E%3Cpath d='M20 44L32 12l12 32' stroke='%2358a6ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='4' fill='%23e2e8f0'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -362,16 +362,18 @@
 
     .hero-visual-frame {
       position: relative;
-      z-index: 1;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(88, 166, 255, 0.35);
-      background: rgba(11, 18, 32, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;          /* geniş sınır */
+  aspect-ratio: 16 / 9;      /* DİKDÖRTGEN oran */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(88, 166, 255, 0.35);
+  background: rgba(11, 18, 32, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
     }
 
     .hero-visual-frame::after {
@@ -384,12 +386,13 @@
     }
 
     .hero-visual-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 1.5rem;
-      position: relative;
-      z-index: 1;
+width: 100%;
+  height: 100%;
+  object-fit: contain;       /* logo bozulmasın */
+  padding: 0.75rem;          /* kenarlar */
+  position: relative;
+  z-index: 1;
+  display: block;
     }
 
     .panel {
@@ -623,8 +626,8 @@
 
     @media (min-width: 640px) {
       .hero {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: center;
+        grid-template-columns: 0.9fr 1.1fr; /* sağ görseli büyüt */
+    align-items: center;
       }
 
       .about-grid {
