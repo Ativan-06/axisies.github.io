@@ -887,6 +887,16 @@
     body.rtl textarea {
       text-align: right;
     }
+    .hero .hero-visual-frame img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  transform-origin: center;
+}
+
+.hero .hero-visual-frame img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(88,166,255,0.25));
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
