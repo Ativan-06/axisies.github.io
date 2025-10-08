@@ -421,12 +421,17 @@
       box-shadow: inset 0 0 40px rgba(88, 166, 255, 0.2);
     }
 
-    .hero-visual-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: clamp(1.2rem, 3vw, 2rem);
-    }
+
+.hero-visual-frame .hero-logo {
+  transform: scale(1.2);           /* %20 büyüt */
+  transform-origin: center;        /* Ortasından büyüt */
+  transition: transform 0.3s ease; /* Yumuşak geçiş efekti */
+}
+
+/* (isteğe bağlı) hover’da hafif parlama efekti */
+.hero-visual-frame .hero-logo:hover {
+  filter: brightness(1.1);
+}
 
     .subnav-wrapper {
       position: sticky;
