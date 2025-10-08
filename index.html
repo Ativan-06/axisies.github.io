@@ -4,20 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Axisies | Innovative Engineering</title>
-  <meta name="description" content="Axisies is a Saudi engineering firm delivering innovative, precision-crafted solutions in automation, R&amp;D, and advanced engineering." />
+  <meta name="description" content="Axisies engineers the future with innovative automation, R&D, and advanced engineering solutions across Saudi Arabia." />
   <meta property="og:title" content="Axisies | Innovative Engineering" />
-  <meta property="og:description" content="Axisies engineers the future with innovative automation, R&amp;D, and advanced engineering solutions across Saudi Arabia." />
+  <meta property="og:description" content="Axisies engineers the future with innovative automation, R&D, and advanced engineering solutions across Saudi Arabia." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ativan-06.github.io/https---github-com-Ativan-06-axisies.github.io/" />
-  <meta property="og:image" content="https://ativan-06.github.io/axisies.github.io/assets/background.png" />
-  <link
-    rel="preload"
-    as="image"
-    href="https://ativan-06.github.io/axisies.github.io/assets/background.png"
-    imagesrcset="https://ativan-06.github.io/axisies.github.io/assets/background.png 1x"
-  />
-  <link rel="preload" as="image" href="assets/axisies_logo1.jpg" />
-<link rel="preload" as="image" href="assets/axisies_logo2.jpg" />
+  <meta property="og:url" content="https://axisies.github.io/" />
+  <meta property="og:image" content="/assets/background.png" />
+  <link rel="preload" as="image" href="/assets/background.png" />
+  <link rel="preload" as="image" href="/assets/axisies_logo1.jpg" />
+  <link rel="preload" as="image" href="/assets/axisies_logo2.jpg" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' ry='12' fill='%230b1220'/%3E%3Cpath d='M20 44L32 12l12 32' stroke='%2358a6ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='4' fill='%23e2e8f0'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -26,10 +21,10 @@
       --panel: #1f2937;
       --accent: #58a6ff;
       --text: #e2e8f0;
-      --muted: rgba(236, 232, 240, 0.7);
-      --font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, sans-serif;
+      --muted: rgba(226, 232, 240, 0.7);
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Ubuntu, "Noto Sans", Arial, sans-serif;
       --shadow: 0 24px 48px rgba(11, 18, 32, 0.45);
-      --hero-bg: url('https://ativan-06.github.io/axisies.github.io/assets/background.png');
+      --hero-bg: url('/assets/background.png');
       scroll-behavior: smooth;
     }
 
@@ -40,17 +35,18 @@
     body {
       margin: 0;
       font-family: var(--font);
-      background: radial-gradient(circle at top, rgba(88, 166, 255, 0.08), transparent 60%), var(--bg);
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
       min-height: 100vh;
+      letter-spacing: 0.01em;
     }
 
     body.rtl {
       direction: rtl;
     }
 
-    img, svg {
+    img {
       max-width: 100%;
       display: block;
     }
@@ -60,129 +56,138 @@
       text-decoration: none;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(11, 18, 32, 0.8);
-      border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+    button {
+      font: inherit;
     }
 
-    .nav-shell {
-      max-width: 1100px;
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .global-header {
+      position: sticky;
+      top: 0;
+      inset-inline: 0;
+      z-index: 1000;
+      background: rgba(11, 18, 32, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+      --headerH: 72px;
+    }
+
+    .header-shell {
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 1.25rem;
-      gap: 1rem;
+      padding: 0.6rem clamp(1rem, 4vw, 2.4rem);
+      gap: 1.5rem;
+      min-height: var(--headerH);
     }
 
     .brand {
-      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      letter-spacing: 0.12em;
     }
 
+    /* Brand logo sizing: feel free to fine-tune height later */
     .brand img {
-      height: 30px;
+      height: 32px;
       width: auto;
-      flex-shrink: 0;
       border-radius: 6px;
-      transition: opacity 0.3s ease;
-      box-shadow: 0 8px 12px rgba(88, 166, 255, 0.25);
+      box-shadow: 0 10px 20px rgba(88, 166, 255, 0.28);
     }
 
-    .brand:hover img,
-    .brand:focus-visible img {
-      opacity: 0.9;
+    .nav-primary {
+      display: none;
     }
 
-    nav {
+    .nav-list {
       display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      list-style: none;
+      gap: 1.6rem;
       padding: 0;
       margin: 0;
+      list-style: none;
+      font-size: 0.95rem;
     }
 
-    .nav-links a {
-      font-size: 0.92rem;
-      color: var(--muted);
+    .nav-list a {
       position: relative;
+      color: var(--muted);
       padding: 0.35rem 0;
       transition: color 0.3s ease;
     }
 
-    .nav-links a::after {
+    .nav-list a::after {
       content: "";
       position: absolute;
-      left: 0;
+      inset-inline: 0;
       bottom: 0;
-      width: 100%;
       height: 2px;
-      background: var(--accent);
       transform: scaleX(0);
       transform-origin: center;
+      background: var(--accent);
       transition: transform 0.3s ease;
     }
 
-    .nav-links a:focus-visible,
-    .nav-links a:hover {
+    .nav-list a:hover,
+    .nav-list a:focus-visible {
       color: var(--text);
     }
 
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after {
+    .nav-list a[aria-current="true"]::after,
+    .nav-list a:hover::after,
+    .nav-list a:focus-visible::after {
       transform: scaleX(1);
     }
 
-    .lang-toggle {
+    .lang-switch {
       display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(88, 166, 255, 0.4);
+      border: 1px solid rgba(88, 166, 255, 0.35);
       border-radius: 999px;
       overflow: hidden;
-      background: rgba(31, 41, 55, 0.8);
+      background: rgba(31, 41, 55, 0.85);
     }
 
-    .lang-toggle button {
+    .lang-switch button {
       background: none;
       border: none;
       color: var(--muted);
-      padding: 0.35rem 0.9rem;
-      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
       cursor: pointer;
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .lang-toggle button.active {
+    .lang-switch button.active {
       background: var(--accent);
       color: #0b1220;
       font-weight: 600;
     }
 
     .menu-toggle {
+      background: rgba(31, 41, 55, 0.8);
+      border: 1px solid rgba(88, 166, 255, 0.45);
+      color: var(--text);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      border: 1px solid rgba(88, 166, 255, 0.4);
-      background: rgba(31, 41, 55, 0.6);
-      color: var(--text);
       cursor: pointer;
       transition: border 0.3s ease;
     }
@@ -192,312 +197,504 @@
       outline-offset: 4px;
     }
 
-    .menu-toggle span {
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      content: "";
       display: block;
       width: 18px;
       height: 2px;
       background: currentColor;
+      border-radius: 999px;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .menu-icon {
       position: relative;
     }
 
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      content: "";
+    .menu-icon::before,
+    .menu-icon::after {
       position: absolute;
       left: 0;
-      width: 100%;
-      height: 2px;
-      background: currentColor;
-      transition: transform 0.3s ease;
     }
 
-    .menu-toggle span::before {
+    .menu-icon::before {
       top: -6px;
     }
 
-    .menu-toggle span::after {
+    .menu-icon::after {
       top: 6px;
     }
 
-    .menu-open .menu-toggle span {
+    .mobile-open .menu-icon {
       background: transparent;
     }
 
-    .menu-open .menu-toggle span::before {
+    .mobile-open .menu-icon::before {
       transform: translateY(6px) rotate(45deg);
     }
 
-    .menu-open .menu-toggle span::after {
+    .mobile-open .menu-icon::after {
       transform: translateY(-6px) rotate(-45deg);
     }
 
-    .nav-group {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    .mobile-open .menu-icon,
+    .mobile-open .menu-icon::before,
+    .mobile-open .menu-icon::after {
+      opacity: 1;
     }
 
-    .nav-links.mobile-hidden {
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 18, 32, 0.95);
+      backdrop-filter: blur(20px);
       display: none;
+      flex-direction: column;
+      padding: 6rem 2rem 2rem;
+      gap: 1.4rem;
+      z-index: 999;
     }
 
-    @media (min-width: 768px) {
-      .menu-toggle {
-        display: none;
-      }
-      .nav-links {
-        display: flex !important;
-      }
+    .mobile-open .mobile-nav {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      font-size: 1.25rem;
+      color: var(--muted);
+    }
+
+    .mobile-nav a[aria-current="true"],
+    .mobile-nav a:focus-visible {
+      color: var(--text);
     }
 
     main {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 0 1.25rem 4rem;
+      padding: 0 clamp(1.2rem, 5vw, 3rem) 5rem;
     }
 
     section {
-      margin: 4.5rem 0;
+      margin-block: clamp(4rem, 8vw, 7rem);
     }
 
     .hero {
-display: grid;
-  gap: 2.5rem;
-  /* üst | yatay | alt */
-  padding: 5rem clamp(1.25rem, 4vw, 3rem) 4rem;
-  background-color: #0b1220;
-  background-image: linear-gradient(rgba(11, 18, 32, 0.8), rgba(11, 18, 32, 0.8)), var(--hero-bg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+      position: relative;
+      padding: clamp(4rem, 10vw, 7rem) clamp(1.2rem, 5vw, 3rem) clamp(5rem, 12vw, 8rem);
+      margin-inline: calc(clamp(1.2rem, 5vw, 3rem) * -1);
+      background-image: linear-gradient(rgba(11, 18, 32, 0.86), rgba(11, 18, 32, 0.94)), var(--hero-bg);
+      background-size: cover;
+      background-position: center;
+      border-radius: clamp(2.4rem, 6vw, 4rem);
+      display: grid;
+      gap: clamp(2.5rem, 6vw, 4rem);
     }
 
-    .hero-content {
+    .hero-shell {
+      display: grid;
+      gap: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    @media (min-width: 900px) {
+      .hero-shell {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+      }
+    }
+
+    .hero-copy {
       display: grid;
       gap: 1.4rem;
     }
 
-    .eyebrow {
-      letter-spacing: 0.35em;
+    .hero-eyebrow {
+      letter-spacing: 0.36em;
       font-size: 0.75rem;
       text-transform: uppercase;
       color: var(--accent);
     }
 
-    h1, h2, h3 {
-      margin: 0;
-      font-weight: 600;
-    }
-
     h1 {
-      font-size: clamp(2.5rem, 6vw, 3.75rem);
-      line-height: 1.1;
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
     }
 
     h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin-bottom: 1rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.18;
     }
 
     h3 {
-      font-size: 1.25rem;
+      margin: 0 0 0.8rem;
+      font-size: clamp(1.35rem, 2.6vw, 1.65rem);
     }
 
     p {
       margin: 0;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 62ch;
     }
 
     .cta-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.9rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.85rem 1.6rem;
+      gap: 0.6rem;
       border-radius: 999px;
       border: 1px solid transparent;
+      padding: 0.9rem 1.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .btn.primary {
       background: var(--accent);
       color: #0b1220;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 18px 40px rgba(88, 166, 255, 0.28);
     }
 
     .btn.secondary {
       background: rgba(31, 41, 55, 0.75);
+      border-color: rgba(88, 166, 255, 0.35);
       color: var(--text);
-      border-color: rgba(88, 166, 255, 0.4);
     }
 
     .btn:hover,
     .btn:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(88, 166, 255, 0.25);
+      transform: translateY(-3px);
     }
 
     .hero-visual {
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.16), rgba(31, 41, 55, 0.85));
+      border-radius: clamp(1.8rem, 4vw, 2.5rem);
+      border: 1px solid rgba(88, 166, 255, 0.18);
+      padding: clamp(1.8rem, 4vw, 2.6rem);
       position: relative;
-      padding: 2rem;
-      background: linear-gradient(135deg, rgba(88, 166, 255, 0.12), transparent);
-      border-radius: 28px;
-      border: 1px solid rgba(88, 166, 255, 0.2);
       box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 1.2rem;
+      border-radius: inherit;
+      background: radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.35), transparent 60%);
+      opacity: 0.65;
+      pointer-events: none;
     }
 
     .hero-visual::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.35), transparent 55%);
-      opacity: 0.6;
-    }
-
-    .hero-visual-frame {
-      position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 800px;          /* geniş sınır */
-  aspect-ratio: 16 / 9;      /* DİKDÖRTGEN oran */
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(88, 166, 255, 0.35);
-  background: rgba(11, 18, 32, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-    }
-
-    .hero-visual-frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(11, 18, 32, 0.6);
-      mix-blend-mode: multiply;
+      border-radius: inherit;
+      border: 1px solid rgba(88, 166, 255, 0.18);
+      mix-blend-mode: screen;
       pointer-events: none;
     }
 
+    /* Hero visual frame: adjust aspect-ratio / max-width here if you need different proportions */
+    .hero-visual-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(11, 18, 32, 0.75);
+      border: 1px solid rgba(88, 166, 255, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 40px rgba(88, 166, 255, 0.2);
+    }
+
     .hero-visual-frame img {
-width: 100%;
-  height: 100%;
-  object-fit: contain;       /* logo bozulmasın */
-  padding: 0.75rem;          /* kenarlar */
-  position: relative;
-  z-index: 1;
-  display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: clamp(1.2rem, 3vw, 2rem);
     }
 
-    .panel {
-      background: rgba(31, 41, 55, 0.75);
-      border-radius: 24px;
-      padding: 2.5rem;
-      border: 1px solid rgba(88, 166, 255, 0.12);
-      box-shadow: 0 20px 48px rgba(10, 16, 30, 0.45);
+    .subnav-wrapper {
+      position: sticky;
+      top: calc(var(--headerH) - 1px);
+      z-index: 990;
+      margin-inline: calc(clamp(1.2rem, 5vw, 3rem) * -1);
+      padding-inline: clamp(1.2rem, 5vw, 3rem);
+      background: linear-gradient(to bottom, rgba(11, 18, 32, 0.92), rgba(11, 18, 32, 0.6));
+      border-bottom: 1px solid rgba(88, 166, 255, 0.12);
     }
 
-    .about-grid {
+    .subnav {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .subnav a {
+      flex: 0 0 auto;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: rgba(31, 41, 55, 0.65);
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: border 0.3s ease, color 0.3s ease, background 0.3s ease;
+    }
+
+    .subnav a[aria-current="true"],
+    .subnav a:hover,
+    .subnav a:focus-visible {
+      border-color: rgba(88, 166, 255, 0.5);
+      color: var(--text);
+      background: rgba(88, 166, 255, 0.12);
+    }
+
+    .section-header {
+      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .section-header p {
+      max-width: 58ch;
+    }
+
+    .solutions-grid {
       display: grid;
-      gap: 1.5rem;
+      gap: clamp(2.4rem, 6vw, 3.5rem);
     }
 
-    .services-grid, .portfolio-grid {
+    .solution-row {
       display: grid;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .service-card, .portfolio-card {
-      padding: 1.8rem;
-      background: var(--panel);
-      border-radius: 22px;
-      border: 1px solid rgba(88, 166, 255, 0.12);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      gap: 1.8rem;
+      align-items: center;
+      padding: clamp(1.6rem, 4vw, 2.4rem);
+      background: rgba(31, 41, 55, 0.65);
+      border-radius: clamp(1.6rem, 3vw, 2.4rem);
+      border: 1px solid rgba(88, 166, 255, 0.16);
+      box-shadow: 0 24px 50px rgba(5, 10, 20, 0.35);
       position: relative;
       overflow: hidden;
     }
 
-    .service-card:hover,
-    .service-card:focus-within,
-    .portfolio-card:hover,
-    .portfolio-card:focus-within {
-      transform: translateY(-6px);
-      border-color: rgba(88, 166, 255, 0.35);
+    .solution-row::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(88, 166, 255, 0.12), transparent 55%);
+      pointer-events: none;
     }
 
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.2rem;
-      background: rgba(88, 166, 255, 0.12);
-      border: 1px solid rgba(88, 166, 255, 0.25);
+    @media (min-width: 900px) {
+      .solution-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .solution-row:nth-child(even) .solution-visual {
+        order: 2;
+      }
     }
 
-    .portfolio-kpis {
-      margin-top: 1rem;
+    .solution-visual {
+      display: grid;
+      place-items: center;
+    }
+
+    .solution-visual img {
+      width: min(220px, 70%);
+      filter: drop-shadow(0 18px 35px rgba(88, 166, 255, 0.3));
+    }
+
+    .solution-copy {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .kpi-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 1.2rem;
-      color: var(--muted);
-      font-size: 0.9rem;
+      gap: 1.1rem;
     }
 
-    .process-steps {
-      display: grid;
-      gap: 1.2rem;
-      margin-top: 2rem;
+    .kpi {
+      padding: 0.8rem 1.2rem;
+      border-radius: 14px;
+      background: rgba(11, 18, 32, 0.6);
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      min-width: 120px;
+      text-align: center;
     }
 
-    .process-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.2rem 1.4rem;
-      background: var(--panel);
-      border-radius: 18px;
-      border: 1px solid rgba(88, 166, 255, 0.12);
-      transition: transform 0.3s ease;
-    }
-
-    .process-item:hover {
-      transform: translateX(6px);
-    }
-
-    .process-step {
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      background: rgba(88, 166, 255, 0.12);
+    .kpi strong {
+      display: block;
+      font-size: 1.1rem;
       color: var(--accent);
+    }
+
+    .plans-tabs {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .tablist {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.7);
+      padding: 0.5rem;
+      border: 1px solid rgba(88, 166, 255, 0.16);
+    }
+
+    .tablist button {
+      border: none;
+      background: none;
+      color: var(--muted);
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease, background 0.3s ease;
+    }
+
+    .tablist button[aria-selected="true"] {
+      background: var(--accent);
+      color: #0b1220;
+      font-weight: 600;
+      box-shadow: 0 14px 30px rgba(88, 166, 255, 0.3);
+    }
+
+    .tabpanels {
+      display: grid;
+    }
+
+    .tabpanel {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tabpanel.active {
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .plans-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 780px) {
+      .plans-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .plan-card {
+      background: rgba(31, 41, 55, 0.72);
+      border-radius: 22px;
+      border: 1px solid rgba(88, 166, 255, 0.22);
+      padding: 2rem;
+      display: grid;
+      gap: 1.1rem;
+      box-shadow: 0 26px 46px rgba(6, 10, 18, 0.42);
+    }
+
+    .plan-card h3 {
+      font-size: 1.4rem;
+    }
+
+    .plan-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .plan-card ul {
+      margin: 0;
+      padding-inline-start: 1.2rem;
+      display: grid;
+      gap: 0.55rem;
+      color: var(--muted);
+    }
+
+    .plan-cta {
+      justify-self: flex-start;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      padding: 1rem;
+      background: rgba(11, 18, 32, 0.55);
+    }
+
+    th {
+      background: rgba(31, 41, 55, 0.75);
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: rgba(11, 18, 32, 0.45);
+    }
+
+    .compare-table-wrapper {
+      overflow-x: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(88, 166, 255, 0.18);
+      box-shadow: 0 24px 44px rgba(5, 9, 16, 0.45);
+    }
+
+    @media (min-width: 920px) {
+      .compare-table-wrapper table {
+        position: relative;
+      }
+
+      .compare-table-wrapper th:first-child,
+      .compare-table-wrapper td:first-child {
+        position: sticky;
+        inset-inline-start: 0;
+        background: rgba(31, 41, 55, 0.85);
+        box-shadow: 1px 0 0 rgba(88, 166, 255, 0.15);
+      }
     }
 
     .faq-list {
       display: grid;
       gap: 1rem;
-      margin-top: 2rem;
     }
 
     .faq-item {
-      background: var(--panel);
       border-radius: 18px;
-      border: 1px solid rgba(88, 166, 255, 0.18);
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      background: rgba(31, 41, 55, 0.7);
       overflow: hidden;
+      transition: border 0.3s ease;
+    }
+
+    .faq-item[aria-expanded="true"] {
+      border-color: rgba(88, 166, 255, 0.35);
     }
 
     .faq-question {
@@ -505,15 +702,14 @@ width: 100%;
       background: none;
       border: none;
       color: var(--text);
-      font-size: 1rem;
+      text-align: start;
+      padding: 1.2rem 1.6rem;
       font-weight: 600;
-      padding: 1.2rem 1.5rem;
-      text-align: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
       cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
 
     .faq-question:focus-visible {
@@ -525,17 +721,22 @@ width: 100%;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.35s ease, padding 0.35s ease;
-      padding: 0 1.5rem;
+      padding: 0 1.6rem;
     }
 
     .faq-item[aria-expanded="true"] .faq-answer {
-      padding: 0 1.5rem 1.3rem;
-      max-height: 320px;
+      padding: 0 1.6rem 1.5rem;
+      max-height: 420px;
     }
 
     .contact-card {
       display: grid;
       gap: 1.5rem;
+      background: rgba(31, 41, 55, 0.72);
+      border-radius: 24px;
+      border: 1px solid rgba(88, 166, 255, 0.18);
+      padding: clamp(1.8rem, 4vw, 2.6rem);
+      box-shadow: 0 30px 50px rgba(6, 10, 18, 0.42);
     }
 
     form {
@@ -548,15 +749,16 @@ width: 100%;
       color: var(--text);
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
-      padding: 0.85rem 1rem;
-      border-radius: 14px;
+      padding: 0.9rem 1.1rem;
+      border-radius: 16px;
       border: 1px solid rgba(88, 166, 255, 0.25);
-      background: rgba(11, 18, 32, 0.6);
+      background: rgba(11, 18, 32, 0.65);
       color: var(--text);
-      font-family: var(--font);
       transition: border 0.3s ease, box-shadow 0.3s ease;
+      resize: vertical;
     }
 
     input:focus-visible,
@@ -567,56 +769,56 @@ width: 100%;
     }
 
     textarea {
-      min-height: 140px;
-      resize: vertical;
+      min-height: 150px;
     }
 
     .direct-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.95rem;
+      gap: 0.8rem;
     }
 
     .direct-links a {
-      border: 1px solid rgba(88, 166, 255, 0.35);
       border-radius: 999px;
-      padding: 0.55rem 1.2rem;
-      background: rgba(31, 41, 55, 0.6);
-      transition: border 0.3s ease;
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      padding: 0.6rem 1.3rem;
+      background: rgba(11, 18, 32, 0.55);
+      color: var(--muted);
+      transition: border 0.3s ease, color 0.3s ease;
     }
 
     .direct-links a:hover,
     .direct-links a:focus-visible {
       border-color: var(--accent);
+      color: var(--text);
     }
 
     footer {
-      border-top: 1px solid rgba(88, 166, 255, 0.1);
-      padding: 2.5rem 1.25rem 3rem;
-      background: rgba(11, 18, 32, 0.85);
+      border-top: 1px solid rgba(88, 166, 255, 0.12);
+      padding: 3rem clamp(1.2rem, 5vw, 3rem) 3.5rem;
+      background: rgba(11, 18, 32, 0.9);
     }
 
     .footer-shell {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      gap: 1.2rem;
+      gap: 1.5rem;
     }
 
     .socials {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.8rem;
     }
 
     .socials a {
-      border: 1px solid rgba(88, 166, 255, 0.35);
+      padding: 0.55rem 1.1rem;
       border-radius: 999px;
-      padding: 0.45rem 1rem;
-      font-size: 0.85rem;
+      border: 1px solid rgba(88, 166, 255, 0.25);
       color: var(--muted);
-      transition: border 0.3s ease;
+      font-size: 0.9rem;
+      transition: border 0.3s ease, color 0.3s ease;
     }
 
     .socials a:hover,
@@ -625,734 +827,917 @@ width: 100%;
       color: var(--text);
     }
 
-    @media (min-width: 640px) {
-      .hero {
-        grid-template-columns: 0.9fr 1.1fr; /* sağ görseli büyüt */
-    align-items: center;
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
       }
 
-      .about-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (min-width: 768px) {
-      .services-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    @media (min-width: 960px) {
+      .nav-primary {
+        display: flex;
       }
 
-      .portfolio-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .process-steps {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .menu-toggle,
+      .mobile-nav {
+        display: none;
       }
     }
 
-    .rtl .hero,
-    .rtl .about-grid,
-    .rtl .services-grid,
-    .rtl .portfolio-grid,
-    .rtl .process-steps {
-      direction: rtl;
+    body.rtl .nav-list,
+    body.rtl .subnav,
+    body.rtl .cta-group,
+    body.rtl .direct-links,
+    body.rtl .socials,
+    body.rtl .tablist {
+      flex-direction: row-reverse;
+    }
+
+    body.rtl .nav-list a::after {
+      transform-origin: center;
+    }
+
+    body.rtl .kpi {
+      text-align: center;
+    }
+
+    body.rtl input,
+    body.rtl textarea {
       text-align: right;
-    }
-
-    .rtl .cta-group {
-      justify-content: flex-end;
-    }
-
-    .rtl .process-item:hover {
-      transform: translateX(-6px);
-    }
-
-    .rtl .portfolio-kpis,
-    .rtl .direct-links,
-    .rtl .socials {
-      justify-content: flex-end;
-    }
-
-    .mobile-nav {
-      display: none;
-      padding: 0 1.25rem 1rem;
-      border-bottom: 1px solid rgba(88, 166, 255, 0.12);
-      background: rgba(11, 18, 32, 0.95);
-    }
-
-    .mobile-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .mobile-nav a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .menu-open .mobile-nav {
-      display: block;
-    }
-
-    .menu-open header {
-      box-shadow: 0 24px 48px rgba(11, 18, 32, 0.75);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        transition-duration: 0.001ms !important;
-        animation-duration: 0.001ms !important;
-      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav-shell">
-      <a class="brand" href="#hero" aria-label="Axisies home">
-        <img src="assets/axisies_logo1.jpg" alt="Axisies logo" height="32" loading="eager" decoding="async">
-        Axisies
+  <header class="global-header" id="top">
+    <div class="header-shell">
+      <a class="brand" href="#home" data-scroll>
+        <img src="/assets/axisies_logo1.jpg" alt="Axisies logo" width="120" height="32" />
+        <span>AXISIES</span>
       </a>
-      <div class="nav-group">
-        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-        </button>
-        <ul class="nav-links mobile-hidden">
-          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
-          <li><a href="#about" data-i18n="nav.about">About</a></li>
-          <li><a href="#services" data-i18n="nav.services">Services</a></li>
-          <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-          <li><a href="#process" data-i18n="nav.process">Process</a></li>
-          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      <nav class="nav-primary" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home" data-scroll data-i18n="nav.home" aria-current="true">Home</a></li>
+          <li><a href="#solutions" data-scroll data-i18n="nav.solutions">Solutions</a></li>
+          <li><a href="#plans" data-scroll data-i18n="nav.plans">Plans</a></li>
+          <li><a href="#compare" data-scroll data-i18n="nav.compare">Compare</a></li>
+          <li><a href="#faq" data-scroll data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#contact" data-scroll data-i18n="nav.contact">Contact</a></li>
         </ul>
-        <div class="lang-toggle" role="group" aria-label="Language toggle">
-          <button type="button" data-lang="en" class="active">EN</button>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="active" data-lang="en">EN</button>
           <button type="button" data-lang="ar">AR</button>
         </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">
+          <span class="menu-icon" aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
       </div>
     </div>
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-      <ul>
-        <li><a href="#hero" data-i18n="nav.home">Home</a></li>
-        <li><a href="#about" data-i18n="nav.about">About</a></li>
-        <li><a href="#services" data-i18n="nav.services">Services</a></li>
-        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-        <li><a href="#process" data-i18n="nav.process">Process</a></li>
-        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-      </ul>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <a href="#home" data-scroll data-i18n="nav.home">Home</a>
+      <a href="#solutions" data-scroll data-i18n="nav.solutions">Solutions</a>
+      <a href="#plans" data-scroll data-i18n="nav.plans">Plans</a>
+      <a href="#compare" data-scroll data-i18n="nav.compare">Compare</a>
+      <a href="#faq" data-scroll data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-scroll data-i18n="nav.contact">Contact</a>
     </nav>
   </header>
+
   <main>
-    <section id="hero" class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <span class="eyebrow" data-i18n="hero.eyebrow">Engineering beyond boundaries</span>
-        <h1 id="hero-title" data-i18n="hero.title">Axisies | Innovative Engineering</h1>
-        <p data-i18n="hero.subtitle">Where imagination meets precision. We design, innovate, and build the future of engineering in Saudi Arabia.</p>
-        <div class="cta-group">
-          <a class="btn" href="#contact" data-i18n="hero.ctaPrimary">Get a Quote</a>
-          <a class="btn secondary" href="#portfolio" data-i18n="hero.ctaSecondary">Discover Our Work</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-visual-frame">
-          <img src="assets/axisies_logo1.jpg" alt="Axisies logo" height="32" loading="eager" decoding="async">
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="panel" aria-labelledby="about-title">
-      <div class="about-grid">
-        <div>
-          <h2 id="about-title" data-i18n="about.heading">About Axisies</h2>
-          <p data-i18n="about.body1">Axisies is a Saudi-based engineering firm that bridges innovation, design, and technology. We specialize in machine installation, industrial automation, R&amp;D, and advanced engineering services.</p>
-        </div>
-        <div>
-          <p data-i18n="about.body2">We transform ideas into sustainable, high-performance solutions.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" aria-labelledby="services-title">
-      <h2 id="services-title" data-i18n="services.heading">Services</h2>
-      <p data-i18n="services.subtitle">Built by engineers, powered by imagination. Explore our core capabilities.</p>
-      <div class="services-grid">
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
-              <path d="M10 34h28L30 14H18z" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round" />
-              <circle cx="18" cy="38" r="3" fill="var(--accent)" />
-              <circle cx="30" cy="38" r="3" fill="var(--accent)" />
-            </svg>
-          </div>
-          <h3 data-i18n="services.items.0">Machine Installation &amp; Commissioning</h3>
-        </article>
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
-              <rect x="10" y="10" width="28" height="28" rx="6" fill="none" stroke="var(--accent)" stroke-width="2.5" />
-              <path d="M16 24h16" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
-              <path d="M24 16v16" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
-            </svg>
-          </div>
-          <h3 data-i18n="services.items.1">Industrial Automation</h3>
-        </article>
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
-              <path d="M12 32l12-16 12 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-              <circle cx="24" cy="20" r="4" fill="var(--accent)" />
-            </svg>
-          </div>
-          <h3 data-i18n="services.items.2">R&amp;D &amp; Prototyping</h3>
-        </article>
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
-              <path d="M12 20h24v16H12z" fill="none" stroke="var(--accent)" stroke-width="2.5" />
-              <path d="M18 16l6-6 6 6" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
-            </svg>
-          </div>
-          <h3 data-i18n="services.items.3">Engineering Consultancy</h3>
-        </article>
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
-              <rect x="12" y="14" width="24" height="20" rx="4" fill="none" stroke="var(--accent)" stroke-width="2.5" />
-              <circle cx="24" cy="24" r="5" fill="var(--accent)" />
-              <path d="M24 14v-4" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
-            </svg>
-          </div>
-          <h3 data-i18n="services.items.4">IoT &amp; Embedded Systems</h3>
-        </article>
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true">
-              <path d="M12 30c6-12 18-12 24 0" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" />
-              <circle cx="24" cy="18" r="6" fill="none" stroke="var(--accent)" stroke-width="2.5" />
-              <circle cx="24" cy="18" r="2" fill="var(--accent)" />
-            </svg>
-          </div>
-          <h3 data-i18n="services.items.5">AI-Driven Optimization</h3>
-        </article>
-      </div>
-    </section>
-
-    <section id="portfolio" aria-labelledby="portfolio-title" class="panel">
-      <h2 id="portfolio-title" data-i18n="portfolio.heading">Case Studies</h2>
-      <p data-i18n="portfolio.subtitle">Proof of impact measured in efficiency, savings, and speed.</p>
-      <div class="portfolio-grid">
-        <article class="portfolio-card">
-          <svg viewBox="0 0 240 140" aria-hidden="true">
-            <rect width="240" height="140" rx="18" fill="rgba(88,166,255,0.08)" />
-            <path d="M30 90l40-50 40 30 40-20 40 30 20-40" fill="none" stroke="rgba(88,166,255,0.5)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <h3 data-i18n="portfolio.items.0.title">Smart Factory Retrofit</h3>
-          <p data-i18n="portfolio.items.0.desc">OEE +22%, scrap −15%, ROI 9 months</p>
-        </article>
-        <article class="portfolio-card">
-          <svg viewBox="0 0 240 140" aria-hidden="true">
-            <rect width="240" height="140" rx="18" fill="rgba(88,166,255,0.08)" />
-            <path d="M40 100h160" stroke="rgba(88,166,255,0.45)" stroke-width="3" />
-            <rect x="80" y="50" width="80" height="60" rx="12" fill="rgba(88,166,255,0.18)" />
-            <path d="M110 70h20" stroke="rgba(226,232,240,0.7)" stroke-width="4" stroke-linecap="round" />
-          </svg>
-          <h3 data-i18n="portfolio.items.1.title">IoT Energy Monitoring</h3>
-          <p data-i18n="portfolio.items.1.desc">energy cost −18%</p>
-        </article>
-        <article class="portfolio-card">
-          <svg viewBox="0 0 240 140" aria-hidden="true">
-            <rect width="240" height="140" rx="18" fill="rgba(88,166,255,0.08)" />
-            <path d="M60 100h120" stroke="rgba(88,166,255,0.45)" stroke-width="3" />
-            <path d="M80 90l40-50 40 50" fill="none" stroke="rgba(226,232,240,0.7)" stroke-width="6" stroke-linecap="round" />
-          </svg>
-          <h3 data-i18n="portfolio.items.2.title">Automated Packaging Line</h3>
-          <p data-i18n="portfolio.items.2.desc">throughput +35%</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="process" aria-labelledby="process-title">
-      <h2 id="process-title" data-i18n="process.heading">How We Work</h2>
-      <p data-i18n="process.subtitle">A complete journey from concept to continuous improvement.</p>
-      <div class="process-steps">
-        <div class="process-item">
-          <span class="process-step">1</span>
-          <span data-i18n="process.steps.0">Discovery</span>
-        </div>
-        <div class="process-item">
-          <span class="process-step">2</span>
-          <span data-i18n="process.steps.1">Design</span>
-        </div>
-        <div class="process-item">
-          <span class="process-step">3</span>
-          <span data-i18n="process.steps.2">Prototype</span>
-        </div>
-        <div class="process-item">
-          <span class="process-step">4</span>
-          <span data-i18n="process.steps.3">Test</span>
-        </div>
-        <div class="process-item">
-          <span class="process-step">5</span>
-          <span data-i18n="process.steps.4">Implementation</span>
-        </div>
-        <div class="process-item">
-          <span class="process-step">6</span>
-          <span data-i18n="process.steps.5">Support</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="panel" aria-labelledby="faq-title">
-      <h2 id="faq-title" data-i18n="faq.heading">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question" aria-expanded="false" data-faq="0">
-            <span data-i18n="faq.items.0.q">What industries do you serve?</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.items.0.a">We partner with manufacturing, energy, logistics, and government innovators across the Kingdom.</p>
+    <section class="hero" id="home">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <span class="hero-eyebrow" data-i18n="hero.eyebrow">Future-ready engineering</span>
+          <h1 data-i18n="hero.title">Axisies | Innovative Engineering</h1>
+          <p data-i18n="hero.subtitle">Saudi-founded Axisies delivers automation, advanced R&amp;D, and precision engineering that elevate factories and infrastructure for Industry 4.0.</p>
+          <div class="cta-group">
+            <a class="btn primary" href="mailto:info@axisies.com?subject=Axisies%20Consultation" data-i18n="hero.primaryCta">Get a Quote</a>
+            <a class="btn secondary" href="#solutions" data-scroll data-i18n="hero.secondaryCta">Discover Our Work</a>
           </div>
         </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question" aria-expanded="false" data-faq="1">
-            <span data-i18n="faq.items.1.q">Do you provide turnkey automation solutions?</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.items.1.a">Yes, we cover the entire lifecycle from design to commissioning and long-term support.</p>
-          </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question" aria-expanded="false" data-faq="2">
-            <span data-i18n="faq.items.2.q">How do you ensure project success?</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.items.2.a">We align every engagement with measurable KPIs, transparent communication, and rigorous testing.</p>
-          </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question" aria-expanded="false" data-faq="3">
-            <span data-i18n="faq.items.3.q">Can you integrate with existing factory systems?</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.items.3.a">Absolutely. Our team specializes in interoperable architectures that modernize without disruption.</p>
-          </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question" aria-expanded="false" data-faq="4">
-            <span data-i18n="faq.items.4.q">Do you offer post-launch support?</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.items.4.a">We provide training, monitoring, and optimization services to keep systems performing flawlessly.</p>
-          </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question" aria-expanded="false" data-faq="5">
-            <span data-i18n="faq.items.5.q">Where is Axisies based?</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12M9 3v12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" /></svg>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.items.5.a">We are proudly headquartered in Saudi Arabia with teams ready to collaborate across the region.</p>
+        <div class="hero-visual">
+          <div class="hero-visual-frame">
+            <img src="/assets/axisies_logo2.jpg" alt="Axisies engineering showcase" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="panel contact-card">
-        <div>
-          <h2 id="contact-title" data-i18n="contact.heading">Let’s build what’s next</h2>
-          <p data-i18n="contact.subtitle">Share your vision and we’ll craft a proposal engineered around your goals.</p>
+    <div class="subnav-wrapper" aria-hidden="false">
+      <nav class="subnav" aria-label="In-page">
+        <a href="#solutions" data-scroll data-i18n="subnav.solutions">Solutions</a>
+        <a href="#plans" data-scroll data-i18n="subnav.plans">Plans</a>
+        <a href="#compare" data-scroll data-i18n="subnav.compare">Compare</a>
+        <a href="#faq" data-scroll data-i18n="subnav.faq">FAQ</a>
+        <a href="#contact" data-scroll data-i18n="subnav.contact">Contact</a>
+      </nav>
+    </div>
+
+    <section id="solutions" aria-labelledby="solutions-title" class="reveal">
+      <div class="section-header">
+        <h2 id="solutions-title" data-i18n="solutions.heading">Engineering that amplifies performance</h2>
+        <p data-i18n="solutions.description">From plant automation to R&amp;D innovation, Axisies blends Saudi expertise with global standards to deliver measurable impact across every asset.</p>
+      </div>
+      <div class="solutions-grid" id="solutionsGrid">
+        <!-- Solutions rows injected here -->
+      </div>
+    </section>
+
+    <section id="plans" aria-labelledby="plans-title" class="reveal">
+      <div class="section-header">
+        <h2 id="plans-title" data-i18n="plans.heading">Plans built for every stage of transformation</h2>
+        <p data-i18n="plans.description">Choose the engagement model that fits your roadmap—from pilots to full-scale smart factory programs.</p>
+      </div>
+      <div class="plans-tabs">
+        <div class="tablist" role="tablist" aria-label="Axisies plans" id="plansTabs">
+          <!-- Tabs injected -->
         </div>
-        <form id="contact-form">
+        <div class="tabpanels" id="plansPanels">
+          <!-- Panels injected -->
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" aria-labelledby="compare-title" class="reveal">
+      <div class="section-header">
+        <h2 id="compare-title" data-i18n="compare.heading">Compare capabilities across plans</h2>
+        <p data-i18n="compare.description">Evaluate which plan delivers the automation depth, analytics, and service coverage your operation requires.</p>
+      </div>
+      <div class="compare-table-wrapper" role="region" aria-live="polite">
+        <table>
+          <thead>
+            <tr id="compareHead">
+              <!-- Headings injected -->
+            </tr>
+          </thead>
+          <tbody id="compareBody">
+            <!-- Rows injected -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title" class="reveal">
+      <div class="section-header">
+        <h2 id="faq-title" data-i18n="faq.heading">Frequently asked questions</h2>
+        <p data-i18n="faq.description">Quick answers about Axisies project delivery, timelines, and ongoing partnerships.</p>
+      </div>
+      <div class="faq-list" id="faqList">
+        <!-- FAQ injected -->
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title" class="reveal">
+      <div class="section-header">
+        <h2 id="contact-title" data-i18n="contact.heading">Let’s build your next milestone</h2>
+        <p data-i18n="contact.description">Share your requirements and our engineers will respond with a tailored workshop or on-site assessment.</p>
+      </div>
+      <div class="contact-card">
+        <form id="contactForm">
           <div>
             <label for="name" data-i18n="contact.nameLabel">Name</label>
-            <input id="name" name="name" type="text" required data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" />
+            <input id="name" name="name" type="text" autocomplete="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" required />
           </div>
           <div>
             <label for="email" data-i18n="contact.emailLabel">Email</label>
-            <input id="email" name="email" type="email" required data-i18n-placeholder="contact.emailPlaceholder" placeholder="name@example.com" />
+            <input id="email" name="email" type="email" autocomplete="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="name@example.com" required />
           </div>
           <div>
-            <label for="message" data-i18n="contact.messageLabel">Message</label>
-            <textarea id="message" name="message" required data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell us about your project"></textarea>
+            <label for="message" data-i18n="contact.messageLabel">Project details</label>
+            <textarea id="message" name="message" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell us about your project" required></textarea>
           </div>
-          <button class="btn" type="submit" data-i18n="contact.submit">Send Inquiry</button>
+          <button type="submit" class="btn primary plan-cta" data-i18n="contact.submit">Send to Axisies</button>
         </form>
-        <div>
-          <p data-i18n="contact.direct">Prefer direct contact?</p>
-          <div class="direct-links">
-            <a href="mailto:info@axisies.com">info@axisies.com</a>
-            <a href="mailto:support@axisies.com">support@axisies.com</a>
-          </div>
+        <div class="direct-links">
+          <a href="mailto:info@axisies.com">info@axisies.com</a>
+          <a href="mailto:support@axisies.com">support@axisies.com</a>
         </div>
       </div>
     </section>
   </main>
+
   <footer>
     <div class="footer-shell">
-      <div class="socials" aria-label="Social links">
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="GitHub">GitHub</a>
-        <a href="#" aria-label="YouTube">YouTube</a>
-      </div>
-      <p id="footer-copy"><span data-i18n="footer.copy">© Axisies. All rights reserved.</span></p>
-      <div class="direct-links">
-        <a href="mailto:info@axisies.com">info@axisies.com</a>
-        <a href="mailto:support@axisies.com">support@axisies.com</a>
+      <p data-i18n="footer.copy">© <span data-year></span> Axisies. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="Axisies on LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Axisies on GitHub">GitHub</a>
+        <a href="#" aria-label="Axisies on YouTube">YouTube</a>
       </div>
     </div>
   </footer>
-  <script defer>
+
+  <script>
     const i18n = {
       en: {
-        htmlLang: "en",
-        dir: "ltr",
+        meta: {
+          title: "Axisies | Innovative Engineering",
+          description: "Axisies engineers the future with innovative automation, R&D, and advanced engineering solutions across Saudi Arabia.",
+        },
         nav: {
           home: "Home",
-          about: "About",
-          services: "Services",
-          portfolio: "Portfolio",
-          process: "Process",
+          solutions: "Solutions",
+          plans: "Plans",
+          compare: "Compare",
           faq: "FAQ",
-          contact: "Contact"
+          contact: "Contact",
+        },
+        subnav: {
+          solutions: "Solutions",
+          plans: "Plans",
+          compare: "Compare",
+          faq: "FAQ",
+          contact: "Contact",
         },
         hero: {
-          eyebrow: "Engineering beyond boundaries",
+          eyebrow: "Future-ready engineering",
           title: "Axisies | Innovative Engineering",
-          subtitle: "Where imagination meets precision. We design, innovate, and build the future of engineering in Saudi Arabia.",
-          ctaPrimary: "Get a Quote",
-          ctaSecondary: "Discover Our Work"
+          subtitle:
+            "Saudi-founded Axisies delivers automation, advanced R&D, and precision engineering that elevate factories and infrastructure for Industry 4.0.",
+          primaryCta: "Get a Quote",
+          secondaryCta: "Discover Our Work",
         },
-        about: {
-          heading: "About Axisies",
-          body1: "Axisies is a Saudi-based engineering firm that bridges innovation, design, and technology. We specialize in machine installation, industrial automation, R&D, and advanced engineering services.",
-          body2: "We transform ideas into sustainable, high-performance solutions."
+        solutions: {
+          heading: "Engineering that amplifies performance",
+          description:
+            "From plant automation to R&D innovation, Axisies blends Saudi expertise with global standards to deliver measurable impact across every asset.",
+          rows: [
+            {
+              title: "Smart automation systems",
+              body:
+                "Design, integrate, and commission PLC, SCADA, and robotics solutions that streamline complex industrial processes and increase throughput.",
+              kpis: [
+                { label: "OEE", value: "+22%" },
+                { label: "Downtime", value: "-18%" },
+                { label: "Throughput", value: "+35%" },
+              ],
+              alt: "Automation blueprint illustration",
+            },
+            {
+              title: "Applied R&D and prototyping",
+              body:
+                "Axisies labs build PoC rigs, digital twins, and mechatronic prototypes that de-risk innovation and accelerate market readiness.",
+              kpis: [
+                { label: "Time-to-pilot", value: "6 weeks" },
+                { label: "Iterations", value: "4x faster" },
+              ],
+              alt: "Prototype testing visualization",
+            },
+            {
+              title: "Operational analytics & energy intelligence",
+              body:
+                "Deploy Industrial IoT sensing, edge computing, and AI dashboards for energy optimization and continuous reliability improvement.",
+              kpis: [
+                { label: "Energy", value: "-18%" },
+                { label: "Visibility", value: "24/7" },
+                { label: "ROI", value: "< 12 mo" },
+              ],
+              alt: "Energy analytics display",
+            },
+            {
+              title: "Lifecycle support & field services",
+              body:
+                "From commissioning to preventive maintenance, Axisies teams provide on-site and remote expertise to keep production lines resilient.",
+              kpis: [
+                { label: "Response", value: "< 4h" },
+                { label: "SLA", value: "99.5%" },
+              ],
+              alt: "Field service team illustration",
+            },
+          ],
         },
-        services: {
-          heading: "Services",
-          subtitle: "Built by engineers, powered by imagination. Explore our core capabilities.",
-          items: [
-            "Machine Installation & Commissioning",
-            "Industrial Automation",
-            "R&D & Prototyping",
-            "Engineering Consultancy",
-            "IoT & Embedded Systems",
-            "AI-Driven Optimization"
-          ]
+        plans: {
+          heading: "Plans built for every stage of transformation",
+          description:
+            "Choose the engagement model that fits your roadmap—from pilots to full-scale smart factory programs.",
+          tabs: [
+            {
+              id: "starter",
+              label: "Starter",
+              summary: "Pilot & PoC automation",
+              features: [
+                "On-site site survey",
+                "Basic PLC/HMI configuration",
+                "1 line or asset",
+                "Email support",
+              ],
+              cta: "Contact Sales",
+            },
+            {
+              id: "pro",
+              label: "Professional",
+              summary: "Scale & optimize",
+              features: [
+                "SCADA / IIoT rollout",
+                "Advanced analytics reporting",
+                "3-5 lines or assets",
+                "Priority support",
+              ],
+              cta: "Get a Quote",
+            },
+            {
+              id: "enterprise",
+              label: "Enterprise",
+              summary: "End-to-end transformation",
+              features: [
+                "Turnkey automation delivery",
+                "Energy AI optimization",
+                "Fleet & OEE dashboards",
+                "Dedicated SLA team",
+              ],
+              cta: "Talk to Experts",
+            },
+          ],
         },
-        portfolio: {
-          heading: "Case Studies",
-          subtitle: "Proof of impact measured in efficiency, savings, and speed.",
-          items: [
-            { title: "Smart Factory Retrofit", desc: "OEE +22%, scrap −15%, ROI 9 months" },
-            { title: "IoT Energy Monitoring", desc: "energy cost −18%" },
-            { title: "Automated Packaging Line", desc: "throughput +35%" }
-          ]
-        },
-        process: {
-          heading: "How We Work",
-          subtitle: "A complete journey from concept to continuous improvement.",
-          steps: [
-            "Discovery",
-            "Design",
-            "Prototype",
-            "Test",
-            "Implementation",
-            "Support"
-          ]
+        compare: {
+          heading: "Compare capabilities across plans",
+          description:
+            "Evaluate which plan delivers the automation depth, analytics, and service coverage your operation requires.",
+          columns: ["Feature", "Starter", "Professional", "Enterprise"],
+          rows: [
+            { feature: "Lines / assets", values: ["1", "Up to 5", "Unlimited"] },
+            { feature: "SCADA", values: ["—", "Included", "Included"] },
+            { feature: "Energy monitoring", values: ["—", "Optional", "Included"] },
+            { feature: "OEE dashboard", values: ["—", "Included", "Advanced AI"] },
+            { feature: "24/7 support", values: ["Email", "Priority", "Dedicated team"] },
+            { feature: "Commissioning", values: ["Remote", "Hybrid", "On-site"] },
+          ],
         },
         faq: {
-          heading: "Frequently Asked Questions",
+          heading: "Frequently asked questions",
+          description: "Quick answers about Axisies project delivery, timelines, and ongoing partnerships.",
           items: [
             {
-              q: "What industries do you serve?",
-              a: "We partner with manufacturing, energy, logistics, and government innovators across the Kingdom."
+              q: "Which industries does Axisies support?",
+              a: "We collaborate with manufacturing, energy, utilities, and smart city initiatives across Saudi Arabia and the wider GCC region.",
             },
             {
-              q: "Do you provide turnkey automation solutions?",
-              a: "Yes, we cover the entire lifecycle from design to commissioning and long-term support."
+              q: "How fast can a pilot be launched?",
+              a: "Starter pilots typically mobilize within four weeks, including requirements capture, hardware procurement, and on-site installation.",
             },
             {
-              q: "How do you ensure project success?",
-              a: "We align every engagement with measurable KPIs, transparent communication, and rigorous testing."
+              q: "Do you integrate with existing systems?",
+              a: "Yes. Axisies engineers integrate with incumbent PLCs, ERPs, MES, and cloud platforms to preserve previous investments.",
             },
             {
-              q: "Can you integrate with existing factory systems?",
-              a: "Absolutely. Our team specializes in interoperable architectures that modernize without disruption."
+              q: "What service levels do you offer?",
+              a: "Professional and Enterprise plans include priority response times, 24/7 monitoring, and proactive maintenance schedules.",
             },
             {
-              q: "Do you offer post-launch support?",
-              a: "We provide training, monitoring, and optimization services to keep systems performing flawlessly."
+              q: "Can Axisies handle turnkey delivery?",
+              a: "Our Enterprise team delivers design-build services spanning controls, electrical, mechanical, and software integration end-to-end.",
             },
             {
-              q: "Where is Axisies based?",
-              a: "We are proudly headquartered in Saudi Arabia with teams ready to collaborate across the region."
-            }
-          ]
+              q: "Do you provide training?",
+              a: "Knowledge transfer is part of every engagement, with operator training, documentation, and on-site coaching.",
+            },
+          ],
         },
         contact: {
-          heading: "Let\u2019s build what\u2019s next",
-          subtitle: "Share your vision and we\u2019ll craft a proposal engineered around your goals.",
+          heading: "Let’s build your next milestone",
+          description: "Share your requirements and our engineers will respond with a tailored workshop or on-site assessment.",
           nameLabel: "Name",
-          namePlaceholder: "Your name",
           emailLabel: "Email",
+          messageLabel: "Project details",
+          namePlaceholder: "Your name",
           emailPlaceholder: "name@example.com",
-          messageLabel: "Message",
           messagePlaceholder: "Tell us about your project",
-          submit: "Send Inquiry",
-          direct: "Prefer direct contact?"
+          submit: "Send to Axisies",
         },
         footer: {
-          copy: "© {year} Axisies. All rights reserved."
-        }
+          copy: "© <span data-year></span> Axisies. All rights reserved.",
+        },
       },
       ar: {
-        htmlLang: "ar",
-        dir: "rtl",
+        meta: {
+          title: "أكسيزيس | هندسة مبتكرة",
+          description: "تقدم أكسيزيس حلول الأتمتة والبحث والتطوير والهندسة المتقدمة لرفع كفاءة المصانع والبنى التحتية في المملكة العربية السعودية.",
+        },
         nav: {
           home: "الرئيسية",
-          about: "نبذة",
-          services: "الخدمات",
-          portfolio: "الأعمال",
-          process: "المنهجية",
-          faq: "الأسئلة الشائعة",
-          contact: "تواصل"
+          solutions: "الحلول",
+          plans: "الباقات",
+          compare: "المقارنة",
+          faq: "الأسئلة",
+          contact: "تواصل",
+        },
+        subnav: {
+          solutions: "الحلول",
+          plans: "الباقات",
+          compare: "المقارنة",
+          faq: "الأسئلة",
+          contact: "تواصل",
         },
         hero: {
-          eyebrow: "هندسة بلا حدود",
-          title: "أكسيسيس | الهندسة الإبداعية",
-          subtitle: "حيث يلتقي الخيال بالدقة. نصمم ونبتكر ونبني مستقبل الهندسة في المملكة العربية السعودية.",
-          ctaPrimary: "اطلب عرضًا",
-          ctaSecondary: "اكتشف أعمالنا"
+          eyebrow: "هندسة لمستقبل متطور",
+          title: "أكسيزيس | هندسة مبتكرة",
+          subtitle:
+            "تقدم أكسيزيس السعودية حلول الأتمتة والبحث والتطوير والهندسة الدقيقة لرفع أداء المصانع والبنية التحتية نحو الصناعة 4.0.",
+          primaryCta: "احصل على عرض",
+          secondaryCta: "استكشف أعمالنا",
         },
-        about: {
-          heading: "عن أكسيسيس",
-          body1: "تأسست شركة أكسيسيس في المملكة العربية السعودية لدمج الابتكار والتصميم والتقنية. نحن متخصصون في تركيب الآلات، الأتمتة الصناعية، البحث والتطوير، والخدمات الهندسية المتقدمة.",
-          body2: "نحوّل الأفكار إلى حلول مستدامة عالية الأداء."
+        solutions: {
+          heading: "هندسة تعظم الأداء",
+          description:
+            "من أتمتة المصانع إلى الابتكار في البحث والتطوير، تمزج أكسيزيس الخبرة السعودية بالمعايير العالمية لتقديم أثر ملموس لكل أصل.",
+          rows: [
+            {
+              title: "أنظمة أتمتة ذكية",
+              body:
+                "تصميم وتكامل وتشغيل حلول PLC وSCADA والروبوتات لأتمتة العمليات الصناعية المعقدة وزيادة الإنتاجية.",
+              kpis: [
+                { label: "الكفاءة", value: "+22%" },
+                { label: "التوقف", value: "-18%" },
+                { label: "الإنتاجية", value: "+35%" },
+              ],
+              alt: "مخطط أتمتة صناعية",
+            },
+            {
+              title: "بحث وتطوير وتطوير نماذج أولية",
+              body:
+                "تبني مختبرات أكسيزيس نماذج إثبات المفهوم والتوأمة الرقمية والأنظمة الميكاترونية لتقليل المخاطر وتسريع الجاهزية للسوق.",
+              kpis: [
+                { label: "وقت الإطلاق", value: "6 أسابيع" },
+                { label: "التكرارات", value: "أسرع 4 مرات" },
+              ],
+              alt: "اختبار نموذج أولي",
+            },
+            {
+              title: "تحليلات تشغيلية وذكاء الطاقة",
+              body:
+                "نطبق أجهزة إنترنت الأشياء الصناعية والحوسبة الطرفية ولوحات الذكاء الاصطناعي للطاقة لتحقيق كفاءة واستمرارية موثوقة.",
+              kpis: [
+                { label: "الطاقة", value: "-18%" },
+                { label: "الرصد", value: "24/7" },
+                { label: "العائد", value: "أقل من 12 شهر" },
+              ],
+              alt: "عرض تحليلات الطاقة",
+            },
+            {
+              title: "دعم مدى الحياة وخدمات ميدانية",
+              body:
+                "من التشغيل الأولي إلى الصيانة الوقائية، توفر فرق أكسيزيس خبرة ميدانية وعن بُعد للحفاظ على موثوقية خطوط الإنتاج.",
+              kpis: [
+                { label: "الاستجابة", value: "أقل من 4 ساعات" },
+                { label: "اتفاقية الخدمة", value: "99.5%" },
+              ],
+              alt: "فريق خدمات ميدانية",
+            },
+          ],
         },
-        services: {
-          heading: "الخدمات",
-          subtitle: "نصنع حلولاً هندسية مستوحاة من الخيال ومبنية على الدقة.",
-          items: [
-            "تركيب وتشغيل الآلات",
-            "الأتمتة الصناعية",
-            "البحث والتطوير والنمذجة الأولية",
-            "الاستشارات الهندسية",
-            "أنظمة إنترنت الأشياء والأنظمة المدمجة",
-            "التحسين بالذكاء الاصطناعي"
-          ]
+        plans: {
+          heading: "باقات تناسب كل مرحلة تحول",
+          description:
+            "اختر نموذج التعاون الأنسب لمسارك من إثبات المفهوم إلى برنامج المصنع الذكي المتكامل.",
+          tabs: [
+            {
+              id: "starter",
+              label: "نظرة عامة",
+              summary: "تجارب وإثباتات الأتمتة",
+              features: [
+                "زيارة ميدانية للموقع",
+                "تهيئة PLC/HMI أساسية",
+                "خط أو أصل واحد",
+                "دعم عبر البريد",
+              ],
+              cta: "تواصل مع المبيعات",
+            },
+            {
+              id: "pro",
+              label: "احترافي",
+              summary: "توسيع وتحسين",
+              features: [
+                "نشر SCADA وIIoT",
+                "تقارير تحليلات متقدمة",
+                "3-5 خطوط أو أصول",
+                "دعم أولوية",
+              ],
+              cta: "اطلب عرض سعر",
+            },
+            {
+              id: "enterprise",
+              label: "مؤسسي",
+              summary: "تحول شامل",
+              features: [
+                "تسليم أتمتة متكامل",
+                "ذكاء الطاقة بالذكاء الاصطناعي",
+                "لوحات أسطول وOEE",
+                "فريق خدمة مخصص",
+              ],
+              cta: "تحدث مع الخبراء",
+            },
+          ],
         },
-        portfolio: {
-          heading: "دراسات حالة",
-          subtitle: "أثر ملموس في الكفاءة والتكاليف والسرعة.",
-          items: [
-            { title: "تحديث مصنع ذكي", desc: "كفاءة التشغيل +22٪، الهدر −15٪، عائد الاستثمار 9 أشهر" },
-            { title: "مراقبة الطاقة عبر إنترنت الأشياء", desc: "خفض تكاليف الطاقة −18٪" },
-            { title: "خط تغليف آلي", desc: "زيادة الإنتاجية +35٪" }
-          ]
-        },
-        process: {
-          heading: "منهجيتنا",
-          subtitle: "رحلة متكاملة من الفكرة إلى التحسين المستمر.",
-          steps: [
-            "الاكتشاف",
-            "التصميم",
-            "النموذج الأولي",
-            "الاختبار",
-            "التنفيذ",
-            "الدعم"
-          ]
+        compare: {
+          heading: "قارن القدرات عبر الباقات",
+          description:
+            "قيّم أي باقة توفر عمق الأتمتة والتحليلات وتغطية الخدمات التي يحتاجها تشغيلك.",
+          columns: ["الميزة", "نظرة عامة", "احترافي", "مؤسسي"],
+          rows: [
+            { feature: "الخطوط / الأصول", values: ["1", "حتى 5", "غير محدود"] },
+            { feature: "SCADA", values: ["—", "متضمن", "متضمن"] },
+            { feature: "مراقبة الطاقة", values: ["—", "اختياري", "متضمن"] },
+            { feature: "لوحة OEE", values: ["—", "متضمن", "ذكاء متقدم"] },
+            { feature: "دعم على مدار الساعة", values: ["بريد إلكتروني", "أولوية", "فريق مخصص"] },
+            { feature: "التشغيل الأولي", values: ["عن بُعد", "هجيني", "ميداني"] },
+          ],
         },
         faq: {
           heading: "الأسئلة الشائعة",
+          description: "إجابات سريعة حول تنفيذ مشاريع أكسيزيس والجداول الزمنية والشراكات المستمرة.",
           items: [
             {
-              q: "ما القطاعات التي تخدمونها؟",
-              a: "نتعاون مع رواد التصنيع والطاقة واللوجستيات والجهات الحكومية في أنحاء المملكة."
+              q: "ما القطاعات التي تخدمها أكسيزيس؟",
+              a: "نتعاون مع قطاعات التصنيع والطاقة والمرافق ومبادرات المدن الذكية في المملكة العربية السعودية ومنطقة الخليج.",
             },
             {
-              q: "هل تقدمون حلول أتمتة متكاملة؟",
-              a: "نعم، نغطي دورة الحياة كاملة من التصميم إلى التشغيل والدعم الطويل الأمد."
+              q: "ما سرعة إطلاق التجربة؟",
+              a: "عادةً ما تبدأ مشاريع الباقة الأولى خلال أربعة أسابيع متضمنة جمع المتطلبات وشراء الأجهزة والتركيب في الموقع.",
             },
             {
-              q: "كيف تضمنون نجاح المشاريع؟",
-              a: "نربط كل مشروع بمؤشرات أداء واضحة وتواصل شفاف واختبارات صارمة."
+              q: "هل تتكاملون مع الأنظمة الحالية؟",
+              a: "نعم، يقوم مهندسو أكسيزيس بالدمج مع وحدات PLC وERP وMES والمنصات السحابية للحفاظ على الاستثمارات السابقة.",
             },
             {
-              q: "هل يمكنكم التكامل مع الأنظمة الحالية؟",
-              a: "بالتأكيد، نمتلك خبرة في بناء أنظمة متوافقة تحدّث المصانع دون تعطيل."
+              q: "ما مستويات الخدمة المتاحة؟",
+              a: "تشمل الباقات الاحترافية والمؤسسية أوقات استجابة أولوية ومراقبة على مدار الساعة وصيانة استباقية.",
             },
             {
-              q: "هل توفرون دعمًا بعد الإطلاق؟",
-              a: "نقدم التدريب والمراقبة والتحسين لضمان أداء الأنظمة باستمرار."
+              q: "هل توفر أكسيزيس تسليم متكامل؟",
+              a: "يقدم فريق المؤسسية خدمات التصميم والبناء عبر التحكم والكهرباء والميكانيكا وتكامل البرمجيات من البداية للنهاية.",
             },
             {
-              q: "أين يقع مقر أكسيسيس؟",
-              a: "نحن مقرّنا في المملكة العربية السعودية ونتعاون مع العملاء في المنطقة."
-            }
-          ]
+              q: "هل تقدمون تدريباً؟",
+              a: "نضمن نقل المعرفة في كل مشروع مع تدريب المشغلين والوثائق والإرشاد في الموقع.",
+            },
+          ],
         },
         contact: {
-          heading: "لنبنِ المستقبل معًا",
-          subtitle: "شاركنا رؤيتك لنصمم عرضًا هندسيًا يناسب أهدافك.",
+          heading: "لنبنِ إنجازك القادم",
+          description: "شاركنا متطلباتك ليقوم مهندسونا بتقديم ورشة عمل مخصصة أو تقييم ميداني.",
           nameLabel: "الاسم",
-          namePlaceholder: "اكتب اسمك",
           emailLabel: "البريد الإلكتروني",
+          messageLabel: "تفاصيل المشروع",
+          namePlaceholder: "اسمك",
           emailPlaceholder: "name@example.com",
-          messageLabel: "الرسالة",
-          messagePlaceholder: "حدثنا عن مشروعك",
-          submit: "أرسل الطلب",
-          direct: "تفضّل التواصل المباشر؟"
+          messagePlaceholder: "أخبرنا عن مشروعك",
+          submit: "إرسال إلى أكسيزيس",
         },
         footer: {
-          copy: "© {year} أكسيسيس. جميع الحقوق محفوظة."
-        }
-      }
+          copy: "© <span data-year></span> أكسيزيس. جميع الحقوق محفوظة.",
+        },
+      },
     };
 
-    const htmlEl = document.documentElement;
-    const bodyEl = document.body;
-    const langButtons = document.querySelectorAll('.lang-toggle button');
-    const navLinks = document.querySelector('.nav-links');
-    const menuToggle = document.querySelector('.menu-toggle');
+    const langButtons = document.querySelectorAll('.lang-switch button');
+    const mobileToggle = document.querySelector('.menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
-    const form = document.getElementById('contact-form');
-    const textNodes = document.querySelectorAll('[data-i18n]');
-    const placeholderNodes = document.querySelectorAll('[data-i18n-placeholder]');
-    const footerCopySpan = document.querySelector('#footer-copy [data-i18n="footer.copy"]');
+    const navLinks = document.querySelectorAll('[data-scroll]');
+    const tablist = document.getElementById('plansTabs');
+    const tabpanels = document.getElementById('plansPanels');
+    const solutionsGrid = document.getElementById('solutionsGrid');
+    const compareHead = document.getElementById('compareHead');
+    const compareBody = document.getElementById('compareBody');
+    const faqList = document.getElementById('faqList');
+    const contactForm = document.getElementById('contactForm');
+    const yearEl = document.querySelector('[data-year]');
 
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach((item) => {
-      const button = item.querySelector('.faq-question');
-      button.addEventListener('click', () => {
-        const expanded = item.getAttribute('aria-expanded') === 'true';
-        item.setAttribute('aria-expanded', String(!expanded));
-        button.setAttribute('aria-expanded', String(!expanded));
-      });
-    });
+    const placeholderSVG = (direction = 'ltr') => `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220' viewBox='0 0 320 220'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%' stop-color='%2358a6ff' stop-opacity='0.2'/%3E%3Cstop offset='100%' stop-color='%2358a6ff' stop-opacity='0.05'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='220' rx='28' fill='%231f2937'/%3E%3Crect x='14' y='14' width='292' height='192' rx='22' fill='url(%23g)' stroke='%2358a6ff' stroke-opacity='0.18'/%3E%3Cpath d='M70 150 Q160 ${direction === 'rtl' ? '90' : '130'} 250 80' stroke='%2358a6ff' stroke-width='6' stroke-linecap='round' fill='none' opacity='0.45'/%3E%3Ccircle cx='110' cy='92' r='18' fill='%2358a6ff' opacity='0.25'/%3E%3Ccircle cx='210' cy='132' r='12' fill='%2358a6ff' opacity='0.2'/%3E%3C/svg%3E`;
 
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      bodyEl.classList.toggle('menu-open');
-      const firstLink = mobileNav.querySelector('a');
-      if (!expanded) {
-        firstLink.focus({ preventScroll: true });
-      }
-    });
-
-    mobileNav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        bodyEl.classList.remove('menu-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    const applyLanguage = (lang) => {
-      const locale = i18n[lang] ? lang : 'en';
-      const dict = i18n[locale];
-      htmlEl.lang = dict.htmlLang;
-      htmlEl.dir = dict.dir;
-      bodyEl.classList.toggle('rtl', dict.dir === 'rtl');
-      textNodes.forEach((node) => {
-        const keyPath = node.dataset.i18n.split('.');
-        let value = dict;
-        keyPath.forEach((k) => {
-          value = value?.[k];
-        });
-        if (Array.isArray(value)) {
-          return;
+    const createSolutions = (langKey) => {
+      const { rows } = i18n[langKey].solutions;
+      const isRTL = langKey === 'ar';
+      solutionsGrid.innerHTML = '';
+      rows.forEach((row, index) => {
+        const wrapper = document.createElement('article');
+        wrapper.className = 'solution-row reveal';
+        wrapper.innerHTML = `
+          <div class="solution-copy">
+            <h3>${row.title}</h3>
+            <p>${row.body}</p>
+            <div class="kpi-row">
+              ${row.kpis
+                .map((kpi) => `<div class="kpi"><strong>${kpi.value}</strong><span>${kpi.label}</span></div>`)
+                .join('')}
+            </div>
+          </div>
+          <div class="solution-visual">
+            <img src="${placeholderSVG(isRTL ? 'rtl' : 'ltr')}" alt="${row.alt}" loading="lazy" />
+          </div>
+        `;
+        if (index % 2 !== 0) {
+          wrapper.classList.add('alt');
         }
-        if (typeof value === 'object' && value !== null) {
-          return;
-        }
-        node.textContent = value ?? node.textContent;
+        solutionsGrid.append(wrapper);
       });
-      placeholderNodes.forEach((node) => {
-        const keyPath = node.dataset.i18nPlaceholder.split('.');
-        let value = dict;
-        keyPath.forEach((k) => {
-          value = value?.[k];
+    };
+
+    const createTabs = (langKey) => {
+      const { tabs } = i18n[langKey].plans;
+      tablist.innerHTML = '';
+      tabpanels.innerHTML = '';
+      tabs.forEach((tab, index) => {
+        const btn = document.createElement('button');
+        btn.id = `tab-${tab.id}`;
+        btn.type = 'button';
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        btn.setAttribute('aria-controls', `panel-${tab.id}`);
+        btn.dataset.tab = tab.id;
+        btn.textContent = tab.label;
+        tablist.append(btn);
+
+        const panel = document.createElement('div');
+        panel.id = `panel-${tab.id}`;
+        panel.className = `tabpanel${index === 0 ? ' active' : ''}`;
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('tabindex', '0');
+        panel.setAttribute('aria-labelledby', `tab-${tab.id}`);
+        panel.innerHTML = `
+          <div class="plan-card">
+            <div>
+              <h3>${tab.label}</h3>
+              <p class="plan-meta">${tab.summary}</p>
+            </div>
+            <ul>
+              ${tab.features.map((feature) => `<li>${feature}</li>`).join('')}
+            </ul>
+            <a class="btn secondary plan-cta" href="#contact" data-scroll>${tab.cta}</a>
+          </div>
+        `;
+        tabpanels.append(panel);
+      });
+    };
+
+    const createCompare = (langKey) => {
+      const { columns, rows } = i18n[langKey].compare;
+      compareHead.innerHTML = columns.map((col) => `<th scope="col">${col}</th>`).join('');
+      compareBody.innerHTML = rows
+        .map(
+          (row) => `
+            <tr>
+              <th scope="row">${row.feature}</th>
+              ${row.values.map((value) => `<td>${value}</td>`).join('')}
+            </tr>
+          `
+        )
+        .join('');
+    };
+
+    const createFaq = (langKey) => {
+      const { items } = i18n[langKey].faq;
+      faqList.innerHTML = '';
+      items.forEach((item, index) => {
+        const faqItem = document.createElement('article');
+        faqItem.className = 'faq-item';
+        faqItem.setAttribute('aria-expanded', 'false');
+        const btnId = `faq-${index}`;
+        faqItem.innerHTML = `
+          <button class="faq-question" aria-expanded="false" aria-controls="${btnId}" id="${btnId}-btn">
+            <span>${item.q}</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="${btnId}" role="region" aria-labelledby="${btnId}-btn">
+            <p>${item.a}</p>
+          </div>
+        `;
+        faqList.append(faqItem);
+      });
+    };
+
+    const updateStaticTexts = (langKey) => {
+      const langData = i18n[langKey];
+      document.documentElement.lang = langKey === 'ar' ? 'ar' : 'en';
+      document.documentElement.dir = langKey === 'ar' ? 'rtl' : 'ltr';
+      document.body.classList.toggle('rtl', langKey === 'ar');
+      document.title = langData.meta.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (metaDesc) metaDesc.setAttribute('content', langData.meta.description);
+      if (ogTitle) ogTitle.setAttribute('content', langData.meta.title);
+      if (ogDesc) ogDesc.setAttribute('content', langData.meta.description);
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const keys = el.getAttribute('data-i18n').split('.');
+        let value = langData;
+        keys.forEach((key) => {
+          if (value) value = value[key];
         });
         if (typeof value === 'string') {
-          node.placeholder = value;
+          el.innerHTML = value;
         }
       });
-      // update repeating arrays for services, portfolio, process, faq
-      const serviceTitles = document.querySelectorAll('[data-i18n="services.items.0"], [data-i18n="services.items.1"], [data-i18n="services.items.2"], [data-i18n="services.items.3"], [data-i18n="services.items.4"], [data-i18n="services.items.5"]');
-      serviceTitles.forEach((node, index) => {
-        node.textContent = dict.services.items[index];
-      });
-      const portfolioTitles = document.querySelectorAll('[data-i18n^="portfolio.items"]');
-      portfolioTitles.forEach((node) => {
-        const path = node.dataset.i18n;
-        const match = path.match(/portfolio\.items\.(\d+)\.(title|desc)/);
-        if (match) {
-          const [, idx, prop] = match;
-          node.textContent = dict.portfolio.items[Number(idx)][prop];
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const keys = el.getAttribute('data-i18n-placeholder').split('.');
+        let value = langData;
+        keys.forEach((key) => {
+          if (value) value = value[key];
+        });
+        if (typeof value === 'string') {
+          el.setAttribute('placeholder', value);
         }
       });
-      const processItems = document.querySelectorAll('[data-i18n^="process.steps"]');
-      processItems.forEach((node) => {
-        const idx = Number(node.dataset.i18n.split('.').pop());
-        node.textContent = dict.process.steps[idx];
-      });
-      const faqNodes = document.querySelectorAll('[data-i18n^="faq.items"]');
-      faqNodes.forEach((node) => {
-        const match = node.dataset.i18n.match(/faq\.items\.(\d+)\.(q|a)/);
-        if (match) {
-          const [, idx, qa] = match;
-          node.textContent = dict.faq.items[Number(idx)][qa];
-        }
-      });
-      const year = new Date().getFullYear();
-      if (footerCopySpan) {
-        footerCopySpan.textContent = dict.footer.copy.replace('{year}', year);
-      }
-      langButtons.forEach((button) => {
-        button.classList.toggle('active', button.dataset.lang === locale);
-      });
-      localStorage.setItem('axisies_lang', locale);
-      document.title = dict.hero.title;
-      document.querySelector('meta[name="description"]').setAttribute('content', dict.about.body1);
-      document.querySelector('meta[property="og:title"]').setAttribute('content', dict.hero.title);
-      document.querySelector('meta[property="og:description"]').setAttribute('content', dict.about.body1);
     };
 
-    langButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const lang = button.dataset.lang;
-        applyLanguage(lang);
+    const setActiveLangButton = (langKey) => {
+      langButtons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === langKey);
+        btn.setAttribute('aria-pressed', btn.dataset.lang === langKey);
+      });
+    };
+
+    const renderAll = (langKey) => {
+      updateStaticTexts(langKey);
+      createSolutions(langKey);
+      createTabs(langKey);
+      createCompare(langKey);
+      createFaq(langKey);
+      setActiveLangButton(langKey);
+      setTimeout(() => {
+        observeTabs();
+        revealObserver();
+      }, 50);
+    };
+
+    const observeTabs = () => {
+      const buttons = tablist.querySelectorAll('button[role="tab"]');
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => activateTab(btn.id));
+        btn.addEventListener('keydown', handleTabKeydown);
+      });
+    };
+
+    const handleTabKeydown = (event) => {
+      const buttons = Array.from(tablist.querySelectorAll('button[role="tab"]'));
+      const currentIndex = buttons.indexOf(event.currentTarget);
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        const delta = event.key === 'ArrowRight' ? 1 : -1;
+        const nextIndex = (currentIndex + delta + buttons.length) % buttons.length;
+        buttons[nextIndex].focus();
+        activateTab(buttons[nextIndex].id);
+      }
+    };
+
+    const activateTab = (tabId) => {
+      tablist.querySelectorAll('button[role="tab"]').forEach((btn) => {
+        const isActive = btn.id === tabId;
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      tabpanels.querySelectorAll('.tabpanel').forEach((panel) => {
+        panel.classList.toggle('active', panel.getAttribute('aria-labelledby') === tabId);
+      });
+    };
+
+    const highlightOnScroll = () => {
+      const sections = document.querySelectorAll('main section');
+      const updateActive = (id) => {
+        document.querySelectorAll('.nav-list a, .mobile-nav a, .subnav a').forEach((link) => {
+          const match = link.getAttribute('href') === `#${id}`;
+          link.setAttribute('aria-current', match ? 'true' : 'false');
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              updateActive(entry.target.id);
+            }
+          });
+        },
+        {
+          rootMargin: '-55% 0px -40% 0px',
+          threshold: 0.2,
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    };
+
+    const revealObserver = () => {
+      const revealEls = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    };
+
+    const smoothScroll = (target) => {
+      const element = document.querySelector(target);
+      if (!element) return;
+      const headerOffset = document.querySelector('.global-header').offsetHeight + 12;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    };
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = link.getAttribute('href');
+        if (target && target.startsWith('#')) {
+          event.preventDefault();
+          if (document.body.classList.contains('mobile-open')) {
+            toggleMobileMenu(false);
+          }
+          smoothScroll(target);
+        }
       });
     });
 
-    const storedLang = localStorage.getItem('axisies_lang') || 'en';
-    applyLanguage(storedLang);
+    const toggleMobileMenu = (force) => {
+      const willOpen = typeof force === 'boolean' ? force : !document.body.classList.contains('mobile-open');
+      document.body.classList.toggle('mobile-open', willOpen);
+      mobileToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    };
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const formData = new FormData(form);
-      const name = formData.get('name').toString().trim();
-      const email = formData.get('email').toString().trim();
-      const message = formData.get('message').toString().trim();
-      const currentLang = localStorage.getItem('axisies_lang') || 'en';
-      const fallback = currentLang === 'ar' ? 'استفسار' : 'Inquiry';
-      const topic = message ? message.split('\n')[0].slice(0, 60) : fallback;
-      const subject = `[Axisies] ${topic || fallback} - ${name || ''}`;
-      const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-      const mailto = `mailto:info@axisies.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
+    mobileToggle.addEventListener('click', () => toggleMobileMenu());
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        renderAll(lang);
+      });
     });
+
+    const updateYear = () => {
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    };
+
+    const handleFaq = () => {
+      faqList.addEventListener('click', (event) => {
+        const button = event.target.closest('.faq-question');
+        if (!button) return;
+        const container = button.parentElement;
+        const expanded = container.getAttribute('aria-expanded') === 'true';
+        container.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        const symbol = button.querySelector('span[aria-hidden="true"]');
+        if (symbol) {
+          symbol.textContent = expanded ? '+' : '−';
+        }
+      });
+    };
+
+    const handleContactSubmit = () => {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const langKey = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+        const name = contactForm.name.value.trim();
+        const email = contactForm.email.value.trim();
+        const message = contactForm.message.value.trim();
+        const subject = encodeURIComponent(langKey === 'ar' ? 'طلب استشارة من موقع أكسيزيس' : 'Axisies consultation request');
+        const body = encodeURIComponent(`${langKey === 'ar' ? 'الاسم' : 'Name'}: ${name}\n${langKey === 'ar' ? 'البريد' : 'Email'}: ${email}\n\n${message}`);
+        window.location.href = `mailto:info@axisies.com?subject=${subject}&body=${body}`;
+      });
+    };
+
+    const init = () => {
+      updateYear();
+      renderAll('en');
+      highlightOnScroll();
+      revealObserver();
+      handleFaq();
+      handleContactSubmit();
+    };
+
+    window.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
