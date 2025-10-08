@@ -881,6 +881,16 @@
     body.rtl input,
     body.rtl textarea {
       text-align: right;
+      .hero-visual-frame .hero-logo {
+  transform: scale(1.2);           /* %20 büyütme */
+  transform-origin: center;        /* Ortasından büyüsün */
+  transition: transform 0.3s ease; /* Akıcı bir büyüme efekti */
+}
+
+/* (İsteğe bağlı) fare üzerine gelince hafif parlama */
+.hero-visual-frame .hero-logo:hover {
+  filter: brightness(1.1);
+}
     }
   </style>
 </head>
@@ -922,25 +932,25 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-shell">
-        <div class="hero-copy">
-          <span class="hero-eyebrow" data-i18n="hero.eyebrow">Future-ready engineering</span>
-          <h1 data-i18n="hero.title">Axisies | Innovative Engineering</h1>
-          <p data-i18n="hero.subtitle">Saudi-founded Axisies delivers automation, advanced R&amp;D, and precision engineering that elevate factories and infrastructure for Industry 4.0.</p>
-          <div class="cta-group">
-            <a class="btn primary" href="mailto:info@axisies.com?subject=Axisies%20Consultation" data-i18n="hero.primaryCta">Get a Quote</a>
-            <a class="btn secondary" href="#solutions" data-scroll data-i18n="hero.secondaryCta">Discover Our Work</a>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <span class="hero-eyebrow" data-i18n="hero.eyebrow">Future-ready engineering</span>
+            <h1 data-i18n="hero.title">Axisies | Innovative Engineering</h1>
+            <p data-i18n="hero.subtitle">Saudi-founded Axisies delivers automation, advanced R&amp;D, and precision engineering that elevate factories and infrastructure for Industry 4.0.</p>
+            <div class="cta-group">
+              <a class="btn primary" href="mailto:info@axisies.com?subject=Axisies%20Consultation" data-i18n="hero.primaryCta">Get a Quote</a>
+              <a class="btn secondary" href="#solutions" data-scroll data-i18n="hero.secondaryCta">Discover Our Work</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-visual-frame">
+              <img class="hero-logo" src="assets/axisies_logo1.jpg" alt="Axisies engineering showcase">
+            </div>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-visual-frame">
-            <img src="assets/axisies_logo1.jpg" alt="Axisies engineering showcase">
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
     <div class="subnav-wrapper" aria-hidden="false">
       <nav class="subnav" aria-label="In-page">
