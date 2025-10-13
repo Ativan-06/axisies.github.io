@@ -887,6 +887,167 @@
     body.rtl textarea {
       text-align: right;
     }
+    /* ===== Axisies ChatMail Widget ===== */
+    .axc-chat-launch {
+      position: fixed;
+      right: 20px;
+      bottom: 22px;
+      z-index: 9999;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #0b1220;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(88, 166, 255, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .axc-chat-launch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(88, 166, 255, 0.4);
+    }
+
+    .axc-chat-launch svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .axc-chat-panel {
+      position: fixed;
+      right: 20px;
+      bottom: 92px;
+      z-index: 9999;
+      width: min(360px, 92vw);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(88, 166, 255, 0.22);
+      background: rgba(31, 41, 55, 0.92);
+      backdrop-filter: blur(12px);
+      color: var(--text);
+      box-shadow: 0 28px 60px rgba(6, 10, 18, 0.55);
+    }
+
+    .axc-chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1rem;
+      background: rgba(31, 41, 55, 0.85);
+      border-bottom: 1px solid rgba(88, 166, 255, 0.18);
+    }
+
+    .axc-close {
+      background: transparent;
+      border: 1px solid rgba(88, 166, 255, 0.35);
+      color: var(--text);
+      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+    }
+
+    .axc-chat-feed {
+      padding: 1rem;
+      display: grid;
+      gap: 0.6rem;
+      max-height: 180px;
+      overflow: auto;
+    }
+
+    .axc-bot,
+    .axc-user {
+      max-width: 86%;
+      padding: 0.7rem 0.9rem;
+      border-radius: 14px;
+      background: rgba(11, 18, 32, 0.6);
+      border: 1px solid rgba(88, 166, 255, 0.18);
+    }
+
+    .axc-user {
+      justify-self: end;
+      background: rgba(88, 166, 255, 0.12);
+      border-color: rgba(88, 166, 255, 0.35);
+    }
+
+    .axc-form {
+      display: grid;
+      gap: 0.85rem;
+      padding: 0 1rem 1rem;
+    }
+
+    .axc-form label {
+      display: grid;
+      gap: 0.35rem;
+      font-weight: 600;
+    }
+
+    .axc-form input,
+    .axc-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      background: rgba(11, 18, 32, 0.65);
+      color: var(--text);
+    }
+
+    .axc-form input:focus-visible,
+    .axc-form textarea:focus-visible {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25);
+    }
+
+    .axc-send {
+      justify-self: flex-end;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--accent);
+      color: #0b1220;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(88, 166, 255, 0.3);
+      transition: transform 0.12s ease;
+    }
+
+    .axc-send:active {
+      transform: translateY(1px);
+    }
+
+    .axc-error {
+      color: #ffb4b4;
+      font-size: 0.9rem;
+    }
+
+    .axc-fallback {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .axc-fallback a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    .axc-hp {
+      position: absolute !important;
+      left: -10000px !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .axc-chat-launch,
+      .axc-send {
+        transition: none;
+      }
+    }
     .hero .hero-visual-frame img {
   transition: transform 0.4s ease, filter 0.4s ease;
   transform-origin: center;
@@ -1061,6 +1222,49 @@
       </div>
     </div>
   </footer>
+
+  <!-- BEGIN: Axisies ChatMail Widget -->
+  <div class="axc-chat-launch" aria-label="Open contact panel" role="button" tabindex="0">
+    <!-- simple mail icon -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h20v12H2z" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M2 6l10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </div>
+
+  <div class="axc-chat-panel" role="dialog" aria-modal="true" aria-labelledby="axcChatTitle" hidden>
+    <div class="axc-chat-header">
+      <h3 id="axcChatTitle">Contact Axisies</h3>
+      <button class="axc-close" aria-label="Close">✕</button>
+    </div>
+
+    <div class="axc-chat-feed" aria-live="polite">
+      <div class="axc-bot">
+        <p>Hi! Share a few details and we’ll email you back.</p>
+      </div>
+    </div>
+
+    <form class="axc-form" novalidate>
+      <!-- honeypot -->
+      <input type="text" name="company" class="axc-hp" autocomplete="off" tabindex="-1" aria-hidden="true">
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name" placeholder="Your name">
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required autocomplete="email" placeholder="name@example.com">
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea name="message" required placeholder="How can we help?" rows="3"></textarea>
+      </label>
+      <button type="submit" class="axc-send">Send</button>
+      <p class="axc-error" role="alert" hidden></p>
+      <p class="axc-fallback" hidden>
+        Can’t open your email app? Write us at
+        <a href="mailto:support@axisies.com">support@axisies.com</a>.
+      </p>
+    </form>
+  </div>
+  <!-- END: Axisies ChatMail Widget -->
 
   <script>
     const i18n = {
@@ -1754,6 +1958,106 @@
     };
 
     window.addEventListener('DOMContentLoaded', init);
+
+    (function () {
+      const RECIPIENT_EMAIL = 'support@axisies.com';
+      let mailAttempted = false;
+
+      function openPanel(panel) {
+        panel.hidden = false;
+        document.body.classList.add('axc-open');
+        const name = panel.querySelector('input[name="name"]');
+        if (name) {
+          name.focus();
+        }
+      }
+
+      function closePanel(panel) {
+        panel.hidden = true;
+        document.body.classList.remove('axc-open');
+      }
+
+      function initAxisiesChatMail() {
+        const launch = document.querySelector('.axc-chat-launch');
+        const panel = document.querySelector('.axc-chat-panel');
+        if (!launch || !panel) return;
+
+        const closeBtn = panel.querySelector('.axc-close');
+        const form = panel.querySelector('.axc-form');
+        const feed = panel.querySelector('.axc-chat-feed');
+        const err = panel.querySelector('.axc-error');
+        const fallback = panel.querySelector('.axc-fallback');
+
+        const showUserBubble = (text) => {
+          const div = document.createElement('div');
+          div.className = 'axc-user';
+          div.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+          feed.appendChild(div);
+          feed.scrollTop = feed.scrollHeight;
+        };
+
+        const validate = (name, email, message) => {
+          if (!name || !email || !message) return 'Please fill in all fields.';
+          const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+          if (!ok) return 'Please enter a valid email address.';
+          return '';
+        };
+
+        launch.addEventListener('click', () => openPanel(panel, launch));
+        launch.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPanel(panel, launch);
+          }
+        });
+        closeBtn.addEventListener('click', () => closePanel(panel));
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !panel.hidden) closePanel(panel);
+        });
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          err.hidden = true;
+          fallback.hidden = true;
+
+          const hp = form.company?.value?.trim();
+          if (hp) {
+            return;
+          }
+
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
+
+          const problem = validate(name, email, message);
+          if (problem) {
+            err.textContent = problem;
+            err.hidden = false;
+            return;
+          }
+
+          showUserBubble(message);
+
+          const subject = `[Axisies] Inquiry from ${name}`;
+          const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+          const href = `mailto:${encodeURIComponent(RECIPIENT_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+          mailAttempted = true;
+          const before = Date.now();
+          window.location.href = href;
+
+          setTimeout(() => {
+            const delta = Date.now() - before;
+            if (delta < 1500) {
+              fallback.hidden = false;
+            }
+          }, 1200);
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', initAxisiesChatMail);
+    })();
   </script>
 </body>
 </html>
