@@ -5,15 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Axisies | Innovative Engineering</title>
   <meta name="description" content="Axisies engineers the future with innovative automation, R&D, and advanced engineering solutions across Saudi Arabia." />
-  <meta property="og:title" content="Axisies | Innovative Engineering" />
-  <meta property="og:description" content="Axisies engineers the future with innovative automation, R&D, and advanced engineering solutions across Saudi Arabia." />
+  <link rel="canonical" href="https://axisies.com/" />
+  <link rel="alternate" hreflang="en" href="https://axisies.com/" />
+  <link rel="alternate" hreflang="ar" href="https://axisies.com/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://axisies.com/" />
+
+  <!-- Favicon ve PWA -->
+  <link rel="icon" href="assets/axisies_logo2.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="assets/axisies_logo2.jpg" />
+  <link rel="manifest" href="data:application/manifest+json,{&quot;name&quot;:&quot;Axisies&quot;,&quot;short_name&quot;:&quot;Axisies&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0b0b0b&quot;,&quot;theme_color&quot;:&quot;#0b0b0b&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;assets/axisies_logo2.jpg&quot;,&quot;sizes&quot;:&quot;512x512&quot;,&quot;type&quot;:&quot;image/jpeg&quot;}]}" />
+
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://axisies.github.io/" />
-<meta property="og:image" content="https://ativan-06.github.io/axisies.github.io/assets/background.png">
-<link rel="preload" as="image" href="assets/background.png">
+  <meta property="og:url" content="https://axisies.com/" />
+  <meta property="og:title" content="Axisies | Innovative Engineering" />
+  <meta property="og:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia." />
+  <meta property="og:image" content="https://axisies.com/assets/axisies_logo2.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Axisies | Innovative Engineering" />
+  <meta name="twitter:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia." />
+  <meta name="twitter:image" content="https://axisies.com/assets/axisies_logo2.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Axisies",
+      "url": "https://axisies.com",
+      "logo": "https://axisies.com/assets/axisies_logo2.jpg",
+      "sameAs": ["https://www.linkedin.com/company/axisies"]
+    }
+  </script>
+
+  <!-- robots.txt -->
+  <meta name="robots" content="index, follow" />
+  <!-- sitemap.xml -->
+  <script type="application/xml">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url><loc>https://axisies.com/</loc></url>
+      <url><loc>https://axisies.com/solutions</loc></url>
+      <url><loc>https://axisies.com/plans</loc></url>
+      <url><loc>https://axisies.com/compare</loc></url>
+      <url><loc>https://axisies.com/faq</loc></url>
+      <url><loc>https://axisies.com/contact</loc></url>
+    </urlset>
+  </script>
+
+  <link rel="preload" as="image" href="assets/background.png" />
   <link rel="preload" as="image" href="assets/axisies_logo1.jpg" />
-<link rel="preload" as="image" href="assets/axisies_logo2.jpg" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' ry='12' fill='%230b1220'/%3E%3Cpath d='M20 44L32 12l12 32' stroke='%2358a6ff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='4' fill='%23e2e8f0'/%3E%3C/svg%3E" />
+  <link rel="preload" as="image" href="assets/axisies_logo2.jpg" />
   <style>
     :root {
       color-scheme: dark;
@@ -42,13 +83,20 @@
       letter-spacing: 0.01em;
     }
 
-    body.rtl {
+    body[dir="rtl"] {
       direction: rtl;
+      text-align: right;
+    }
+
+    :focus-visible {
+      outline: 2px solid #555;
+      outline-offset: 2px;
     }
 
     img {
       max-width: 100%;
       display: block;
+      height: auto;
     }
 
     a {
@@ -866,25 +914,25 @@
       }
     }
 
-    body.rtl .nav-list,
-    body.rtl .subnav,
-    body.rtl .cta-group,
-    body.rtl .direct-links,
-    body.rtl .socials,
-    body.rtl .tablist {
+    body[dir="rtl"] .nav-list,
+    body[dir="rtl"] .subnav,
+    body[dir="rtl"] .cta-group,
+    body[dir="rtl"] .direct-links,
+    body[dir="rtl"] .socials,
+    body[dir="rtl"] .tablist {
       flex-direction: row-reverse;
     }
 
-    body.rtl .nav-list a::after {
+    body[dir="rtl"] .nav-list a::after {
       transform-origin: center;
     }
 
-    body.rtl .kpi {
+    body[dir="rtl"] .kpi {
       text-align: center;
     }
 
-    body.rtl input,
-    body.rtl textarea {
+    body[dir="rtl"] input,
+    body[dir="rtl"] textarea {
       text-align: right;
     }
     /* ===== Axisies ChatMail Widget ===== */
@@ -1061,11 +1109,11 @@
 }
   </style>
 </head>
-<body>
+<body dir="ltr">
   <header class="global-header" id="top">
     <div class="header-shell">
       <a class="brand" href="#home" data-scroll>
-        <<img src="assets/axisies_logo2.jpg" alt="Axisies logo"  height="40" loading="eager" decoding="async">
+        <img src="assets/axisies_logo2.jpg" alt="Axisies logo" width="1024" height="1024" loading="lazy" decoding="async" />
         <span>AXISIES</span>
       </a>
       <nav class="nav-primary" aria-label="Primary">
@@ -1113,7 +1161,7 @@
         </div>
         <div class="hero-visual">
           <div class="hero-visual-frame">
-            <img src="assets/axisies_logo1.jpg" alt="Axisies engineering showcase">
+            <img src="assets/axisies_logo1.jpg" alt="Axisies engineering showcase" width="1536" height="1024" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -1189,7 +1237,7 @@
         <p data-i18n="contact.description">Share your requirements and our engineers will respond with a tailored workshop or on-site assessment.</p>
       </div>
       <div class="contact-card">
-        <form id="contactForm">
+        <form id="contactForm" method="POST" action="https://formspree.io/f/FORM_IDINIZ">
           <div>
             <label for="name" data-i18n="contact.nameLabel">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" required />
@@ -1204,6 +1252,7 @@
           </div>
           <button type="submit" class="btn primary plan-cta" data-i18n="contact.submit">Send to Axisies</button>
         </form>
+        <div id="form-status" aria-live="polite"></div>
         <div class="direct-links">
           <a href="mailto:info@axisies.com">info@axisies.com</a>
           <a href="mailto:support@axisies.com">support@axisies.com</a>
@@ -1638,7 +1687,6 @@
     const compareHead = document.getElementById('compareHead');
     const compareBody = document.getElementById('compareBody');
     const faqList = document.getElementById('faqList');
-    const contactForm = document.getElementById('contactForm');
     const yearEl = document.querySelector('[data-year]');
 
     const placeholderSVG = (direction = 'ltr') => `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220' viewBox='0 0 320 220'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%' stop-color='%2358a6ff' stop-opacity='0.2'/%3E%3Cstop offset='100%' stop-color='%2358a6ff' stop-opacity='0.05'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='220' rx='28' fill='%231f2937'/%3E%3Crect x='14' y='14' width='292' height='192' rx='22' fill='url(%23g)' stroke='%2358a6ff' stroke-opacity='0.18'/%3E%3Cpath d='M70 150 Q160 ${direction === 'rtl' ? '90' : '130'} 250 80' stroke='%2358a6ff' stroke-width='6' stroke-linecap='round' fill='none' opacity='0.45'/%3E%3Ccircle cx='110' cy='92' r='18' fill='%2358a6ff' opacity='0.25'/%3E%3Ccircle cx='210' cy='132' r='12' fill='%2358a6ff' opacity='0.2'/%3E%3C/svg%3E`;
@@ -1661,7 +1709,7 @@
             </div>
           </div>
           <div class="solution-visual">
-            <img src="${placeholderSVG(isRTL ? 'rtl' : 'ltr')}" alt="${row.alt}" loading="lazy" />
+            <img src="${placeholderSVG(isRTL ? 'rtl' : 'ltr')}" alt="${row.alt}" loading="lazy" width="320" height="220" />
           </div>
         `;
         if (index % 2 !== 0) {
@@ -1746,9 +1794,11 @@
 
     const updateStaticTexts = (langKey) => {
       const langData = i18n[langKey];
-      document.documentElement.lang = langKey === 'ar' ? 'ar' : 'en';
-      document.documentElement.dir = langKey === 'ar' ? 'rtl' : 'ltr';
-      document.body.classList.toggle('rtl', langKey === 'ar');
+      const htmlLang = langKey === 'ar' ? 'ar' : 'en';
+      const htmlDir = langKey === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.setAttribute('lang', htmlLang);
+      document.documentElement.setAttribute('dir', htmlDir);
+      document.body.setAttribute('dir', htmlDir);
       document.title = langData.meta.title;
       const metaDesc = document.querySelector('meta[name="description"]');
       const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -1935,26 +1985,12 @@
       });
     };
 
-    const handleContactSubmit = () => {
-      contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const langKey = document.documentElement.lang === 'ar' ? 'ar' : 'en';
-        const name = contactForm.name.value.trim();
-        const email = contactForm.email.value.trim();
-        const message = contactForm.message.value.trim();
-        const subject = encodeURIComponent(langKey === 'ar' ? 'طلب استشارة من موقع أكسيزيس' : 'Axisies consultation request');
-        const body = encodeURIComponent(`${langKey === 'ar' ? 'الاسم' : 'Name'}: ${name}\n${langKey === 'ar' ? 'البريد' : 'Email'}: ${email}\n\n${message}`);
-        window.location.href = `mailto:info@axisies.com?subject=${subject}&body=${body}`;
-      });
-    };
-
     const init = () => {
       updateYear();
       renderAll('en');
       highlightOnScroll();
       revealObserver();
       handleFaq();
-      handleContactSubmit();
     };
 
     window.addEventListener('DOMContentLoaded', init);
@@ -2058,6 +2094,39 @@
 
       window.addEventListener('DOMContentLoaded', initAxisiesChatMail);
     })();
+  </script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('form-status');
+    if (form && statusEl) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = 'Sending...';
+        try {
+          const data = new FormData(form);
+          const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+          if (res.ok) {
+            statusEl.textContent = 'Message sent successfully!';
+            form.reset();
+          } else {
+            statusEl.textContent = 'Error: please try again.';
+          }
+        } catch {
+          statusEl.textContent = 'Network error.';
+        }
+      });
+    }
+  </script>
+  <script>
+    if (document.title === "404" || window.location.pathname.includes("404")) {
+      document.body.innerHTML = "<main style='font-family:system-ui;text-align:center;padding:4rem;color:#fff;background:#0b0b0b'><h1>404 - Page Not Found</h1><p>Redirecting to <a href='/' style='color:#9cf'>Home</a>...</p></main>";
+      setTimeout(() => (location.href = "/"), 4000);
+    }
+  </script>
+  <script>
+    if (location.hostname.startsWith('www.')) {
+      location.hostname = 'axisies.com';
+    }
   </script>
 </body>
 </html>
