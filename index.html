@@ -1108,6 +1108,41 @@
 }
 }
   </style>
+
+  <link rel="canonical" href="https://axisies.com/">
+  <link rel="alternate" hreflang="en" href="https://axisies.com/">
+  <link rel="alternate" hreflang="x-default" href="https://axisies.com/">
+
+  <link rel="icon" href="assets/axisies_logo2.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="assets/axisies_logo2.jpg">
+
+  <!-- Inline manifest (ek dosya oluşturma) -->
+  <link rel="manifest" href="data:application/manifest+json,{&quot;name&quot;:&quot;Axisies&quot;,&quot;short_name&quot;:&quot;Axisies&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0b0b0b&quot;,&quot;theme_color&quot;:&quot;#0b0b0b&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;assets/axisies_logo2.jpg&quot;,&quot;sizes&quot;:&quot;512x512&quot;,&quot;type&quot;:&quot;image/jpeg&quot;}]}">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://axisies.com/">
+  <meta property="og:title" content="Axisies | Innovative Engineering">
+  <meta property="og:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia.">
+  <meta property="og:image" content="https://axisies.com/assets/axisies_logo2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Axisies | Innovative Engineering">
+  <meta name="twitter:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia.">
+  <meta name="twitter:image" content="https://axisies.com/assets/axisies_logo2.jpg">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Axisies","url":"https://axisies.com","logo":"https://axisies.com/assets/axisies_logo2.jpg","sameAs":["https://www.linkedin.com/company/axisies"]}
+  </script>
+
+  <!-- erişilebilirlik ve CLS iyileştirmesi -->
+  <style>
+    :focus-visible { outline: 2px solid #555; outline-offset: 2px; }
+    img { max-width: 100%; height: auto; }
+  </style>
+
+  <!-- www -> apex yönlendirmesi (formlara dokunmaz) -->
+  <script>if (location.hostname.startsWith('www.')) location.hostname = 'axisies.com';</script>
 </head>
 <body dir="ltr">
   <header class="global-header" id="top">
@@ -2118,14 +2153,9 @@
     }
   </script>
   <script>
-    if (document.title === "404" || window.location.pathname.includes("404")) {
-      document.body.innerHTML = "<main style='font-family:system-ui;text-align:center;padding:4rem;color:#fff;background:#0b0b0b'><h1>404 - Page Not Found</h1><p>Redirecting to <a href='/' style='color:#9cf'>Home</a>...</p></main>";
-      setTimeout(() => (location.href = "/"), 4000);
-    }
-  </script>
-  <script>
-    if (location.hostname.startsWith('www.')) {
-      location.hostname = 'axisies.com';
+    if (document.title === '404' || /\/404(\.html)?$/.test(location.pathname)) {
+      document.body.innerHTML = "<main style='font-family:system-ui;text-align:center;padding:4rem;color:#fff;background:#0b0b0b'><h1>404 — Page Not Found</h1><p>Redirecting to <a href=\"/\" style=\"color:#9cf\">home</a>…</p></main>";
+      setTimeout(()=>location.href='/', 4000);
     }
   </script>
 </body>
