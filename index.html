@@ -2,29 +2,26 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Axisies | Innovative Engineering</title>
   <meta name="description" content="Axisies engineers the future with innovative automation, R&D, and advanced engineering solutions across Saudi Arabia." />
+  <!-- // AXISIES: Consolidated canonical and discovery metadata for SEO -->
   <link rel="canonical" href="https://axisies.com/" />
   <link rel="alternate" hreflang="en" href="https://axisies.com/" />
-  <link rel="alternate" hreflang="ar" href="https://axisies.com/ar/" />
   <link rel="alternate" hreflang="x-default" href="https://axisies.com/" />
-
-  <!-- Favicon ve PWA -->
   <link rel="icon" href="assets/axisies_logo2.jpg" type="image/jpeg" />
   <link rel="apple-touch-icon" href="assets/axisies_logo2.jpg" />
-  <link rel="manifest" href="data:application/manifest+json,{&quot;name&quot;:&quot;Axisies&quot;,&quot;short_name&quot;:&quot;Axisies&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0b0b0b&quot;,&quot;theme_color&quot;:&quot;#0b0b0b&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;assets/axisies_logo2.jpg&quot;,&quot;sizes&quot;:&quot;512x512&quot;,&quot;type&quot;:&quot;image/jpeg&quot;}]}" />
-
-  <!-- Open Graph / Twitter -->
+  <link
+    rel="manifest"
+    href="data:application/manifest+json,{&quot;name&quot;:&quot;Axisies&quot;,&quot;short_name&quot;:&quot;Axisies&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#000000&quot;,&quot;theme_color&quot;:&quot;#0a7e55&quot;}"
+  />
+  <meta name="theme-color" content="#0a7e55" />
+  <meta name="robots" content="index,follow" />
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Axisies — Creative Engineering" />
+  <meta property="og:description" content="We merge mechanical precision with digital intelligence." />
   <meta property="og:url" content="https://axisies.com/" />
-  <meta property="og:title" content="Axisies | Innovative Engineering" />
-  <meta property="og:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia." />
-  <meta property="og:image" content="https://axisies.com/assets/axisies_logo2.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Axisies | Innovative Engineering" />
-  <meta name="twitter:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia." />
-  <meta name="twitter:image" content="https://axisies.com/assets/axisies_logo2.jpg" />
+  <meta property="og:image" content="assets/axisies_logo2.jpg" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -38,9 +35,8 @@
     }
   </script>
 
-  <!-- robots.txt -->
-  <meta name="robots" content="index, follow" />
-  <!-- sitemap.xml -->
+    <!-- robots.txt -->
+    <!-- sitemap.xml -->
   <script type="application/xml">
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url><loc>https://axisies.com/</loc></url>
@@ -56,11 +52,13 @@
   <link rel="preload" as="image" href="assets/axisies_logo1.jpg" />
   <link rel="preload" as="image" href="assets/axisies_logo2.jpg" />
   <style>
+    /* // AXISIES: Global palette refreshed with Saudi green accent */
     :root {
       color-scheme: dark;
       --bg: #0b1220;
       --panel: #1f2937;
-      --accent: #58a6ff;
+      --accent: #0a7e55;
+      --accent-rgb: 10, 126, 85;
       --text: #e2e8f0;
       --muted: rgba(226, 232, 240, 0.7);
       --font: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Ubuntu, "Noto Sans", Arial, sans-serif;
@@ -89,8 +87,8 @@
     }
 
     :focus-visible {
-      outline: 2px solid #555;
-      outline-offset: 2px;
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
     img {
@@ -127,7 +125,7 @@
       z-index: 1000;
       background: rgba(11, 18, 32, 0.82);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+      border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
       --headerH: 72px;
     }
 
@@ -156,7 +154,7 @@
       height: 32px;
       width: auto;
       border-radius: 6px;
-      box-shadow: 0 10px 20px rgba(88, 166, 255, 0.28);
+      box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.28);
     }
 
     .nav-primary {
@@ -205,7 +203,7 @@
     .lang-switch {
       display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(88, 166, 255, 0.35);
+      border: 1px solid rgba(var(--accent-rgb), 0.35);
       border-radius: 999px;
       overflow: hidden;
       background: rgba(31, 41, 55, 0.85);
@@ -222,13 +220,13 @@
 
     .lang-switch button.active {
       background: var(--accent);
-      color: #0b1220;
+      color: #f0fff8;
       font-weight: 600;
     }
 
     .menu-toggle {
       background: rgba(31, 41, 55, 0.8);
-      border: 1px solid rgba(88, 166, 255, 0.45);
+      border: 1px solid rgba(var(--accent-rgb), 0.45);
       color: var(--text);
       width: 42px;
       height: 42px;
@@ -358,6 +356,13 @@
       gap: 1.4rem;
     }
 
+    .hero-tagline {
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
     .hero-eyebrow {
       letter-spacing: 0.36em;
       font-size: 0.75rem;
@@ -410,13 +415,13 @@
 
     .btn.primary {
       background: var(--accent);
-      color: #0b1220;
-      box-shadow: 0 18px 40px rgba(88, 166, 255, 0.28);
+      color: #f0fff8;
+      box-shadow: 0 18px 40px rgba(var(--accent-rgb), 0.28);
     }
 
     .btn.secondary {
       background: rgba(31, 41, 55, 0.75);
-      border-color: rgba(88, 166, 255, 0.35);
+      border-color: rgba(var(--accent-rgb), 0.35);
       color: var(--text);
     }
 
@@ -426,9 +431,9 @@
     }
 
     .hero-visual {
-      background: linear-gradient(135deg, rgba(88, 166, 255, 0.16), rgba(31, 41, 55, 0.85));
+      background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.16), rgba(31, 41, 55, 0.85));
       border-radius: clamp(1.8rem, 4vw, 2.5rem);
-      border: 1px solid rgba(88, 166, 255, 0.18);
+      border: 1px solid rgba(var(--accent-rgb), 0.18);
       padding: clamp(1.8rem, 4vw, 2.6rem);
       position: relative;
       box-shadow: var(--shadow);
@@ -439,7 +444,7 @@
       position: absolute;
       inset: 1.2rem;
       border-radius: inherit;
-      background: radial-gradient(circle at 30% 30%, rgba(88, 166, 255, 0.35), transparent 60%);
+      background: radial-gradient(circle at 30% 30%, rgba(var(--accent-rgb), 0.35), transparent 60%);
       opacity: 0.65;
       pointer-events: none;
     }
@@ -449,9 +454,52 @@
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      border: 1px solid rgba(88, 166, 255, 0.18);
+      border: 1px solid rgba(var(--accent-rgb), 0.18);
       mix-blend-mode: screen;
       pointer-events: none;
+    }
+
+    /* // AXISIES: Hero entrance animation respecting motion preferences */
+    .hero [data-animate] {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero [data-animate] {
+        animation: hero-fade 0.45s ease forwards;
+      }
+
+      .hero-copy [data-animate]:nth-of-type(1) {
+        animation-delay: 0.05s;
+      }
+
+      .hero-copy [data-animate]:nth-of-type(2) {
+        animation-delay: 0.12s;
+      }
+
+      .hero-copy [data-animate]:nth-of-type(3) {
+        animation-delay: 0.18s;
+      }
+
+      .hero-copy [data-animate]:nth-of-type(4) {
+        animation-delay: 0.24s;
+      }
+
+      .hero .cta-group[data-animate] {
+        animation-delay: 0.32s;
+      }
+
+      .hero-visual[data-animate] {
+        animation-delay: 0.24s;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero [data-animate] {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     /* Hero visual frame: adjust aspect-ratio / max-width here if you need different proportions */
@@ -462,11 +510,11 @@
       border-radius: 20px;
       overflow: hidden;
       background: rgba(11, 18, 32, 0.75);
-      border: 1px solid rgba(88, 166, 255, 0.28);
+      border: 1px solid rgba(var(--accent-rgb), 0.28);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: inset 0 0 40px rgba(88, 166, 255, 0.2);
+      box-shadow: inset 0 0 40px rgba(var(--accent-rgb), 0.2);
     }
 
 
@@ -488,7 +536,7 @@
       margin-inline: calc(clamp(1.2rem, 5vw, 3rem) * -1);
       padding-inline: clamp(1.2rem, 5vw, 3rem);
       background: linear-gradient(to bottom, rgba(11, 18, 32, 0.92), rgba(11, 18, 32, 0.6));
-      border-bottom: 1px solid rgba(88, 166, 255, 0.12);
+      border-bottom: 1px solid rgba(var(--accent-rgb), 0.12);
     }
 
     .subnav {
@@ -516,9 +564,9 @@
     .subnav a[aria-current="true"],
     .subnav a:hover,
     .subnav a:focus-visible {
-      border-color: rgba(88, 166, 255, 0.5);
+      border-color: rgba(var(--accent-rgb), 0.5);
       color: var(--text);
-      background: rgba(88, 166, 255, 0.12);
+      background: rgba(var(--accent-rgb), 0.12);
     }
 
     .section-header {
@@ -529,40 +577,40 @@
       max-width: 58ch;
     }
 
+    /* // AXISIES: Service cards responsive grid & interactions */
     .solutions-grid {
       display: grid;
-      gap: clamp(2.4rem, 6vw, 3.5rem);
+      gap: clamp(2rem, 5vw, 3rem);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .solution-row {
       display: grid;
-      gap: 1.8rem;
-      align-items: center;
-      padding: clamp(1.6rem, 4vw, 2.4rem);
-      background: rgba(31, 41, 55, 0.65);
+      gap: 1.6rem;
+      align-content: start;
+      padding: clamp(1.8rem, 4vw, 2.6rem);
+      background: rgba(31, 41, 55, 0.72);
       border-radius: clamp(1.6rem, 3vw, 2.4rem);
-      border: 1px solid rgba(88, 166, 255, 0.16);
+      border: 1px solid rgba(var(--accent-rgb), 0.18);
       box-shadow: 0 24px 50px rgba(5, 10, 20, 0.35);
       position: relative;
       overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+    }
+
+    .solution-row:hover,
+    .solution-row:focus-within {
+      transform: translateY(-2px);
+      box-shadow: 0 32px 58px rgba(5, 10, 20, 0.45);
+      border-color: rgba(var(--accent-rgb), 0.35);
     }
 
     .solution-row::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, rgba(88, 166, 255, 0.12), transparent 55%);
+      background: linear-gradient(140deg, rgba(var(--accent-rgb), 0.12), transparent 60%);
       pointer-events: none;
-    }
-
-    @media (min-width: 900px) {
-      .solution-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .solution-row:nth-child(even) .solution-visual {
-        order: 2;
-      }
     }
 
     .solution-visual {
@@ -571,13 +619,57 @@
     }
 
     .solution-visual img {
-      width: min(220px, 70%);
-      filter: drop-shadow(0 18px 35px rgba(88, 166, 255, 0.3));
+      width: min(220px, 72%);
+      filter: drop-shadow(0 18px 35px rgba(var(--accent-rgb), 0.3));
     }
 
     .solution-copy {
       display: grid;
       gap: 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .solution-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(var(--accent-rgb), 0.16);
+      border: 1px solid rgba(var(--accent-rgb), 0.35);
+    }
+
+    .solution-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent);
+      stroke-width: 1.6;
+      fill: none;
+    }
+
+    .solution-copy h3 {
+      position: relative;
+      padding-bottom: 0.4rem;
+    }
+
+    .solution-copy h3::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.12));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .solution-row:hover .solution-copy h3::after,
+    .solution-row:focus-within .solution-copy h3::after {
+      transform: scaleX(1);
     }
 
     .kpi-row {
@@ -590,7 +682,7 @@
       padding: 0.8rem 1.2rem;
       border-radius: 14px;
       background: rgba(11, 18, 32, 0.6);
-      border: 1px solid rgba(88, 166, 255, 0.2);
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
       min-width: 120px;
       text-align: center;
     }
@@ -613,7 +705,7 @@
       border-radius: 999px;
       background: rgba(31, 41, 55, 0.7);
       padding: 0.5rem;
-      border: 1px solid rgba(88, 166, 255, 0.16);
+      border: 1px solid rgba(var(--accent-rgb), 0.16);
     }
 
     .tablist button {
@@ -629,9 +721,9 @@
 
     .tablist button[aria-selected="true"] {
       background: var(--accent);
-      color: #0b1220;
+      color: #f0fff8;
       font-weight: 600;
-      box-shadow: 0 14px 30px rgba(88, 166, 255, 0.3);
+      box-shadow: 0 14px 30px rgba(var(--accent-rgb), 0.3);
     }
 
     .tabpanels {
@@ -662,7 +754,7 @@
     .plan-card {
       background: rgba(31, 41, 55, 0.72);
       border-radius: 22px;
-      border: 1px solid rgba(88, 166, 255, 0.22);
+      border: 1px solid rgba(var(--accent-rgb), 0.22);
       padding: 2rem;
       display: grid;
       gap: 1.1rem;
@@ -698,7 +790,7 @@
 
     th,
     td {
-      border: 1px solid rgba(88, 166, 255, 0.2);
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
       padding: 1rem;
       background: rgba(11, 18, 32, 0.55);
     }
@@ -715,7 +807,7 @@
     .compare-table-wrapper {
       overflow-x: auto;
       border-radius: 22px;
-      border: 1px solid rgba(88, 166, 255, 0.18);
+      border: 1px solid rgba(var(--accent-rgb), 0.18);
       box-shadow: 0 24px 44px rgba(5, 9, 16, 0.45);
     }
 
@@ -729,7 +821,7 @@
         position: sticky;
         inset-inline-start: 0;
         background: rgba(31, 41, 55, 0.85);
-        box-shadow: 1px 0 0 rgba(88, 166, 255, 0.15);
+        box-shadow: 1px 0 0 rgba(var(--accent-rgb), 0.15);
       }
     }
 
@@ -740,14 +832,14 @@
 
     .faq-item {
       border-radius: 18px;
-      border: 1px solid rgba(88, 166, 255, 0.2);
+      border: 1px solid rgba(var(--accent-rgb), 0.2);
       background: rgba(31, 41, 55, 0.7);
       overflow: hidden;
       transition: border 0.3s ease;
     }
 
     .faq-item[aria-expanded="true"] {
-      border-color: rgba(88, 166, 255, 0.35);
+      border-color: rgba(var(--accent-rgb), 0.35);
     }
 
     .faq-question {
@@ -787,14 +879,26 @@
       gap: 1.5rem;
       background: rgba(31, 41, 55, 0.72);
       border-radius: 24px;
-      border: 1px solid rgba(88, 166, 255, 0.18);
+      border: 1px solid rgba(var(--accent-rgb), 0.18);
       padding: clamp(1.8rem, 4vw, 2.6rem);
       box-shadow: 0 30px 50px rgba(6, 10, 18, 0.42);
     }
 
+    /* // AXISIES: Contact form refinements */
     form {
       display: grid;
       gap: 1.2rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
     }
 
     label {
@@ -807,7 +911,7 @@
       width: 100%;
       padding: 0.9rem 1.1rem;
       border-radius: 16px;
-      border: 1px solid rgba(88, 166, 255, 0.25);
+      border: 1px solid rgba(var(--accent-rgb), 0.25);
       background: rgba(11, 18, 32, 0.65);
       color: var(--text);
       transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -818,11 +922,69 @@
     textarea:focus-visible {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25);
+      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25);
     }
 
     textarea {
       min-height: 150px;
+    }
+
+    .optional {
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-inline-start: 0.35rem;
+    }
+
+    .hp-field {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .consent-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .consent-field input[type="checkbox"] {
+      margin-top: 0.2rem;
+      width: 20px;
+      height: 20px;
+      accent-color: var(--accent);
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      color: rgba(var(--accent-rgb), 0.75);
+      margin: 0;
+    }
+
+    .form-status {
+      font-size: 0.95rem;
+      min-height: 1.2rem;
+      color: var(--muted);
+    }
+
+    .form-status[data-tone="success"] {
+      color: var(--accent);
+    }
+
+    .form-status[data-tone="error"] {
+      color: #ffb8b8;
+    }
+
+    .form-status[data-tone="warn"] {
+      color: rgba(var(--accent-rgb), 0.85);
     }
 
     .direct-links {
@@ -833,7 +995,7 @@
 
     .direct-links a {
       border-radius: 999px;
-      border: 1px solid rgba(88, 166, 255, 0.25);
+      border: 1px solid rgba(var(--accent-rgb), 0.25);
       padding: 0.6rem 1.3rem;
       background: rgba(11, 18, 32, 0.55);
       color: var(--muted);
@@ -846,8 +1008,9 @@
       color: var(--text);
     }
 
+    /* // AXISIES: Footer layout modernization */
     footer {
-      border-top: 1px solid rgba(88, 166, 255, 0.12);
+      border-top: 1px solid rgba(var(--accent-rgb), 0.12);
       padding: 3rem clamp(1.2rem, 5vw, 3rem) 3.5rem;
       background: rgba(11, 18, 32, 0.9);
     }
@@ -856,28 +1019,98 @@
       max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
+    .footer-top {
+      display: grid;
+      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
-    .socials a {
-      padding: 0.55rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(88, 166, 255, 0.25);
+    .footer-about {
+      margin: 0 0 0.6rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      max-width: 42ch;
+    }
+
+    .footer-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .footer-email::after {
+      content: "↗";
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    .footer-email:hover,
+    .footer-email:focus-visible {
+      color: var(--accent);
+    }
+
+    .footer-sitemap {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .footer-sitemap a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-sitemap a:hover,
+    .footer-sitemap a:focus-visible {
+      color: var(--accent);
+    }
+
+    .footer-socials {
+      display: grid;
+      gap: 0.8rem;
+      align-content: start;
+    }
+
+    .footer-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid rgba(var(--accent-rgb), 0.25);
+      color: var(--muted);
       transition: border 0.3s ease, color 0.3s ease;
     }
 
-    .socials a:hover,
-    .socials a:focus-visible {
+    .footer-social svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .footer-social:hover,
+    .footer-social:focus-visible {
       border-color: var(--accent);
       color: var(--text);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid rgba(var(--accent-rgb), 0.12);
+      padding-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     .reveal {
@@ -889,6 +1122,18 @@
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    @keyframes hero-fade {
+      from {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes fadeIn {
@@ -927,6 +1172,10 @@
       transform-origin: center;
     }
 
+    body[dir="rtl"] .solution-copy h3::after {
+      transform-origin: right;
+    }
+
     body[dir="rtl"] .kpi {
       text-align: center;
     }
@@ -948,15 +1197,15 @@
       align-items: center;
       justify-content: center;
       background: var(--accent);
-      color: #0b1220;
+      color: #f0fff8;
       cursor: pointer;
-      box-shadow: 0 14px 30px rgba(88, 166, 255, 0.35);
+      box-shadow: 0 14px 30px rgba(var(--accent-rgb), 0.35);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .axc-chat-launch:hover {
       transform: translateY(-2px);
-      box-shadow: 0 20px 40px rgba(88, 166, 255, 0.4);
+      box-shadow: 0 20px 40px rgba(var(--accent-rgb), 0.4);
     }
 
     .axc-chat-launch svg {
@@ -972,7 +1221,7 @@
       width: min(360px, 92vw);
       border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(88, 166, 255, 0.22);
+      border: 1px solid rgba(var(--accent-rgb), 0.22);
       background: rgba(31, 41, 55, 0.92);
       backdrop-filter: blur(12px);
       color: var(--text);
@@ -985,12 +1234,12 @@
       justify-content: space-between;
       padding: 0.9rem 1rem;
       background: rgba(31, 41, 55, 0.85);
-      border-bottom: 1px solid rgba(88, 166, 255, 0.18);
+      border-bottom: 1px solid rgba(var(--accent-rgb), 0.18);
     }
 
     .axc-close {
       background: transparent;
-      border: 1px solid rgba(88, 166, 255, 0.35);
+      border: 1px solid rgba(var(--accent-rgb), 0.35);
       color: var(--text);
       border-radius: 10px;
       width: 34px;
@@ -1012,13 +1261,13 @@
       padding: 0.7rem 0.9rem;
       border-radius: 14px;
       background: rgba(11, 18, 32, 0.6);
-      border: 1px solid rgba(88, 166, 255, 0.18);
+      border: 1px solid rgba(var(--accent-rgb), 0.18);
     }
 
     .axc-user {
       justify-self: end;
-      background: rgba(88, 166, 255, 0.12);
-      border-color: rgba(88, 166, 255, 0.35);
+      background: rgba(var(--accent-rgb), 0.12);
+      border-color: rgba(var(--accent-rgb), 0.35);
     }
 
     .axc-form {
@@ -1038,7 +1287,7 @@
       width: 100%;
       padding: 0.8rem 1rem;
       border-radius: 14px;
-      border: 1px solid rgba(88, 166, 255, 0.25);
+      border: 1px solid rgba(var(--accent-rgb), 0.25);
       background: rgba(11, 18, 32, 0.65);
       color: var(--text);
     }
@@ -1047,7 +1296,7 @@
     .axc-form textarea:focus-visible {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25);
+      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25);
     }
 
     .axc-send {
@@ -1056,10 +1305,10 @@
       border-radius: 999px;
       border: 1px solid transparent;
       background: var(--accent);
-      color: #0b1220;
+      color: #f0fff8;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 12px 28px rgba(88, 166, 255, 0.3);
+      box-shadow: 0 12px 28px rgba(var(--accent-rgb), 0.3);
       transition: transform 0.12s ease;
     }
 
@@ -1090,58 +1339,26 @@
       width: 0 !important;
     }
 
+    .hero .hero-visual-frame img {
+      transition: transform 0.4s ease, filter 0.4s ease;
+      transform-origin: center;
+    }
+
+    .hero .hero-visual-frame img:hover {
+      transform: scaleY(1.12);
+      filter: drop-shadow(0 0 16px rgba(var(--accent-rgb), 0.25));
+      cursor: pointer;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .axc-chat-launch,
-      .axc-send {
+      .axc-send,
+      .hero .hero-visual-frame img {
         transition: none;
       }
     }
-    .hero .hero-visual-frame img {
-  transition: transform 0.4s ease, filter 0.4s ease;
-  transform-origin: center;
-}
-
-.hero .hero-visual-frame img:hover {
-  transform: scaleY(1.15); /* sadece dikey büyütme */
-  filter: drop-shadow(0 0 10px rgba(88,166,255,0.25));
-  cursor: pointer;
-}
-}
   </style>
-
-  <link rel="canonical" href="https://axisies.com/">
-  <link rel="alternate" hreflang="en" href="https://axisies.com/">
-  <link rel="alternate" hreflang="x-default" href="https://axisies.com/">
-
-  <link rel="icon" href="assets/axisies_logo2.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="assets/axisies_logo2.jpg">
-
-  <!-- Inline manifest (ek dosya oluşturma) -->
-  <link rel="manifest" href="data:application/manifest+json,{&quot;name&quot;:&quot;Axisies&quot;,&quot;short_name&quot;:&quot;Axisies&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0b0b0b&quot;,&quot;theme_color&quot;:&quot;#0b0b0b&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;assets/axisies_logo2.jpg&quot;,&quot;sizes&quot;:&quot;512x512&quot;,&quot;type&quot;:&quot;image/jpeg&quot;}]}">
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://axisies.com/">
-  <meta property="og:title" content="Axisies | Innovative Engineering">
-  <meta property="og:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia.">
-  <meta property="og:image" content="https://axisies.com/assets/axisies_logo2.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Axisies | Innovative Engineering">
-  <meta name="twitter:description" content="Automation, industrial R&D, and creative engineering built in Saudi Arabia.">
-  <meta name="twitter:image" content="https://axisies.com/assets/axisies_logo2.jpg">
-
-  <!-- Organization JSON-LD -->
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Organization","name":"Axisies","url":"https://axisies.com","logo":"https://axisies.com/assets/axisies_logo2.jpg","sameAs":["https://www.linkedin.com/company/axisies"]}
-  </script>
-
-  <!-- erişilebilirlik ve CLS iyileştirmesi -->
-  <style>
-    :focus-visible { outline: 2px solid #555; outline-offset: 2px; }
-    img { max-width: 100%; height: auto; }
-  </style>
-
-  <!-- www -> apex yönlendirmesi (formlara dokunmaz) -->
+  <!-- // AXISIES: Redirect www subdomain to apex -->
   <script>if (location.hostname.startsWith('www.')) location.hostname = 'axisies.com';</script>
 </head>
 <body dir="ltr">
@@ -1186,15 +1403,16 @@
     <section class="hero" id="home">
       <div class="hero-shell">
         <div class="hero-copy">
-          <span class="hero-eyebrow" data-i18n="hero.eyebrow">Future-ready engineering</span>
-          <h1 data-i18n="hero.title">Axisies | Innovative Engineering</h1>
-          <p data-i18n="hero.subtitle">Saudi-founded Axisies delivers automation, advanced R&amp;D, and precision engineering that elevate factories and infrastructure for Industry 4.0.</p>
-          <div class="cta-group">
-            <a class="btn primary" href="mailto:info@axisies.com?subject=Axisies%20Consultation" data-i18n="hero.primaryCta">Get a Quote</a>
-            <a class="btn secondary" href="#solutions" data-scroll data-i18n="hero.secondaryCta">Discover Our Work</a>
+          <span class="hero-eyebrow" data-animate data-i18n="hero.eyebrow">Future-ready engineering</span>
+          <h1 data-animate data-i18n="hero.title">Axisies | Innovative Engineering</h1>
+          <p class="hero-tagline" data-animate data-i18n="hero.tagline">We merge mechanical precision with digital intelligence.</p>
+          <p data-animate data-i18n="hero.subtitle">Saudi-founded Axisies delivers automation, advanced R&amp;D, and precision engineering that elevate factories and infrastructure for Industry 4.0.</p>
+          <div class="cta-group" data-animate>
+            <a class="btn primary" href="#solutions" data-scroll data-i18n="hero.primaryCta">Explore Services</a>
+            <a class="btn secondary" href="#contact" data-scroll data-i18n="hero.secondaryCta">Contact Us</a>
           </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-visual" data-animate>
           <div class="hero-visual-frame">
             <img src="assets/axisies_logo1.jpg" alt="Axisies engineering showcase" width="1536" height="1024" loading="lazy" decoding="async" />
           </div>
@@ -1272,22 +1490,82 @@
         <p data-i18n="contact.description">Share your requirements and our engineers will respond with a tailored workshop or on-site assessment.</p>
       </div>
       <div class="contact-card">
-        <form id="contactForm" method="POST" action="https://formspree.io/f/FORM_IDINIZ">
-          <div>
-            <label for="name" data-i18n="contact.nameLabel">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your name" required />
+        <form
+          id="contactForm"
+          method="POST"
+          action="/contact.php"
+          data-fallback-action="mailto:info@axisies.com"
+          enctype="application/x-www-form-urlencoded"
+          novalidate
+        >
+          <!-- // AXISIES: Honeypot field to deter basic bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="contact-check">Leave this field empty</label>
+            <input id="contact-check" name="contact_check" type="text" tabindex="-1" autocomplete="off" />
           </div>
-          <div>
-            <label for="email" data-i18n="contact.emailLabel">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="name@example.com" required />
+          <div class="form-grid">
+            <div>
+              <label for="name" data-i18n="contact.nameLabel">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                data-i18n-placeholder="contact.namePlaceholder"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" data-i18n="contact.emailLabel">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                data-i18n-placeholder="contact.emailPlaceholder"
+                placeholder="name@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="company">
+                <span data-i18n="contact.companyLabel">Company</span>
+                <span class="optional" data-i18n="contact.optional">(Optional)</span>
+              </label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                autocomplete="organization"
+                data-i18n-placeholder="contact.companyPlaceholder"
+                placeholder="Company or team"
+              />
+            </div>
           </div>
           <div>
             <label for="message" data-i18n="contact.messageLabel">Project details</label>
-            <textarea id="message" name="message" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell us about your project" required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              data-i18n-placeholder="contact.messagePlaceholder"
+              placeholder="Tell us about your project"
+              required
+            ></textarea>
           </div>
-          <button type="submit" class="btn primary plan-cta" data-i18n="contact.submit">Send to Axisies</button>
+          <div class="consent-field">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent" data-i18n="contact.consent">I agree to receive communications about this inquiry.</label>
+          </div>
+          <!-- // AXISIES: FormSubmit fallback template (uncomment to activate) -->
+          <!--
+          <input type="hidden" name="_subject" value="New Axisies inquiry" />
+          <input type="hidden" name="_next" value="https://axisies.com/thank-you" />
+          -->
+          <button type="submit" class="btn primary plan-cta" data-i18n="contact.submit">Send Message</button>
+          <p id="mailtoNotice" class="form-note" hidden data-i18n="contact.mailtoNotice">We'll open your email app to finish the message.</p>
         </form>
-        <div id="form-status" aria-live="polite"></div>
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
         <div class="direct-links">
           <a href="mailto:info@axisies.com">info@axisies.com</a>
           <a href="mailto:support@axisies.com">support@axisies.com</a>
@@ -1298,11 +1576,42 @@
 
   <footer>
     <div class="footer-shell">
-      <p data-i18n="footer.copy">© <span data-year></span> Axisies. All rights reserved.</p>
-      <div class="socials">
-        <a href="#" aria-label="Axisies on LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="Axisies on GitHub">GitHub</a>
-        <a href="#" aria-label="Axisies on YouTube">YouTube</a>
+      <div class="footer-top">
+        <div class="footer-about-block">
+          <p class="footer-about" data-i18n="footer.about">Axisies fuses mechanical craft with digital intelligence to deliver Industry 4.0 outcomes.</p>
+          <a class="footer-email" href="mailto:info@axisies.com">info@axisies.com</a>
+        </div>
+        <div class="footer-nav">
+          <h3 class="sr-only" data-i18n="footer.sitemapTitle">Sitemap</h3>
+          <ul class="footer-sitemap">
+            <li><a href="#home" data-scroll data-i18n="footer.links.home">Home</a></li>
+            <li><a href="#solutions" data-scroll data-i18n="footer.links.services">Services</a></li>
+            <li><a href="#plans" data-scroll data-i18n="footer.links.projects">Projects</a></li>
+            <li><a href="#contact" data-scroll data-i18n="footer.links.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-socials">
+          <h3 class="sr-only" data-i18n="footer.socialTitle">Social</h3>
+          <a class="footer-social" href="https://www.linkedin.com/company/axisies" target="_blank" rel="noopener">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M4.98 3.5a2 2 0 1 1-.02 4 2 2 0 0 1 .02-4Zm.52 5.3H2.5V21h3v-12.2Zm5.5 0h-2.98V21h2.98v-6.6c0-1.74.76-2.54 2.1-2.54 1.25 0 1.94.87 1.94 2.54V21h2.98v-7.4c0-3.36-1.9-5.04-4.44-5.04-2.1 0-3.04 1.16-3.56 1.96h-.04l-.1-1.62Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="sr-only" data-i18n="footer.linkedin">LinkedIn</span>
+          </a>
+          <a class="footer-social" href="https://github.com/axisies" target="_blank" rel="noopener">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.24.79-.55v-2.1c-3.23.7-3.91-1.55-3.91-1.55-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.79 2.73 1.27 3.4.97.1-.76.4-1.27.72-1.56-2.58-.3-5.29-1.3-5.29-5.79 0-1.28.46-2.32 1.21-3.14-.12-.3-.52-1.51.11-3.15 0 0 .98-.31 3.2 1.2a11.06 11.06 0 0 1 5.82 0c2.22-1.51 3.2-1.2 3.2-1.2.63 1.64.23 2.85.11 3.15.75.82 1.21 1.86 1.21 3.14 0 4.5-2.72 5.48-5.32 5.78.41.36.77 1.07.77 2.16v3.2c0 .31.21.67.8.55A11.5 11.5 0 0 0 12 .5Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="sr-only" data-i18n="footer.github">GitHub</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copy">© <span data-year></span> Axisies. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1375,10 +1684,11 @@
         hero: {
           eyebrow: "Future-ready engineering",
           title: "Axisies | Innovative Engineering",
+          tagline: "We merge mechanical precision with digital intelligence.",
           subtitle:
             "Saudi-founded Axisies delivers automation, advanced R&D, and precision engineering that elevate factories and infrastructure for Industry 4.0.",
-          primaryCta: "Get a Quote",
-          secondaryCta: "Discover Our Work",
+          primaryCta: "Explore Services",
+          secondaryCta: "Contact Us",
         },
         solutions: {
           heading: "Engineering that amplifies performance",
@@ -1521,14 +1831,30 @@
           description: "Share your requirements and our engineers will respond with a tailored workshop or on-site assessment.",
           nameLabel: "Name",
           emailLabel: "Email",
+          companyLabel: "Company",
+          companyPlaceholder: "Company or team",
+          optional: "(Optional)",
           messageLabel: "Project details",
           namePlaceholder: "Your name",
           emailPlaceholder: "name@example.com",
           messagePlaceholder: "Tell us about your project",
-          submit: "Send to Axisies",
+          consent: "I agree to receive communications about this inquiry.",
+          submit: "Send Message",
+          mailtoNotice: "We'll open your email app to finish the message.",
         },
         footer: {
           copy: "© <span data-year></span> Axisies. All rights reserved.",
+          about: "Axisies fuses mechanical craft with digital intelligence to deliver Industry 4.0 outcomes.",
+          sitemapTitle: "Sitemap",
+          socialTitle: "Connect",
+          links: {
+            home: "Home",
+            services: "Services",
+            projects: "Projects",
+            contact: "Contact",
+          },
+          linkedin: "LinkedIn",
+          github: "GitHub",
         },
       },
       ar: {
@@ -1554,10 +1880,11 @@
         hero: {
           eyebrow: "هندسة لمستقبل متطور",
           title: "أكسيزيس | هندسة مبتكرة",
+          tagline: "نمزج الدقة الميكانيكية مع الذكاء الرقمي.",
           subtitle:
             "تقدم أكسيزيس السعودية حلول الأتمتة والبحث والتطوير والهندسة الدقيقة لرفع أداء المصانع والبنية التحتية نحو الصناعة 4.0.",
-          primaryCta: "احصل على عرض",
-          secondaryCta: "استكشف أعمالنا",
+          primaryCta: "استكشف الخدمات",
+          secondaryCta: "تواصل معنا",
         },
         solutions: {
           heading: "هندسة تعظم الأداء",
@@ -1700,14 +2027,30 @@
           description: "شاركنا متطلباتك ليقوم مهندسونا بتقديم ورشة عمل مخصصة أو تقييم ميداني.",
           nameLabel: "الاسم",
           emailLabel: "البريد الإلكتروني",
+          companyLabel: "الشركة",
+          companyPlaceholder: "اسم الشركة أو الفريق",
+          optional: "(اختياري)",
           messageLabel: "تفاصيل المشروع",
           namePlaceholder: "اسمك",
           emailPlaceholder: "name@example.com",
           messagePlaceholder: "أخبرنا عن مشروعك",
-          submit: "إرسال إلى أكسيزيس",
+          consent: "أوافق على تلقي الردود المتعلقة بهذا الطلب.",
+          submit: "أرسل الرسالة",
+          mailtoNotice: "سنفتح تطبيق بريدك لإكمال الرسالة.",
         },
         footer: {
           copy: "© <span data-year></span> أكسيزيس. جميع الحقوق محفوظة.",
+          about: "تمزج أكسيزيس الحرفة الميكانيكية مع الذكاء الرقمي لتقديم نتائج الصناعة 4.0.",
+          sitemapTitle: "خريطة الموقع",
+          socialTitle: "قنوات التواصل",
+          links: {
+            home: "الرئيسية",
+            services: "الخدمات",
+            projects: "المشاريع",
+            contact: "تواصل",
+          },
+          linkedin: "لينكدإن",
+          github: "جيتهاب",
         },
       },
     };
@@ -1724,7 +2067,7 @@
     const faqList = document.getElementById('faqList');
     const yearEl = document.querySelector('[data-year]');
 
-    const placeholderSVG = (direction = 'ltr') => `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220' viewBox='0 0 320 220'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%' stop-color='%2358a6ff' stop-opacity='0.2'/%3E%3Cstop offset='100%' stop-color='%2358a6ff' stop-opacity='0.05'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='220' rx='28' fill='%231f2937'/%3E%3Crect x='14' y='14' width='292' height='192' rx='22' fill='url(%23g)' stroke='%2358a6ff' stroke-opacity='0.18'/%3E%3Cpath d='M70 150 Q160 ${direction === 'rtl' ? '90' : '130'} 250 80' stroke='%2358a6ff' stroke-width='6' stroke-linecap='round' fill='none' opacity='0.45'/%3E%3Ccircle cx='110' cy='92' r='18' fill='%2358a6ff' opacity='0.25'/%3E%3Ccircle cx='210' cy='132' r='12' fill='%2358a6ff' opacity='0.2'/%3E%3C/svg%3E`;
+    const placeholderSVG = (direction = 'ltr') => `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220' viewBox='0 0 320 220'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%' stop-color='%230a7e55' stop-opacity='0.2'/%3E%3Cstop offset='100%' stop-color='%230a7e55' stop-opacity='0.05'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='220' rx='28' fill='%231f2937'/%3E%3Crect x='14' y='14' width='292' height='192' rx='22' fill='url(%23g)' stroke='%230a7e55' stroke-opacity='0.18'/%3E%3Cpath d='M70 150 Q160 ${direction === 'rtl' ? '90' : '130'} 250 80' stroke='%230a7e55' stroke-width='6' stroke-linecap='round' fill='none' opacity='0.45'/%3E%3Ccircle cx='110' cy='92' r='18' fill='%230a7e55' opacity='0.25'/%3E%3Ccircle cx='210' cy='132' r='12' fill='%230a7e55' opacity='0.2'/%3E%3C/svg%3E`;
 
     const createSolutions = (langKey) => {
       const { rows } = i18n[langKey].solutions;
@@ -1735,6 +2078,12 @@
         wrapper.className = 'solution-row reveal';
         wrapper.innerHTML = `
           <div class="solution-copy">
+            <span class="solution-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                <circle cx="12" cy="12" r="4.5" />
+                <path d="M12 3.5v2.5M12 18v2.5M3.5 12H6M18 12h2.5M6.9 6.9l1.8 1.8M15.3 15.3l1.8 1.8M17.1 6.9l-1.8 1.8M8.7 15.3l-1.8 1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
             <h3>${row.title}</h3>
             <p>${row.body}</p>
             <div class="kpi-row">
@@ -2131,24 +2480,115 @@
     })();
   </script>
   <script>
-    const form = document.getElementById('contactForm');
+    // AXISIES: Progressive contact form submission with server + mailto fallback
+    const contactForm = document.getElementById('contactForm');
     const statusEl = document.getElementById('form-status');
-    if (form && statusEl) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        statusEl.textContent = 'Sending...';
+    const mailtoNotice = document.getElementById('mailtoNotice');
+
+    const setStatus = (message, tone = '') => {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      if (tone) {
+        statusEl.setAttribute('data-tone', tone);
+      } else {
+        statusEl.removeAttribute('data-tone');
+      }
+    };
+
+    const emailIsValid = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+    if (contactForm && statusEl) {
+      const fallbackAction = contactForm.dataset.fallbackAction || 'mailto:info@axisies.com';
+      let contactMode = 'server';
+
+      const primeMode = async () => {
         try {
-          const data = new FormData(form);
-          const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-          if (res.ok) {
-            statusEl.textContent = 'Message sent successfully!';
-            form.reset();
-          } else {
-            statusEl.textContent = 'Error: please try again.';
-          }
-        } catch {
-          statusEl.textContent = 'Network error.';
+          const response = await fetch(contactForm.action, { method: 'HEAD' });
+          if (!response.ok) throw new Error('No endpoint');
+          contactMode = 'server';
+        } catch (error) {
+          contactMode = 'mailto';
+          contactForm.action = fallbackAction;
+          contactForm.setAttribute('enctype', 'text/plain');
         }
+        contactForm.dataset.mode = contactMode;
+      };
+
+      // AXISIES: Detect endpoint availability without blocking interaction
+      primeMode();
+
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        mailtoNotice?.setAttribute('hidden', '');
+        setStatus('');
+
+        if (!contactForm.checkValidity()) {
+          contactForm.reportValidity();
+          return;
+        }
+
+        const emailValue = contactForm.email.value.trim();
+        if (!emailIsValid(emailValue)) {
+          setStatus('Please enter a valid email address.', 'error');
+          contactForm.email.focus();
+          return;
+        }
+
+        if (contactForm.contact_check?.value.trim()) {
+          return;
+        }
+
+        setStatus('Sending…');
+
+        const payload = new FormData(contactForm);
+        payload.set('email', emailValue);
+        payload.set('consent', contactForm.consent.checked ? 'yes' : 'no');
+
+        const attemptServer = async () => {
+          try {
+            const response = await fetch(contactForm.action, {
+              method: 'POST',
+              body: payload,
+            });
+            if (!response.ok) throw new Error('Bad response');
+            setStatus("We’ll get back within 24–48 hours.", 'success');
+            contactForm.reset();
+            return true;
+          } catch (error) {
+            return false;
+          }
+        };
+
+        const deliverByServer = contactMode === 'server' ? await attemptServer() : false;
+
+        if (deliverByServer) {
+          return;
+        }
+
+        contactMode = 'mailto';
+        contactForm.dataset.mode = 'mailto';
+        contactForm.action = fallbackAction;
+        contactForm.setAttribute('enctype', 'text/plain');
+
+        const name = contactForm.name.value.trim();
+        const company = contactForm.company.value.trim();
+        const message = contactForm.message.value.trim();
+        const subject = `[Axisies] Inquiry from ${name || 'Axisies visitor'}`;
+        const lines = [
+          `Name: ${name || 'Not provided'}`,
+          `Email: ${emailValue}`,
+          company ? `Company: ${company}` : null,
+          `Consent: ${contactForm.consent.checked ? 'Yes' : 'No'}`,
+          '',
+          message,
+        ].filter(Boolean);
+        const base = fallbackAction;
+        const separator = base.includes('?') ? '&' : '?';
+        const href = `${base}${separator}subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+
+        setStatus('Unable to reach our server. Opening your email client…', 'warn');
+        mailtoNotice?.removeAttribute('hidden');
+        window.location.href = href;
       });
     }
   </script>
